@@ -206,6 +206,13 @@ endr
 	ld b, a
 	call Random
 	ld c, a
+
+	ld a, [wForceShiny]
+	and a
+	jr z, .initializeDVs
+	ld b, $fa
+	ld c, $aa
+
 .initializeDVs
 	ld a, b
 	ld [de], a

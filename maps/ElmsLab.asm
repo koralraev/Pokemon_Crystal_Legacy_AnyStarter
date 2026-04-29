@@ -5,6 +5,7 @@
 	const ELMSLAB_POKE_BALL2
 	const ELMSLAB_POKE_BALL3
 	const ELMSLAB_OFFICER
+	const ELMSLAB_FISHER
 
 ElmsLab_MapScripts:
 	def_scene_scripts
@@ -1303,6 +1304,84 @@ ElmsLabWindowText2:
 	line "through here!"
 	done
 
+CustomNPCPokemonGiverScript:
+	faceplayer
+	opentext
+	checkflag ENGINE_POKEDEX
+	iffalse .no_pokedex
+	checkevent EVENT_COP_IN_ELMS_LAB
+	iffalse .no_pokedex
+	writetext CustomNPCGreetingText
+	waitbutton
+	closetext
+
+	callasm CustomNPC_SelectPokemonUI
+	ifequal 0, .cancel
+
+	callasm CustomNPC_SelectLevelUI
+	ifequal 0, .cancel
+	callasm CustomNPC_StoreLevel
+
+	opentext
+	writetext CustomNPCAskShinyText
+	yesorno
+	iffalse .not_shiny
+	callasm CustomNPC_SetShiny
+	sjump .give
+.not_shiny
+	callasm CustomNPC_ClearShiny
+
+.give
+	callasm CustomNPC_GivePokemon
+	callasm CustomNPC_ClearShiny
+
+	writetext CustomNPCDoneText
+	waitbutton
+	closetext
+	end
+
+.no_pokedex
+	writetext CustomNPCNoPokedexText
+	waitbutton
+	closetext
+	end
+
+.cancel
+	opentext
+	writetext CustomNPCCancelText
+	waitbutton
+	closetext
+	end
+
+CustomNPCNoPokedexText:
+	text "Come back when you"
+	line "have a POKéDEX!"
+	done
+
+CustomNPCGreetingText:
+	text "Hello! I can give"
+	line "you any #MON."
+	
+	para "Please choose one"
+	line "from the POKéDEX."
+	done
+
+CustomNPCAskShinyText:
+	text "Would you like it"
+	line "to be shiny?"
+	done
+
+CustomNPCDoneText:
+	text "There you go!"
+	line "Take good care"
+	cont "of it!"
+	done
+
+CustomNPCCancelText:
+	text "Maybe another"
+	line "time then."
+	done
+
 ElmsLabTravelTip1Text:
 	text "<PLAYER> opened a"
 	line "book."
@@ -1403,3 +1482,4 @@ ElmsLab_MapEvents:
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	object_event  5,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CopScript, EVENT_COP_IN_ELMS_LAB
+	object_event  3, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CustomNPCPokemonGiverScript, -1

@@ -20,7 +20,7 @@
 POKEDEX_SCX EQU 5
 EXPORT POKEDEX_SCX
 
-Pokedex:
+Pokedex::
 	ldh a, [hWX]
 	ld l, a
 	ldh a, [hWY]
@@ -295,6 +295,16 @@ Pokedex_UpdateMainScreen:
 
 .a
 	call Pokedex_GetSelectedMon
+	ld a, [wPokedexSelectionMode]
+	and a
+	jr z, .normal_a
+	ld a, [wCurPartySpecies]
+	ld [wScriptVar], a
+	ld a, DEXSTATE_EXIT
+	ld [wJumptableIndex], a
+	ret
+
+.normal_a
 	call Pokedex_CheckSeen
 	ret z
 	ld a, DEXSTATE_DEX_ENTRY_SCR
@@ -326,6 +336,13 @@ Pokedex_UpdateMainScreen:
 	ret
 
 .b
+	ld a, [wPokedexSelectionMode]
+	and a
+	jr z, .normal_b
+	xor a
+	ld [wScriptVar], a
+
+.normal_b
 	ld a, DEXSTATE_EXIT
 	ld [wJumptableIndex], a
 	ret
@@ -2439,9 +2456,17 @@ Pokedex_GetSelectedMon:
 Pokedex_CheckCaught:
 	push de
 	push hl
+	ld a, [wPokedexSelectionMode]
+	and a
+	jr nz, .caught
 	ld a, [wTempSpecies]
 	dec a
 	call CheckCaughtMon
+	jr .done
+.caught
+	ld a, 1
+	and a
+.done
 	pop hl
 	pop de
 	ret
@@ -2449,11 +2474,17 @@ Pokedex_CheckCaught:
 Pokedex_CheckSeen:
 	push de
 	push hl
+	ld a, [wPokedexSelectionMode]
+	and a
+	jr nz, .seen
 	ld a, [wTempSpecies]
 	dec a
 	call CheckSeenMon
-	; ld a, 1 ; DEBUG, to unlock all unseen mon
-	; and a ; DEBUG, to unlock all unseen mon
+	jr .done
+.seen
+	ld a, 1
+	and a
+.done
 	pop hl
 	pop de
 	ret
@@ -3499,3 +3530,4 @@ Pokedex_InitColorOption:
 	ld a, SCGB_POKEDEX_SEARCH_OPTION
 	call Pokedex_GetSGBLayout
 	jp Pokedex_IncrementDexPointer
+

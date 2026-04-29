@@ -3409,6 +3409,8 @@ wPokeAnimBitmaskBuffer:: ds 7
 	ds 2
 wPokeAnimStructEnd::
 
+wPokedexSelectionMode:: db
+wForceShiny:: db
 
 SECTION "Battle Tower RAM", WRAMX
 
@@ -3625,3 +3627,4 @@ wWindowStackBottom:: ds 1
 INCLUDE "sram.asm"
 
 INCLUDE "hram.asm"
+
