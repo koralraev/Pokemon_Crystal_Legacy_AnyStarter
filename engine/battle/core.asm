@@ -5342,7 +5342,7 @@ BattleMenu_Run:
 	ld a, $3
 	ld [wMenuCursorY], a
 	;ld hl, wBattleMonSpeed
-	ld hl, wEnemyMonSpeed  ;compare enemy speed to enemy speed to allow always fleeing
+	ld hl, wEnemyMonSpeed  ;compares enemy speed against enemy speed to always allow fleeing
 	ld de, wEnemyMonSpeed
 	call TryToRunAwayFromBattle
 	ld a, FALSE
