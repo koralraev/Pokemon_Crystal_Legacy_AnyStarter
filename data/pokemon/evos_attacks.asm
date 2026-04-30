@@ -131,6 +131,7 @@ SquirtleEvosAttacks:
 	db 18, BITE
 	db 23, RAPID_SPIN
 	db 29, PROTECT
+	db 34, IRON_DEFENSE
 	db 35, RAIN_DANCE
 	db 41, BODY_SLAM
 	db 47, ICE_BEAM
@@ -150,6 +151,7 @@ WartortleEvosAttacks:
 	db 23, RAPID_SPIN
 	db 29, PROTECT
 	db 35, RAIN_DANCE
+	db 40, IRON_DEFENSE
 	db 41, BODY_SLAM
 	db 47, ICE_BEAM
 	db 51, SKULL_BASH
@@ -168,6 +170,7 @@ BlastoiseEvosAttacks:
 	db 29, PROTECT
 	db 35, RAIN_DANCE
 	db 41, BODY_SLAM
+	db 44, IRON_DEFENSE
 	db 47, ICE_BEAM
 	db 51, SKULL_BASH
 	db 56, HYDRO_PUMP
@@ -187,6 +190,7 @@ MetapodEvosAttacks:
 	db 1, TACKLE
 	db 1, STRING_SHOT
 	db 7, HARDEN
+	db 13, IRON_DEFENSE
 	db 0 ; no more level-up moves
 
 ButterfreeEvosAttacks:
@@ -218,6 +222,7 @@ KakunaEvosAttacks:
 	db 1, POISON_STING
 	db 1, STRING_SHOT
 	db 7, HARDEN
+	db 13, IRON_DEFENSE
 	db 0 ; no more level-up moves
 
 BeedrillEvosAttacks:
@@ -400,6 +405,7 @@ SandshrewEvosAttacks:
 	db 15, ROLLOUT
 	db 19, METAL_CLAW
 	db 25, SLASH
+	db 27, IRON_DEFENSE
 	db 30, CUT
 	db 35, SANDSTORM
 	db 40, EARTHQUAKE
@@ -416,6 +422,7 @@ SandslashEvosAttacks:
 	db 19, METAL_CLAW
 	db 22, DIG
 	db 25, SLASH
+	db 27, IRON_DEFENSE
 	db 30, CUT
 	db 35, SANDSTORM
 	db 40, EARTHQUAKE
@@ -1095,6 +1102,7 @@ GeodudeEvosAttacks:
 	db 21, SELFDESTRUCT
 	db 27, HARDEN
 	db 34, ROLLOUT
+	db 37, IRON_DEFENSE
 	db 40, ROCK_SLIDE
 	db 45, EARTHQUAKE
 	db 48, EXPLOSION
@@ -1110,6 +1118,7 @@ GravelerEvosAttacks:
 	db 21, SELFDESTRUCT
 	db 27, HARDEN
 	db 34, ROLLOUT
+	db 37, IRON_DEFENSE
 	db 40, ROCK_SLIDE
 	db 45, EARTHQUAKE
 	db 48, EXPLOSION
@@ -1124,6 +1133,7 @@ GolemEvosAttacks:
 	db 21, SELFDESTRUCT
 	db 27, HARDEN
 	db 34, ROLLOUT
+	db 37, IRON_DEFENSE
 	db 40, ROCK_SLIDE
 	db 45, EARTHQUAKE
 	db 48, EXPLOSION
@@ -1192,6 +1202,7 @@ SlowbroEvosAttacks:
 	db 37, WITHDRAW
 	db 41, AMNESIA
 	db 45, PSYCHIC_M
+	db 48, IRON_DEFENSE
 	db 0 ; no more level-up moves
 
 MagnemiteEvosAttacks:
@@ -1207,6 +1218,7 @@ MagnemiteEvosAttacks:
 	db 37, THUNDERBOLT
 	db 40, LOCK_ON
 	db 43, SCREECH
+	db 45, IRON_DEFENSE
 	db 51, ZAP_CANNON
 	db 0 ; no more level-up moves
 
@@ -1222,6 +1234,7 @@ MagnetonEvosAttacks:
 	db 37, THUNDERBOLT
 	db 40, LOCK_ON
 	db 43, SCREECH
+	db 45, IRON_DEFENSE
 	db 51, ZAP_CANNON
 	db 0 ; no more level-up moves
 
@@ -1335,6 +1348,7 @@ ShellderEvosAttacks:
 	db 33, LEER
 	db 35, CLAMP
 	db 37, ICE_BEAM
+	db 41, IRON_DEFENSE
 	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -1349,6 +1363,7 @@ CloysterEvosAttacks:
 	db 35, CLAMP
 	db 37, ICE_BEAM
 	db 40, SPIKE_CANNON
+	db 41, IRON_DEFENSE
 	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -1454,6 +1469,7 @@ KrabbyEvosAttacks:
 	db 27, GUILLOTINE
 	db 29, METAL_CLAW
 	db 37, PROTECT
+	db 45, IRON_DEFENSE
 	db 51, CRABHAMMER
 	db 0 ; no more level-up moves
 
@@ -1468,6 +1484,7 @@ KinglerEvosAttacks:
 	db 28, METAL_CLAW
 	db 37, PROTECT
 	db 44, GUILLOTINE
+	db 45, IRON_DEFENSE
 	db 51, CRABHAMMER
 	db 0 ; no more level-up moves
 
@@ -1568,6 +1585,7 @@ MarowakEvosAttacks:
 	db 32, RAGE
 	db 37, THRASH
 	db 41, BONE_RUSH
+	db 45, IRON_DEFENSE
 	db 0 ; no more level-up moves
 
 HitmonleeEvosAttacks:
@@ -1673,6 +1691,7 @@ RhydonEvosAttacks:
 	db 31, SCARY_FACE
 	db 39, EARTHQUAKE
 	db 44, ROCK_SLIDE
+	db 48, IRON_DEFENSE
 	db 51, TAKE_DOWN
 	db 58, HORN_DRILL
 	db 0 ; no more level-up moves
@@ -1903,6 +1922,7 @@ PinsirEvosAttacks:
     db 27, HARDEN
     db 31, GUILLOTINE
     db 37, SUBMISSION
+    db 39, IRON_DEFENSE
     db 43, SWORDS_DANCE
     db 48, MEGAHORN
     db 0 ; no more level-up moves
@@ -2063,6 +2083,7 @@ OmanyteEvosAttacks:
 	db 23, LEER
 	db 27, SPIKE_CANNON
 	db 30, ANCIENTPOWER
+	db 33, IRON_DEFENSE
 	db 37, PROTECT
 	db 46, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -2078,6 +2099,7 @@ OmastarEvosAttacks:
 	db 23, LEER
 	db 27, SPIKE_CANNON
 	db 30, ANCIENTPOWER
+	db 33, IRON_DEFENSE
 	db 37, PROTECT
 	db 46, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -2094,6 +2116,7 @@ KabutoEvosAttacks:
 	db 25, LEER
 	db 28, SAND_ATTACK
 	db 30, ANCIENTPOWER
+	db 33, IRON_DEFENSE
 	db 35, MEGA_DRAIN
 	db 37, ENDURE
 	db 43, SWORDS_DANCE
@@ -2111,6 +2134,7 @@ KabutopsEvosAttacks:
 	db 25, LEER
 	db 28, SAND_ATTACK
 	db 30, ANCIENTPOWER
+	db 33, IRON_DEFENSE
 	db 35, MEGA_DRAIN
 	db 37, ENDURE
 	db 40, SLASH
@@ -2764,6 +2788,7 @@ SudowoodoEvosAttacks:
 	db 1, MIMIC
 	db 10, FLAIL
 	db 19, LOW_KICK
+	db 25, IRON_DEFENSE
 	db 28, ROCK_SLIDE
 	db 31, COUNTER
 	db 36, FAINT_ATTACK
@@ -2988,6 +3013,7 @@ SlowkingEvosAttacks:
 	db 34, HEADBUTT
 	db 41, SWAGGER
 	db 45, PSYCHIC_M
+	db 48, IRON_DEFENSE
 	db 50, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
@@ -3048,6 +3074,7 @@ PinecoEvosAttacks:
 	db 22, RAPID_SPIN
 	db 25, SELFDESTRUCT
 	db 29, BIDE
+	db 34, IRON_DEFENSE
 	db 39, EXPLOSION
 	db 44, SPIKES
 	db 54, DOUBLE_EDGE
@@ -3065,6 +3092,7 @@ ForretressEvosAttacks:
 	db 25, SELFDESTRUCT
 	db 29, BIDE
 	db 33, SPIKE_CANNON
+	db 35, IRON_DEFENSE
 	db 39, EXPLOSION
 	db 44, SPIKES
 	db 54, DOUBLE_EDGE
@@ -3110,6 +3138,7 @@ SteelixEvosAttacks:
 	db 27, RAGE
 	db 36, SANDSTORM
 	db 40, IRON_TAIL
+	db 43, IRON_DEFENSE
 	db 45, EARTHQUAKE
 	db 49, CRUNCH
 	db 0 ; no more level-up moves
@@ -3162,20 +3191,21 @@ QwilfishEvosAttacks:
 	db 0 ; no more level-up moves
 
 ScizorEvosAttacks:
-    db 0 ; no more evolutions
-    db 1, QUICK_ATTACK
-    db 1, LEER
-    db 6, FOCUS_ENERGY
-    db 12, PURSUIT
+	db 0 ; no more evolutions
+	db 1, QUICK_ATTACK
+	db 1, LEER
+	db 6, FOCUS_ENERGY
+	db 12, PURSUIT
 	db 16, CUT
-    db 18, FALSE_SWIPE
-    db 24, DOUBLE_TEAM
-    db 30, METAL_CLAW
-    db 36, SLASH
-    db 42, TWINEEDLE
-    db 48, SWORDS_DANCE
-    db 54, AGILITY
-    db 0 ; no more level-up moves
+	db 18, FALSE_SWIPE
+	db 24, DOUBLE_TEAM
+	db 30, METAL_CLAW
+	db 33, IRON_DEFENSE
+	db 36, SLASH
+	db 42, TWINEEDLE
+	db 48, SWORDS_DANCE
+	db 54, AGILITY
+	db 0 ; no more level-up moves
 
 ShuckleEvosAttacks:
 	db 0 ; no more evolutions
@@ -3203,6 +3233,7 @@ HeracrossEvosAttacks:
     db 12, ENDURE
     db 18, FURY_ATTACK
 	db 25, COUNTER
+	db 34, IRON_DEFENSE
     db 35, TAKE_DOWN
     db 44, REVERSAL
     db 45, MEGAHORN
@@ -3278,6 +3309,7 @@ MagcargoEvosAttacks:
 	db 1, HARDEN
 	db 25, FLAME_WHEEL
 	db 29, AMNESIA
+	db 34, IRON_DEFENSE
 	db 36, FLAMETHROWER
 	db 41, ROCK_SLIDE
 	db 46, BODY_SLAM
@@ -3325,6 +3357,7 @@ CorsolaEvosAttacks:
 	db 19, RECOVER
 	db 23, SPIKES
 	db 25, BUBBLEBEAM
+	db 29, IRON_DEFENSE
 	db 31, SPIKE_CANNON
 	db 37, MIRROR_COAT
 	db 45, HYDRO_PUMP
@@ -3389,6 +3422,7 @@ SkarmoryEvosAttacks:
 	db 31, STEEL_WING
 	db 37, FURY_ATTACK
 	db 41, DRILL_PECK
+	db 43, IRON_DEFENSE
 	db 0 ; no more level-up moves
 
 	HoundourEvosAttacks:
@@ -3457,6 +3491,7 @@ DonphanEvosAttacks:
 	db 17, FLAIL
 	db 25, FURY_ATTACK
 	db 33, ROLLOUT
+	db 34, IRON_DEFENSE
 	db 36, RAPID_SPIN
 	db 40, EARTHQUAKE
 	db 48, DOUBLE_EDGE
@@ -3669,6 +3704,7 @@ PupitarEvosAttacks:
 	db 15, SCREECH
 	db 26, THRASH
 	db 34, SCARY_FACE
+	db 33, IRON_DEFENSE
 	db 40, ROCK_SLIDE
 	db 50, CRUNCH
 	db 55, EARTHQUAKE
@@ -3681,6 +3717,7 @@ TyranitarEvosAttacks:
 	db 1, BITE
 	db 1, ROCK_THROW
 	db 1, SANDSTORM
+	db 1, IRON_DEFENSE
 	db 15, SCREECH
 	db 26, THRASH
 	db 34, SCARY_FACE

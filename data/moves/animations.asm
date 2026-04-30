@@ -253,8 +253,8 @@ BattleAnimations::
 	dw BattleAnim_RockSmash
 	dw BattleAnim_Whirlpool
 	dw BattleAnim_BeatUp
+	dw BattleAnim_IronDefense
 	assert_table_length NUM_ATTACKS + 1
-	dw BattleAnim_252
 	dw BattleAnim_253
 	dw BattleAnim_254
 	dw BattleAnim_SweetScent2
@@ -4595,6 +4595,14 @@ BattleAnim_BeatUp:
 	anim_sound 0, 1, SFX_BEAT_UP
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
 	anim_wait 8
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
+	
+BattleAnim_IronDefense:
+	anim_1gfx ANIM_GFX_REFLECT
+	anim_obp0 $0
+	anim_call BattleAnim_TargetObj_1Row
+	anim_call BattleAnimSub_Metallic
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
