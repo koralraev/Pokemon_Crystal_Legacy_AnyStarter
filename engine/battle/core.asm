@@ -5341,7 +5341,8 @@ BattleMenu_Run:
 	call SafeLoadTempTilemapToTilemap
 	ld a, $3
 	ld [wMenuCursorY], a
-	ld hl, wBattleMonSpeed
+	;ld hl, wBattleMonSpeed
+	ld hl, wEnemyMonSpeed  ;compare enemy speed to enemy speed to allow always fleeing
 	ld de, wEnemyMonSpeed
 	call TryToRunAwayFromBattle
 	ld a, FALSE
