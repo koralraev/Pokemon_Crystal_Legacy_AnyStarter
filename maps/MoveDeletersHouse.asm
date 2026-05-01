@@ -15,13 +15,13 @@ MoveDeleter:
 	closetext
 	end
 
-MoveRelearner:
-	faceplayer
-	opentext
-	special MoveReminder
-	waitbutton
-	closetext
-	end
+;MoveRelearner:		; moved to Cherrygrove Mart
+;	faceplayer
+;	opentext
+;	special MoveReminder
+;	waitbutton
+;	closetext
+;	end
 
 MoveDeletersHouseBookshelf:
 	jumpstd DifficultBookshelfScript
@@ -41,4 +41,4 @@ MoveDeletersHouse_MapEvents:
 
 	def_object_events
 	object_event  2,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MoveDeleter, -1
-	object_event  5,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MoveRelearner, -1
+	;object_event  5,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MoveRelearner, -1
