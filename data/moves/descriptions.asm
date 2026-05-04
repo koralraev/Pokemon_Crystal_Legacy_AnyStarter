@@ -331,8 +331,8 @@ GustDescription:
 	next "gust of wind.@"
 
 WingAttackDescription:
-	db   "Strikes the target"
-	next "with wings.@"
+	db   "Quickly slaps the"
+	next "target with wings@"
 
 WhirlwindDescription:
 	db   "Blows away the foe"
@@ -671,8 +671,8 @@ NightShadeDescription:
 	next "equals damage HP.@"
 
 MimicDescription:
-	db   "Copies a move used"
-	next "by the foe.@"
+	db   "Copies a move"
+	next "from the foe.@"
 
 ScreechDescription:
 	db   "Sharply reduces"

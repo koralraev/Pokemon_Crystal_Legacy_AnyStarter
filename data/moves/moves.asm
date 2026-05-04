@@ -27,9 +27,9 @@ Moves:
 	move GUILLOTINE,   EFFECT_OHKO,                0, NORMAL,        30,  5,   0
 	move RAZOR_WIND,   EFFECT_RAZOR_WIND,         80, NORMAL,        95, 15,   0
 	move SWORDS_DANCE, EFFECT_ATTACK_UP_2,         0, NORMAL,       100, 30,   0
-	move CUT,          EFFECT_NORMAL_HIT,         55, BUG,          95,  30,   0
+	move CUT,          EFFECT_NORMAL_HIT,         55, BUG,          100,  30,   0
 	move GUST,         EFFECT_GUST,               40, FLYING,       100, 35,   0
-	move WING_ATTACK,  EFFECT_NORMAL_HIT,         60, FLYING,       100, 35,   0
+	move WING_ATTACK,  EFFECT_PRIORITY_HIT,        50, FLYING,       100, 35,   0
 	move WHIRLWIND,    EFFECT_FORCE_SWITCH,        0, NORMAL,       100, 20,   0
 	move FLY,          EFFECT_FLY,                70, FLYING,       100, 15,   0
 	move BIND,         EFFECT_TRAP_TARGET,        15, NORMAL,        85, 20,   0
@@ -153,7 +153,7 @@ Moves:
 	move DREAM_EATER,  EFFECT_DREAM_EATER,       100, PSYCHIC_TYPE, 100, 15,   0
 	move POISON_GAS,   EFFECT_POISON,              0, POISON,        85, 40,   0
 	move BARRAGE,      EFFECT_MULTI_HIT,          20, NORMAL,       100, 20,   0
-	move LEECH_LIFE,   EFFECT_LEECH_HIT,          40, BUG,          100, 25,   0
+	move LEECH_LIFE,   EFFECT_LEECH_HIT,          70, BUG,          100, 25,   0
 	move LOVELY_KISS,  EFFECT_SLEEP,               0, NORMAL,        75, 10,   0
 	move SKY_ATTACK,   EFFECT_NORMAL_HIT,        120, FLYING,        85, 10,   0
 	move TRANSFORM,    EFFECT_TRANSFORM,           0, NORMAL,       100, 10,   0

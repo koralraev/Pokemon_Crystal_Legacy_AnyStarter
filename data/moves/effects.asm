@@ -1759,6 +1759,8 @@ RapidSpin:
 	applydamage
 	criticaltext
 	supereffectivetext
+	speedup 	; raises speed by one
+	statupmessage	; message of stat raise
 	clearhazards
 	checkfaint
 	buildopponentrage
