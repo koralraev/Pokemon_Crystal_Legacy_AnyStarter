@@ -265,6 +265,8 @@ MoveFEDescription:
 MoveFFDescription:
 Move00Description:
 	db "?@"
+	
+; maximum text length to col 35 including: @"
 
 PoundDescription:
 	db   "Pounds with fore-"
@@ -527,8 +529,8 @@ DrillPeckDescription:
 	next "ning-peck attack.@"
 
 SubmissionDescription:
-	db   "An attack that al-"
-	next "so hurts the user.@"
+	db   "A strong attack"
+	next "that raises attack@"
 
 LowKickDescription:
 	db   "An attack that may"
@@ -660,7 +662,7 @@ QuickAttackDescription:
 
 RageDescription:
 	db   "Raises ATTACK if"
-	next "the user is hit.@"
+	next "the target is hit.@"
 
 TeleportDescription:
 	db   "A move for fleeing"

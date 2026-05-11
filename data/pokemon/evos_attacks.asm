@@ -836,6 +836,7 @@ MankeyEvosAttacks:
 	db 39, CROSS_CHOP
 	db 45, SCREECH
 	db 51, THRASH
+	db 55, SUBMISSION
 	db 0 ; no more level-up moves
 
 PrimeapeEvosAttacks:
@@ -852,6 +853,7 @@ PrimeapeEvosAttacks:
 	db 39, CROSS_CHOP
 	db 45, SCREECH
 	db 51, THRASH
+	db 55, SUBMISSION
 	db 0 ; no more level-up moves
 
 GrowlitheEvosAttacks:
@@ -1569,6 +1571,7 @@ CuboneEvosAttacks:
 	db 32, RAGE
 	db 37, THRASH
 	db 41, BONE_RUSH
+	db 51, SUBMISSION
 	db 0 ; no more level-up moves
 
 MarowakEvosAttacks:
@@ -1586,6 +1589,7 @@ MarowakEvosAttacks:
 	db 37, THRASH
 	db 41, BONE_RUSH
 	db 45, IRON_DEFENSE
+	db 55, SUBMISSION
 	db 0 ; no more level-up moves
 
 HitmonleeEvosAttacks:
@@ -1616,6 +1620,7 @@ HitmonchanEvosAttacks:
 	db 38, DYNAMICPUNCH
 	db 44, DETECT
 	db 50, COUNTER
+	db 55, SUBMISSION
 	db 0 ; no more level-up moves
 
 LickitungEvosAttacks:
