@@ -43,6 +43,32 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	Donphan,
 	Pupitar / Tyranitar
 	</details>
++ Added move Nasty Plot
+	<details>
+	<summary>Added to movepool of:</summary>
+	Pikachu line,
+	Ninetails,
+	Meouth / Persian,
+	Slowbro / Slowking,
+	Drowzee / Hypno,
+	Articuno / Zapdos / Moltres,
+	Mew,
+	Aipom,
+	Girafig,
+	Houndour / Houndoom,
+	Raikou
+	</details>
+	<details>
+	<summary>Added to egg-movepool of:</summary>
+	Zubat, 
+	Drowzee, 
+	Mr. Mime, 
+	Togepi, 
+	Misdreavus, 
+	Houndour, 
+	Smoochum
+	</details>
++ Added Nasty Plot to E4 Karens Houndoom for battle 1, and to Umbreon for rematches.
 + The Move Relearner NPC has been moved from Blackthorne City to Cherrygrove Mart
 + Changes to some moves:
   <details>

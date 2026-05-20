@@ -254,8 +254,8 @@ BattleAnimations::
 	dw BattleAnim_Whirlpool
 	dw BattleAnim_BeatUp
 	dw BattleAnim_IronDefense
+	dw BattleAnim_NastyPlot
 	assert_table_length NUM_ATTACKS + 1
-	dw BattleAnim_253
 	dw BattleAnim_254
 	dw BattleAnim_SweetScent2
 	assert_table_length $100
@@ -4450,6 +4450,7 @@ BattleAnim_MirrorCoat:
 	anim_wait 32
 	anim_ret
 
+BattleAnim_NastyPlot:
 BattleAnim_PsychUp:
 	anim_1gfx ANIM_GFX_STATUS
 	anim_call BattleAnim_TargetObj_1Row
