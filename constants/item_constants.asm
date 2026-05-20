@@ -239,7 +239,7 @@ TM01 EQU const_value
 	add_tm RAIN_DANCE   ; d1
 	add_tm GIGA_DRAIN   ; d2
 	add_tm ENDURE       ; d3
-	add_tm FRUSTRATION  ; d4
+	add_tm THUNDER_WAVE ; d4 FRUSTRATION
 	add_tm SOLARBEAM    ; d5
 	add_tm IRON_TAIL    ; d6
 	add_tm DRAGONBREATH ; d7
@@ -269,6 +269,10 @@ TM01 EQU const_value
 	add_tm FIRE_PUNCH   ; f0
 	add_tm FURY_CUTTER  ; f1
 	add_tm NIGHTMARE    ; f2
+	add_tm AMNESIA	    ; f3
+	add_tm SWORDS_DANCE ; f4
+	add_tm IRON_DEFENSE ; f5
+	add_tm NASTY_PLOT   ; f6
 NUM_TMS EQU __tmhm_value__ - 1
 
 add_hm: MACRO
