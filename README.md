@@ -43,7 +43,7 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	Donphan,
 	Pupitar / Tyranitar
 	</details>
-+ Added move Nasty Plot
++ Added move Nasty Plot (TM51)
 	<details>
 	<summary>Added to movepool of:</summary>
 	Pikachu line,
@@ -54,9 +54,33 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	Articuno / Zapdos / Moltres,
 	Mew,
 	Aipom,
-	Girafig,
+	Girafarig,
 	Houndour / Houndoom,
 	Raikou
+	</details>
+	<details>
+	<summary>Added to TM learnsets of:</summary>
+	Pikachu line,
+	Ninetails,
+	Zubat line
+	Meouth / Persian,
+	Alakazam,
+	Slowbro / Slowking,
+	Drowzee / Hypno,
+	Gengar,
+	Mr. Mime,
+	Smoochum / Jynx,
+	Articuno / Zapdos / Moltres,
+	Mewtwo,
+	Mew,
+	Hoothoot / Noctowl,
+	Togepi / Togetic,
+	Misdreavus,
+	Aipom,
+	Girafarig,
+	Houndour / Houndoom,
+	Raikou,
+	Celebi
 	</details>
 	<details>
 	<summary>Added to egg-movepool of:</summary>
@@ -68,7 +92,7 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	Houndour, 
 	Smoochum
 	</details>
-+ Added Nasty Plot to E4 Karens Houndoom for battle 1, and to Umbreon for rematches.
++ Nasty Plot added to E4 Karens Houndoom for battle 1, and to Umbreon for rematches.
 + The Move Relearner NPC has been moved from Blackthorne City to Cherrygrove Mart
 + Changes to some moves:
   <details>
@@ -83,10 +107,10 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	  - Submission: 50BP instead of 80, but always raise attack by one (functions like Power-Up Punch from gen 6). Added to movepool of Hitmonchan (lvl 55), Cubone (lvl 51), Marowak (lvl 55), Mankey/Primeape (lvl 55). (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
   </details>
 + Thunder Wave replaces Frustration as TM21. Frustration removed from all pokemons TM learnset as it no longer exists.
-<details>
+  <details>
 	<summary>Thunder Wave added to TM learnsets of:</summary> 
 	Rattata, Raticate, Pikachu, Raichu, Clefairy, Clefable, Jigglypuff, Wigglytuff, Abra, Kadabra, Alakazam, Slowpoke, Slowbro, Magnemite, Magneton, Drowzee, Hypno, Voltorb, Electrode, Chansey, Staryu, Starmie, Mr. Mime, Electabuzz, Gyarados, Jolteon, Porygon, Zapdos, Dratini, Dragonair, Dragonite, Mewtwo, Mew, Chinchou, Lanturn, Pichu, Cleffa, Igglybuff, Togepi, Togetic, Natu, Xatu, Mareep, Flaaffy, Ampharos, Aipom, Murkrow, Slowking, Misdreavus, Girafarig, Dunsparce, Snubbull, Granbull, Qwilfish, Remoraid, Octillery, Porygon2, Stantler, Elekid, Miltank, Blissey, Raikou, Tyranitar, Lugia, Ho-oh and Celebi.
-<details>
+  </details>
 
 
 
@@ -96,3 +120,4 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 + Adding some new moves from later games, or changed existing to be better
 + Moving or removing NPCs in Goldenrod City that always seem to be in the way
 + Make all type boosting hold items available before the E4
+
