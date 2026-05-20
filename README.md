@@ -56,11 +56,17 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	  - Mimic: now lets you choose which move to mimic from the opposing pokemons current moves instead of just mimicking the last used move (same functionality as in gen 1). The mimicked move is used right after learning it and is learned until switching out. (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
 	  - Submission: 50BP instead of 80, but always raise attack by one (functions like Power-Up Punch from gen 6). Added to movepool of Hitmonchan (lvl 55), Cubone (lvl 51), Marowak (lvl 55), Mankey/Primeape (lvl 55). (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
   </details>
++ Thunder Wave replaces Frustration as TM21. Frustration removed from all pokemons TM learnset as it no longer exists.
+<details>
+	<summary>Thunder Wave added to TM learnsets of:</summary> 
+	Rattata, Raticate, Pikachu, Raichu, Clefairy, Clefable, Jigglypuff, Wigglytuff, Abra, Kadabra, Alakazam, Slowpoke, Slowbro, Magnemite, Magneton, Drowzee, Hypno, Voltorb, Electrode, Chansey, Staryu, Starmie, Mr. Mime, Electabuzz, Gyarados, Jolteon, Porygon, Zapdos, Dratini, Dragonair, Dragonite, Mewtwo, Mew, Chinchou, Lanturn, Pichu, Cleffa, Igglybuff, Togepi, Togetic, Natu, Xatu, Mareep, Flaaffy, Ampharos, Aipom, Murkrow, Slowking, Misdreavus, Girafarig, Dunsparce, Snubbull, Granbull, Qwilfish, Remoraid, Octillery, Porygon2, Stantler, Elekid, Miltank, Blissey, Raikou, Tyranitar, Lugia, Ho-oh and Celebi.
+<details>
 
 
 
 ### Planned 
 
-+ TMs are reusable
++ TMs are reusable or can be bought at marts
 + Adding some new moves from later games, or changed existing to be better
 + Moving or removing NPCs in Goldenrod City that always seem to be in the way
++ Make all type boosting hold items available before the E4
