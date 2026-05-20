@@ -33,6 +33,7 @@ MoveEffectsPointers:
 	dw MultiHit
 	dw Conversion
 	dw FlinchHit
+	dw FlashHit
 	dw Heal
 	dw Toxic
 	dw PayDay

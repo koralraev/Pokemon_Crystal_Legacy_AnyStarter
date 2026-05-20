@@ -42,6 +42,7 @@ BattleCommandPointers:
 	dw BattleCommand_ForceSwitch
 	dw BattleCommand_EndLoop
 	dw BattleCommand_FlinchTarget
+	dw BattleCommand_FlashHit
 	dw BattleCommand_OHKO
 	dw BattleCommand_Recoil
 	dw BattleCommand_Mist

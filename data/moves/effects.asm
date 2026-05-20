@@ -912,6 +912,27 @@ FlinchHit:
 	flinchtarget
 	endmove
 
+FlashHit:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	flinchtarget
+	endmove
+	
 OHKOHit:
 	checkobedience
 	usedmovetext

@@ -102,9 +102,10 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	  - Cut: now has 100% accuracy instead of 95%
 	  - Leech Life: 70BP instead of 40
 	  - Rapid Spin: now also raises speed by one stage
-	  - Mirror Move: now a priority move, but lower priority than normal priority moves like Quick Attack (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
+	  - Mirror Move: now a priority move (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
 	  - Mimic: now lets you choose which move to mimic from the opposing pokemons current moves instead of just mimicking the last used move (same functionality as in gen 1). The mimicked move is used right after learning it and is learned until switching out. (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
 	  - Submission: 50BP instead of 80, but always raise attack by one (functions like Power-Up Punch from gen 6). Added to movepool of Hitmonchan (lvl 55), Cubone (lvl 51), Marowak (lvl 55), Mankey/Primeape (lvl 55). (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
+	  - Flash: now a priority move with 60BP, ELECTRIC type and a 10% chance to flinch the target. (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
   </details>
 + Thunder Wave replaces Frustration as TM21. Frustration removed from all pokemons TM learnset as it no longer exists.
   <details>

@@ -5543,6 +5543,24 @@ BattleCommand_FlinchTarget:
 	ret nz
 
 	; fallthrough
+	
+BattleCommand_FlashHit:
+	call CheckSubstituteOpp
+	ret nz
+
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	and 1 << FRZ | SLP
+	ret nz
+
+	call CheckOpponentWentFirst
+	ret nz
+
+	ld a, [wEffectFailed]
+	and a
+	ret nz
+
+	; fallthrough
 
 FlinchTarget:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
