@@ -207,7 +207,7 @@ MartEcruteak:
 
 MartMahogany1:
 	db 6 ; # items
-	db TM_FRUSTRATION
+	db TM_THUNDER_WAVE ; frustration
 	db TM_ROAR
 	db TINYMUSHROOM
 	db SLOWPOKETAIL
@@ -227,7 +227,7 @@ MartMahogany2:
 	db TM_NIGHTMARE
 	db TM_DEFENSE_CURL
 	db TM_DETECT
-	db TM_FRUSTRATION
+	db TM_THUNDER_WAVE ; frustration
 	db TM_ROAR
 	db -1 ; end
 
