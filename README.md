@@ -15,7 +15,7 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 + Gift NPC at Elm's Lab will give the player any requested pokemon, at any level, shiny or not
 + Player can always succesfully flee from wild battles
 	+ Now compares the enemys speed to itself so the speed of the players pokemon is not evaluated for the chance to flee the encounter
-+ Added move Iron Defense
++ Added move Iron Defense (TM54)
 	<details>
 	<summary>Added to movepool of:</summary>
 	Squirtle line,
@@ -43,6 +43,11 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	Donphan,
 	Pupitar / Tyranitar
 	</details>
+	<details>
+	<summary>Added to TM learnsets of:</summary>
+	Squirtle line, Metapod, Kakuna, Sandshrew / Sandslash, Diglett / Dugtrio, Geodude line, Slowbro, Magnemite / Magneton, Shellder / Cloyster, Krabby / Kingler, Cubone / Marowak, Rhydon, Mr.Mime, Pinsir, Omanyte / Omastar, Kabuto / Kabutops, Mew, Sudowoodo, Pineco / Forretress, Slowking, Steelix, Scizor, Shuckle, Heracross, Magcargo, Corsola, Skarmory, Donphan, Larvitar line 
+	</details>
+	Added to egg moves of Larvitar
 + Added move Nasty Plot (TM51)
 	<details>
 	<summary>Added to movepool of:</summary>
@@ -92,7 +97,12 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	Houndour, 
 	Smoochum
 	</details>
-+ Nasty Plot added to E4 Karens Houndoom for battle 1, and to Umbreon for rematches.
++ Nasty Plot added to E4 Karens Houndoom for the first battle, and to Umbreon for rematches.
++ Added Amnesia as TM53
+	<details>
+	<summary>Added to TM learnsets of:</summary>
+	Bulbasaur line, Sandshrew / Sandslash, NidoranM / Nidorino / Nidoking, Clefairy / Clefable, Meowth / Persian, Psyduck / Golduck, Slowpoke / Slowbro, Krabby / Kingler, Lickitung, Tangela, Snorlax, Mewtwo, Mew, Hoothoot / Noctowl, Sentret / Furret, Chinchou / Lanturn, Cleffa, Marill / Azumarill, Wooper / Quagsire, Slugma / Magcargo, Slowking, Wobbuffet, Dunsparce, Swinub / Piloswine, Corsola, Mantine
+	</details>
 + The Move Relearner NPC has been moved from Blackthorne City to Cherrygrove Mart
 + Changes to some moves:
   <details>

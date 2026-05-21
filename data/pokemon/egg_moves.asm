@@ -813,6 +813,7 @@ LarvitarEggMoves:
 	db OUTRAGE
 	db FOCUS_ENERGY
 	db ANCIENTPOWER
+	db IRON_DEFENSE
 	db -1 ; end
 
 NoEggMoves:
