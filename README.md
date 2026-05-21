@@ -112,6 +112,7 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	<summary>Thunder Wave added to TM learnsets of:</summary> 
 	Rattata, Raticate, Pikachu, Raichu, Clefairy, Clefable, Jigglypuff, Wigglytuff, Abra, Kadabra, Alakazam, Slowpoke, Slowbro, Magnemite, Magneton, Drowzee, Hypno, Voltorb, Electrode, Chansey, Staryu, Starmie, Mr. Mime, Electabuzz, Gyarados, Jolteon, Porygon, Zapdos, Dratini, Dragonair, Dragonite, Mewtwo, Mew, Chinchou, Lanturn, Pichu, Cleffa, Igglybuff, Togepi, Togetic, Natu, Xatu, Mareep, Flaaffy, Ampharos, Aipom, Murkrow, Slowking, Misdreavus, Girafarig, Dunsparce, Snubbull, Granbull, Qwilfish, Remoraid, Octillery, Porygon2, Stantler, Elekid, Miltank, Blissey, Raikou, Tyranitar, Lugia, Ho-oh and Celebi.
   </details>
++ There is now a total of ~30% chance for a wild pokemon that has held items to have an item: rare items increased from ~2% to ~5%, and from ~23% to ~25% for the common item. 
 
 
 

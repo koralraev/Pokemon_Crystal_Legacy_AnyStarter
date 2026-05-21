@@ -6056,19 +6056,19 @@ LoadEnemyMon:
 
 ; Failing that, it's all up to chance
 ;  Effective chances:
-;    75% None
-;    23% Item1
-;     2% Item2
+;    75% None -> 70%
+;    23% Item1 -> 25%
+;     2% Item2 -> 5%
 
-; 25% chance of getting an item
+; 25% -> 30% chance of getting an item
 	call BattleRandom
-	cp 75 percent + 1
+	cp 70 percent + 1
 	ld a, NO_ITEM
 	jr c, .UpdateItem
 
-; From there, an 8% chance for Item2
+; From there, an 8% -> 16% chance for Item2
 	call BattleRandom
-	cp 8 percent ; 8% of 25% = 2% Item2
+	cp 16 percent ; 8% of 25% = 2% Item2 -> 16% of 30% = 5%
 	ld a, [wBaseItem1]
 	jr nc, .UpdateItem
 	ld a, [wBaseItem2]
