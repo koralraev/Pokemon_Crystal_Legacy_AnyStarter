@@ -293,6 +293,7 @@ RattataEvosAttacks:
 	db 25, FOCUS_ENERGY
 	db 40, SUPER_FANG
 	db 45, CRUNCH
+	db 47, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 RaticateEvosAttacks:
@@ -306,6 +307,7 @@ RaticateEvosAttacks:
 	db 30, PURSUIT
 	db 40, SUPER_FANG
 	db 45, CRUNCH
+	db 49, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 SpearowEvosAttacks:
@@ -410,6 +412,7 @@ SandshrewEvosAttacks:
 	db 27, IRON_DEFENSE
 	db 30, CUT
 	db 35, SANDSTORM
+	db 38, SWORDS_DANCE
 	db 40, EARTHQUAKE
 	db 0 ; no more level-up moves
 
@@ -428,6 +431,7 @@ SandslashEvosAttacks:
 	db 30, CUT
 	db 35, SANDSTORM
 	db 40, EARTHQUAKE
+	db 43, SWORDS_DANCE
 	db 48, SPIKE_CANNON
 	db 0 ; no more level-up moves
 
@@ -810,6 +814,7 @@ PsyduckEvosAttacks:
 	db 31, PSYCH_UP
 	db 37, FURY_SWIPES
 	db 42, PSYCHIC_M
+	db 43, AMNESIA
 	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -825,6 +830,7 @@ GolduckEvosAttacks:
 	db 31, PSYCH_UP
 	db 37, FURY_SWIPES
 	db 42, PSYCHIC_M
+	db 43, AMNESIA
 	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -2297,9 +2303,11 @@ MewEvosAttacks:
 	db 1, POUND
 	db 10, TRANSFORM
 	db 20, MEGA_PUNCH
+	db 25, MIMIC
 	db 30, METRONOME
 	db 40, PSYCHIC_M
 	db 50, ANCIENTPOWER
+	db 55, AMNESIA
 	db 60, NASTY_PLOT
 	db 0 ; no more level-up moves
 
@@ -3143,6 +3151,7 @@ GligarEvosAttacks:
 	db 36, SLASH
 	db 38, EARTHQUAKE
 	db 44, SCREECH
+	db 50, SWORDS_DANCE
 	db 52, GUILLOTINE
 	db 0 ; no more level-up moves
 

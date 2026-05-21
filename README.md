@@ -15,39 +15,6 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 + Gift NPC at Elm's Lab will give the player any requested pokemon, at any level, shiny or not
 + Player can always succesfully flee from wild battles
 	+ Now compares the enemys speed to itself so the speed of the players pokemon is not evaluated for the chance to flee the encounter
-+ Added move Iron Defense (TM54)
-	<details>
-	<summary>Added to movepool of:</summary>
-	Squirtle line,
-	Metapod,
-	Kakuna,
-	Sandshrew / Sandslash,
-	Geodude line,
-	Slowbro / Slowking,
-	Magnemite / Magneton,
-	Shellder / Cloyster,
-	Krabby / Kingler,
-	Marowak,
-	Rhydon,
-	Pinsir,
-	Omanyte / Omastar,
-	Kabuto / Kabutops,
-	Sudowoodo,
-	Pineco / Forretress,
-	Steelix,
-	Scizor,
-	Heracross,
-	Magcargo,
-	Corsola,
-	Skarmory,
-	Donphan,
-	Pupitar / Tyranitar
-	</details>
-	<details>
-	<summary>Added to TM learnsets of:</summary>
-	Squirtle line, Metapod, Kakuna, Sandshrew / Sandslash, Diglett / Dugtrio, Geodude line, Slowbro, Magnemite / Magneton, Shellder / Cloyster, Krabby / Kingler, Cubone / Marowak, Rhydon, Mr.Mime, Pinsir, Omanyte / Omastar, Kabuto / Kabutops, Mew, Sudowoodo, Pineco / Forretress, Slowking, Steelix, Scizor, Shuckle, Heracross, Magcargo, Corsola, Skarmory, Donphan, Larvitar line 
-	</details>
-	Added to egg moves of Larvitar
 + Added move Nasty Plot (TM51)
 	<details>
 	<summary>Added to movepool of:</summary>
@@ -98,11 +65,57 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	Smoochum
 	</details>
 + Nasty Plot added to E4 Karens Houndoom for the first battle, and to Umbreon for rematches.
++ Added Swords Dance as TM52
+	<details>
+	<summary>Added to level up learnset of:</summary>
+	Raticate, Sandshrew / Sandslash, Gligar
+	</details>
+	<details>
+	<summary>Added to TM learnset of:</summary>
+	Bulbasaur line, Charmander line, Beedrill, Raticate, Sandshrew / Sandslash, Oddish line, Paras / Parasect, Bellsprout line, Tentacool / Tentacruel, Farfetch'd, Krabby / Kingler, Exeggcute / Exeggutor, Cubone / Marowak, Lickitung, Rhyhorn / Rhydon, Tangela, Scyther, Pinsir, Kabutops, Mew, Chikorita line, Totodile line, Ledyba / Ledian, Bellossom, Hoppip line, Sunkern / Sunflora, Gligar, Scizor, Heracross, Sneasel, Teddiursa / Ursaring, Skarmory, Celebi
+	</details>
 + Added Amnesia as TM53
 	<details>
-	<summary>Added to TM learnsets of:</summary>
+	<summary>Added to level up learnset of:</summary>
+	Psyduck / Golduck, Mew
+	</details>
+	<details>
+	<summary>Added to TM learnset of:</summary>
 	Bulbasaur line, Sandshrew / Sandslash, NidoranM / Nidorino / Nidoking, Clefairy / Clefable, Meowth / Persian, Psyduck / Golduck, Slowpoke / Slowbro, Krabby / Kingler, Lickitung, Tangela, Snorlax, Mewtwo, Mew, Hoothoot / Noctowl, Sentret / Furret, Chinchou / Lanturn, Cleffa, Marill / Azumarill, Wooper / Quagsire, Slugma / Magcargo, Slowking, Wobbuffet, Dunsparce, Swinub / Piloswine, Corsola, Mantine
 	</details>
++ Added move Iron Defense (TM54)
+	<details>
+	<summary>Added to level up learnset of:</summary>
+	Squirtle line,
+	Metapod,
+	Kakuna,
+	Sandshrew / Sandslash,
+	Geodude line,
+	Slowbro / Slowking,
+	Magnemite / Magneton,
+	Shellder / Cloyster,
+	Krabby / Kingler,
+	Marowak,
+	Rhydon,
+	Pinsir,
+	Omanyte / Omastar,
+	Kabuto / Kabutops,
+	Sudowoodo,
+	Pineco / Forretress,
+	Steelix,
+	Scizor,
+	Heracross,
+	Magcargo,
+	Corsola,
+	Skarmory,
+	Donphan,
+	Pupitar / Tyranitar
+	</details>
+	<details>
+	<summary>Added to TM learnsets of:</summary>
+	Squirtle line, Metapod, Kakuna, Sandshrew / Sandslash, Diglett / Dugtrio, Geodude line, Slowbro, Magnemite / Magneton, Shellder / Cloyster, Krabby / Kingler, Cubone / Marowak, Rhydon, Mr.Mime, Pinsir, Omanyte / Omastar, Kabuto / Kabutops, Mew, Sudowoodo, Pineco / Forretress, Slowking, Steelix, Scizor, Shuckle, Heracross, Magcargo, Corsola, Skarmory, Donphan, Larvitar line 
+	</details>
+	Added to egg moves of Larvitar
 + The Move Relearner NPC has been moved from Blackthorne City to Cherrygrove Mart
 + Changes to some moves:
   <details>
