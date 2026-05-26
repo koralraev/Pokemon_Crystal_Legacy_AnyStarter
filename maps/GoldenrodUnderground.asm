@@ -426,50 +426,153 @@ ShadyTmGuyMoveTutorScript:
 	yesorno
 	iffalse .Refused
 	writetext TutorWhichMoveShouldITeachText
-	loadmenu .MoveMenuHeader
+	
+.Page1:
+	loadmenu .MoveMenuHeaderPage1
 	verticalmenu
 	closewindow
 	ifequal 1, .BodySlam
 	ifequal 2, .DoubleEdge
 	ifequal 3, .Bubblebeam
-	ifequal 4, .PayDay
-	ifequal 5, .Submission
-	sjump .Incompatible
+	ifequal 4, .Icebeam
+	ifequal 5, .PayDay
+	ifequal 6, .Page2
+	sjump .Refused
 	
+.Page2:
+	loadmenu .MoveMenuHeaderPage2
+	verticalmenu
+	closewindow
+	ifequal 1, .Submission
+	ifequal 2, .Counter
+	ifequal 3, .SeismicToss
+	ifequal 4, .MegaDrain
+	ifequal 5, .DragonRage
+	ifequal 6, .Page3
+	sjump .Refused
+	
+.Page3:
+	loadmenu .MoveMenuHeaderPage3
+	verticalmenu
+	closewindow
+	ifequal 1, .Thunderbolt
+	ifequal 2, .Mimic
+	ifequal 3, .Reflect
+	ifequal 4, .Metronome
+	ifequal 5, .EggBomb
+	ifequal 6, .Page4
+	sjump .Refused
+	
+.Page4:
+	loadmenu .MoveMenuHeaderPage4
+	verticalmenu
+	closewindow
+	ifequal 1, .Softboiled
+	ifequal 2, .SkyAttack
+	ifequal 3, .Explosion
+	ifequal 4, .RockSlide
+	ifequal 5, .TriAttack
+	ifequal 6, .Substitute
+;	ifequal 5, .Cancel
+	sjump .Refused
+	
+;.Page5:
+;	loadmenu .MoveMenuHeaderPage5
+;	verticalmenu
+;	closewindow
+;	ifequal 1, .Softboiled
+;	ifequal 2, .SkyAttack
+;	ifequal 3, .Explosion
+;	ifequal 4, .RockSlide
+;	ifequal 5, .Page3
+;	ifequal 6, .Page5
+;	sjump .Refused
+	
+
+; --- moves for the menu pages
 .BodySlam:
 	setval BODY_SLAM
-	writetext TutorMoveText
-	special MoveTutor
-	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TeachMove2
 	
 .DoubleEdge:
 	setval DOUBLE_EDGE
-	writetext TutorMoveText
-	special MoveTutor
-	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TeachMove2
 	
 .Bubblebeam:
 	setval BUBBLEBEAM
-	writetext TutorMoveText
-	special MoveTutor
-	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TeachMove2
+	
+.Icebeam:
+	setval ICE_BEAM
+	sjump .TeachMove2
 	
 .PayDay:
 	setval PAY_DAY
-	writetext TutorMoveText
-	special MoveTutor
-	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TeachMove2
 	
 .Submission:
 	setval SUBMISSION
-	writetext TutorMoveText
-	special MoveTutor
-	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+	sjump .TeachMove2
+	
+.Counter:
+	setval COUNTER
+	sjump .TeachMove2
+	
+.SeismicToss:
+	setval SEISMIC_TOSS
+	sjump .TeachMove2
+
+.MegaDrain:
+	setval MEGA_DRAIN
+	sjump .TeachMove2
+
+.DragonRage:
+	setval DRAGON_RAGE
+	sjump .TeachMove2
+
+.Thunderbolt:
+	setval THUNDERBOLT
+	sjump .TeachMove2	
+	
+.Mimic:
+	setval MIMIC
+	sjump .TeachMove2
+	
+.Reflect:
+	setval REFLECT
+	sjump .TeachMove2
+	
+.Metronome:
+	setval METRONOME
+	sjump .TeachMove2
+	
+.EggBomb:
+	setval EGG_BOMB
+	sjump .TeachMove2
+	
+.Softboiled:
+	setval SOFTBOILED
+	sjump .TeachMove2
+	
+.SkyAttack:
+	setval SKY_ATTACK
+	sjump .TeachMove2
+	
+.Explosion:
+	setval EXPLOSION
+	sjump .TeachMove2
+	
+.RockSlide:
+	setval ROCK_SLIDE
+	sjump .TeachMove2
+	
+.TriAttack:
+	setval TRI_ATTACK
+	sjump .TeachMove2
+	
+.Substitute:
+	setval SUBSTITUTE
+	sjump .TeachMove2
 
 .Refused:
 	writetext TutorRefusedText
@@ -482,30 +585,91 @@ ShadyTmGuyMoveTutorScript:
 	waitbutton
 	closetext
 	end
-
-.TeachMove:
-	writetext TutorTeachMoveText
-	promptbutton
+	
+.Cancel:
 	writetext TutorFarewellText
 	waitbutton
 	closetext
 	end
+
+
+.TeachMove2:
+	writetext TutorTeachMoveText
+	waitbutton
+	special MoveTutor
+	ifequal FALSE, .MoveTaught
+	closetext
+	end
 	
-.MoveMenuHeader:
+.MoveTaught:
+	writetext TutorToughtMoveText
+	waitbutton
+	closetext
+	end
+	
+.MoveMenuHeaderPage1:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, 15, TEXTBOX_Y
-	dw .MenuData
+	menu_coords 0, 0, 15, TEXTBOX_Y
+	dw .MenuDataPage1
 	db 1 ; default option
 
-.MenuData:
+.MenuDataPage1:
 	db STATICMENU_CURSOR ; flags
-	db 5 ; items + cancel options
-	db "BODY SLAM@" ; REMEMBER TO DEFINE ITEM_CONSTANTS !!!
+	db 6 ; items + cancel options
+	db "BODY SLAM@"
 	db "DOUBLE EDGE@"
 	db "BUBBLEBEAM@"
+	db "ICE BEAM@"
 	db "PAY DAY@"
+	db "NEXT@"
+	
+.MoveMenuHeaderPage2:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 15, TEXTBOX_Y
+	dw .MenuDataPage2
+	db 1 ; default option
+	
+.MenuDataPage2:
+	db STATICMENU_CURSOR ; flags
+	db 6 ; items + cancel options
 	db "SUBMISSION@"
-	db "CANCEL@"
+	db "COUNTER@"
+	db "SEISMIC TOSS@"
+	db "MEGA DRAIN@"
+	db "DRAGON RAGE@"
+	db "NEXT@"
+	
+.MoveMenuHeaderPage3:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 15, TEXTBOX_Y
+	dw .MenuDataPage3
+	db 1 ; default option
+	
+.MenuDataPage3:
+	db STATICMENU_CURSOR ; flags
+	db 6 ; items + cancel options
+	db "THUNDERBOLT@"
+	db "MIMIC@"
+	db "REFLECT@"
+	db "METRONOME@"
+	db "EGG BOMB@"
+	db "NEXT@"
+	
+.MoveMenuHeaderPage4:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 15, TEXTBOX_Y
+	dw .MenuDataPage4
+	db 1 ; default option
+	
+.MenuDataPage4:
+	db STATICMENU_CURSOR ; flags
+	db 6 ; items + cancel options
+	db "SOFTBOILED@"
+	db "SKY ATTACK@"
+	db "EXPLOSION@"
+	db "ROCK SLIDE@"
+	db "TRI ATTACK@"
+	db "SUBSTITUTE@"
 
 SupernerdEricSeenText:
 	text "I got booted out"
@@ -740,7 +904,7 @@ TutorAskTeachAMoveText:
 	text "I found this box"
 	line "full of TMs!"
 	
-	para "They must be from"
+	para "It must be from"
 	line "Kanto as I have"
 	cont "never seen these"
 	cont "TMs here in Johto."
@@ -752,18 +916,15 @@ TutorAskTeachAMoveText:
 	para "…"
 	
 	para "It would be a"
-	line "shame letting them"
-	cont "just site here…"
+	line "shame just letting"
+	cont "them site here…"
 
 	para "Want to try one?"
 	done
 
 
 TutorRefusedText:
-	text "Come back here"
-	line "if you want to"
-	
-	para "try another one."
+	text "OK then."
 	done
 
 TutorWhichMoveShouldITeachText:
@@ -776,10 +937,13 @@ TutorTeachMoveText:
 	text "Seems like a"
 	line "good choise."
 	done
+	
+TutorToughtMoveText:
+	text "Nice. It worked."
+	done
 
 TutorFarewellText:
 	text "Bye then."
-;	line "anytime!"
 	done
 
 TutorIncompatibleText:
@@ -801,7 +965,7 @@ GoldenrodUnderground_MapEvents:
 	warp_event 18,  6, GOLDENROD_UNDERGROUND, 4
 	warp_event 21, 31, GOLDENROD_UNDERGROUND, 3
 	warp_event 22, 31, GOLDENROD_UNDERGROUND, 3
-	warp_event 22, 27, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 1 ; <- maybe add to here
+	warp_event 22, 27, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 1 ;
 
 	def_coord_events
 
