@@ -416,7 +416,96 @@ GoldenrodUndergroundHiddenSuperPotion:
 	hiddenitem SUPER_POTION, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_SUPER_POTION
 
 GoldenrodUndergroundHiddenAntidote:
-	hiddenitem ANTIDOTE, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_ANTIDOTE
+	hiddenitem BASEMENT_KEY, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_ANTIDOTE
+	
+	
+ShadyTmGuyMoveTutorScript:
+	faceplayer
+	opentext
+	writetext TutorAskTeachAMoveText
+	yesorno
+	iffalse .Refused
+	writetext TutorWhichMoveShouldITeachText
+	loadmenu .MoveMenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .BodySlam
+	ifequal 2, .DoubleEdge
+	ifequal 3, .Bubblebeam
+	ifequal 4, .PayDay
+	ifequal 5, .Submission
+	sjump .Incompatible
+	
+.BodySlam:
+	setval BODY_SLAM
+	writetext TutorMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+	
+.DoubleEdge:
+	setval DOUBLE_EDGE
+	writetext TutorMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+	
+.Bubblebeam:
+	setval BUBBLEBEAM
+	writetext TutorMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+	
+.PayDay:
+	setval PAY_DAY
+	writetext TutorMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+	
+.Submission:
+	setval SUBMISSION
+	writetext TutorMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+
+.Refused:
+	writetext TutorRefusedText
+	waitbutton
+	closetext
+	end
+	
+.Incompatible:
+	writetext TutorIncompatibleText
+	waitbutton
+	closetext
+	end
+
+.TeachMove:
+	writetext TutorTeachMoveText
+	promptbutton
+	writetext TutorFarewellText
+	waitbutton
+	closetext
+	end
+	
+.MoveMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, 15, TEXTBOX_Y
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 5 ; items + cancel options
+	db "BODY SLAM@" ; REMEMBER TO DEFINE ITEM_CONSTANTS !!!
+	db "DOUBLE EDGE@"
+	db "BUBBLEBEAM@"
+	db "PAY DAY@"
+	db "SUBMISSION@"
+	db "CANCEL@"
 
 SupernerdEricSeenText:
 	text "I got booted out"
@@ -646,6 +735,62 @@ GoldenrodUndergroundNoEntryText:
 	text "NO ENTRY BEYOND"
 	line "THIS POINT"
 	done
+	
+TutorAskTeachAMoveText:
+	text "I found this box"
+	line "full of TMs!"
+	
+	para "They must be from"
+	line "Kanto as I have"
+	cont "never seen these"
+	cont "TMs here in Johto."
+
+	para "Team Rocket must"
+	line "have forgotten"
+	cont "it when they left."
+	
+	para "…"
+	
+	para "It would be a"
+	line "shame letting them"
+	cont "just site here…"
+
+	para "Want to try one?"
+	done
+
+
+TutorRefusedText:
+	text "Come back here"
+	line "if you want to"
+	
+	para "try another one."
+	done
+
+TutorWhichMoveShouldITeachText:
+	text "Which move do"
+	line "you want?"
+	done
+
+
+TutorTeachMoveText:
+	text "Seems like a"
+	line "good choise."
+	done
+
+TutorFarewellText:
+	text "Bye then."
+;	line "anytime!"
+	done
+
+TutorIncompatibleText:
+	text "Your #mon"
+	line "can't learn this"
+	cont "move…"
+	done
+
+TutorMoveText:
+	text_start
+	done
 
 GoldenrodUnderground_MapEvents:
 	db 0, 0 ; filler
@@ -656,7 +801,7 @@ GoldenrodUnderground_MapEvents:
 	warp_event 18,  6, GOLDENROD_UNDERGROUND, 4
 	warp_event 21, 31, GOLDENROD_UNDERGROUND, 3
 	warp_event 22, 31, GOLDENROD_UNDERGROUND, 3
-	warp_event 22, 27, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 1
+	warp_event 22, 27, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 1 ; <- maybe add to here
 
 	def_coord_events
 
@@ -677,3 +822,4 @@ GoldenrodUnderground_MapEvents:
 	object_event  7, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlderHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER
 	object_event  7, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, YoungerHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER
 	object_event  7, 21, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BitterMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRANNY
+	object_event  21,  27, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ShadyTmGuyMoveTutorScript, -1

@@ -129,6 +129,7 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	  - Mimic: now lets you choose which move to mimic from the opposing pokemons current moves instead of just mimicking the last used move (same functionality as in gen 1). The mimicked move is used right after learning it and is learned until switching out. (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
 	  - Submission: 50BP instead of 80, but always raise attack by one (functions like Power-Up Punch from gen 6). Added to movepool of Hitmonchan (lvl 55), Cubone (lvl 51), Marowak (lvl 55), Mankey/Primeape (lvl 55). (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
 	  - Flash: now a priority move with 60BP, ELECTRIC type and a 10% chance to flinch the target. (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
+	  - Strength: now fighting type
   </details>
 + Thunder Wave replaces Frustration as TM21. Frustration removed from all pokemons TM learnset as it no longer exists.
   <details>
@@ -142,7 +143,6 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 
 ### Planned 
 
-+ TMs are reusable or can be bought at marts
 + Adding some new moves from later games, or changed existing to be better
 + Moving or removing NPCs in Goldenrod City that always seem to be in the way
 + Make all type boosting hold items available before the E4
