@@ -1,5 +1,6 @@
 GOLDENRODUNDERGROUND_OLDER_HAIRCUT_PRICE   EQU 500
 GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_PRICE EQU 300
+TUTORMONEYPAYAMOUNT EQU 5000
 
 	object_const_def
 	const GOLDENRODUNDERGROUND_SUPER_NERD1
@@ -425,17 +426,23 @@ ShadyTmGuyMoveTutorScript:
 	writetext TutorAskTeachAMoveText
 	yesorno
 	iffalse .Refused
+	special PlaceMoneyTopRight
+	writetext TutorAskMoneyOkayText
+	yesorno
+	iffalse .RefusePay
+	checkmoney YOUR_MONEY, TUTORMONEYPAYAMOUNT
+	ifequal HAVE_LESS, .NotEnoughMoney
 	writetext TutorWhichMoveShouldITeachText
 	
 .Page1:
 	loadmenu .MoveMenuHeaderPage1
 	verticalmenu
 	closewindow
-	ifequal 1, .BodySlam
-	ifequal 2, .DoubleEdge
-	ifequal 3, .Bubblebeam
-	ifequal 4, .Icebeam
-	ifequal 5, .PayDay
+	ifequal 1, .MegaPunch
+	ifequal 2, .MegaKick
+	ifequal 3, .BodySlam
+	ifequal 4, .DoubleEdge
+	ifequal 5, .Bubblebeam
 	ifequal 6, .Page2
 	sjump .Refused
 	
@@ -443,11 +450,11 @@ ShadyTmGuyMoveTutorScript:
 	loadmenu .MoveMenuHeaderPage2
 	verticalmenu
 	closewindow
-	ifequal 1, .Submission
-	ifequal 2, .Counter
-	ifequal 3, .SeismicToss
-	ifequal 4, .MegaDrain
-	ifequal 5, .DragonRage
+	ifequal 1, .Icebeam
+	ifequal 2, .PayDay
+	ifequal 3, .Submission
+	ifequal 4, .Counter
+	ifequal 5, .SeismicToss
 	ifequal 6, .Page3
 	sjump .Refused
 	
@@ -455,16 +462,28 @@ ShadyTmGuyMoveTutorScript:
 	loadmenu .MoveMenuHeaderPage3
 	verticalmenu
 	closewindow
-	ifequal 1, .Thunderbolt
-	ifequal 2, .Mimic
-	ifequal 3, .Reflect
-	ifequal 4, .Metronome
-	ifequal 5, .EggBomb
+	ifequal 1, .Rage
+	ifequal 2, .MegaDrain
+	ifequal 3, .DragonRage
+	ifequal 4, .Thunderbolt
+	ifequal 5, .Teleport
 	ifequal 6, .Page4
 	sjump .Refused
 	
 .Page4:
 	loadmenu .MoveMenuHeaderPage4
+	verticalmenu
+	closewindow
+	ifequal 1, .Mimic
+	ifequal 2, .Reflect
+	ifequal 3, .Bide
+	ifequal 4, .Metronome
+	ifequal 5, .EggBomb
+	ifequal 6, .Page5
+	sjump .Refused
+	
+.Page5:
+	loadmenu .MoveMenuHeaderPage5
 	verticalmenu
 	closewindow
 	ifequal 1, .Softboiled
@@ -473,23 +492,18 @@ ShadyTmGuyMoveTutorScript:
 	ifequal 4, .RockSlide
 	ifequal 5, .TriAttack
 	ifequal 6, .Substitute
-;	ifequal 5, .Cancel
 	sjump .Refused
-	
-;.Page5:
-;	loadmenu .MoveMenuHeaderPage5
-;	verticalmenu
-;	closewindow
-;	ifequal 1, .Softboiled
-;	ifequal 2, .SkyAttack
-;	ifequal 3, .Explosion
-;	ifequal 4, .RockSlide
-;	ifequal 5, .Page3
-;	ifequal 6, .Page5
-;	sjump .Refused
 	
 
 ; --- moves for the menu pages
+.MegaPunch:
+	setval MEGA_PUNCH
+	sjump .TeachMove2
+	
+.MegaKick:
+	setval MEGA_KICK
+	sjump .TeachMove2
+	
 .BodySlam:
 	setval BODY_SLAM
 	sjump .TeachMove2
@@ -521,6 +535,10 @@ ShadyTmGuyMoveTutorScript:
 .SeismicToss:
 	setval SEISMIC_TOSS
 	sjump .TeachMove2
+	
+.Rage:
+	setval RAGE
+	sjump .TeachMove2
 
 .MegaDrain:
 	setval MEGA_DRAIN
@@ -534,12 +552,20 @@ ShadyTmGuyMoveTutorScript:
 	setval THUNDERBOLT
 	sjump .TeachMove2	
 	
+.Teleport:
+	setval TELEPORT
+	sjump .TeachMove2
+	
 .Mimic:
 	setval MIMIC
 	sjump .TeachMove2
 	
 .Reflect:
 	setval REFLECT
+	sjump .TeachMove2
+	
+.Bide:
+	setval BIDE
 	sjump .TeachMove2
 	
 .Metronome:
@@ -573,9 +599,21 @@ ShadyTmGuyMoveTutorScript:
 .Substitute:
 	setval SUBSTITUTE
 	sjump .TeachMove2
+	
+.NotEnoughMoney:
+	writetext TutorShortOnFundsText
+	waitbutton
+	closetext
+	end
 
 .Refused:
 	writetext TutorRefusedText
+	waitbutton
+	closetext
+	end
+	
+.RefusePay: 
+	writetext TutorRefusePayText
 	waitbutton
 	closetext
 	end
@@ -602,7 +640,9 @@ ShadyTmGuyMoveTutorScript:
 	end
 	
 .MoveTaught:
-	writetext TutorToughtMoveText
+	takemoney YOUR_MONEY, TUTORMONEYPAYAMOUNT
+	special PlaceMoneyTopRight
+	writetext TutorToughtMoveText	
 	waitbutton
 	closetext
 	end
@@ -616,11 +656,11 @@ ShadyTmGuyMoveTutorScript:
 .MenuDataPage1:
 	db STATICMENU_CURSOR ; flags
 	db 6 ; items + cancel options
+	db "MEGA PUNCH@"
+	db "MEGA KICK@"
 	db "BODY SLAM@"
 	db "DOUBLE EDGE@"
 	db "BUBBLEBEAM@"
-	db "ICE BEAM@"
-	db "PAY DAY@"
 	db "NEXT@"
 	
 .MoveMenuHeaderPage2:
@@ -632,11 +672,11 @@ ShadyTmGuyMoveTutorScript:
 .MenuDataPage2:
 	db STATICMENU_CURSOR ; flags
 	db 6 ; items + cancel options
+	db "ICE BEAM@"
+	db "PAY DAY@"
 	db "SUBMISSION@"
 	db "COUNTER@"
 	db "SEISMIC TOSS@"
-	db "MEGA DRAIN@"
-	db "DRAGON RAGE@"
 	db "NEXT@"
 	
 .MoveMenuHeaderPage3:
@@ -648,11 +688,11 @@ ShadyTmGuyMoveTutorScript:
 .MenuDataPage3:
 	db STATICMENU_CURSOR ; flags
 	db 6 ; items + cancel options
+	db "RAGE@"
+	db "MEGA DRAIN@"
+	db "DRAGON RAGE@"
 	db "THUNDERBOLT@"
-	db "MIMIC@"
-	db "REFLECT@"
-	db "METRONOME@"
-	db "EGG BOMB@"
+	db "TELEPORT@"
 	db "NEXT@"
 	
 .MoveMenuHeaderPage4:
@@ -662,6 +702,22 @@ ShadyTmGuyMoveTutorScript:
 	db 1 ; default option
 	
 .MenuDataPage4:
+	db STATICMENU_CURSOR ; flags
+	db 6 ; items + cancel options
+	db "MIMIC@"
+	db "REFLECT@"
+	db "BIDE@"
+	db "METRONOME@"
+	db "EGG BOMB@"
+	db "NEXT@"
+	
+.MoveMenuHeaderPage5:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 15, TEXTBOX_Y
+	dw .MenuDataPage5
+	db 1 ; default option
+	
+.MenuDataPage5:
 	db STATICMENU_CURSOR ; flags
 	db 6 ; items + cancel options
 	db "SOFTBOILED@"
@@ -922,6 +978,20 @@ TutorAskTeachAMoveText:
 	para "Want to try one?"
 	done
 
+TutorShortOnFundsText:
+	text "You don't have"
+	para "enough money"
+	done
+	
+TutorAskMoneyOkayText:
+	text "¥5000 please."	; amount is TUTORMONEYPAYAMOUNT
+	done
+	
+TutorRefusePayText:
+	text "What? I am not"
+	line "going to just"
+	cont "give it to you."
+	done
 
 TutorRefusedText:
 	text "OK then."

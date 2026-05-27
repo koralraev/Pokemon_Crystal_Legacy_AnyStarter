@@ -309,50 +309,50 @@ MT01 EQU const_value
 	add_mt FLAMETHROWER
 	add_mt THUNDERBOLT	;tm24
 	add_mt ICE_BEAM		;tm13
-;	add_mt MEGA_PUNCH	;tm1 in gen 1
-;	add_mt RAZOR_WIND	;tm2
+	add_mt MEGA_PUNCH	;tm1 in gen 1 NOT ADDED TO TUTOR
+;	add_mt RAZOR_WIND	;tm2 NOT ADDED TO TUTOR: there are 9 gen1 TMs that cannot be added because it exceeds the ram bank limit.
 	; swords dance added as a tm52
-;	add_mt WHIRLWIND	;tm4
-;	add_mt MEGA_KICK	;tm5
+;	add_mt WHIRLWIND	;tm4 NOT ADDED TO TUTOR
+	add_mt MEGA_KICK	;tm5 NOT ADDED TO TUTOR
 	; toxic is already a tm6
-;	add_mt HORN_DRILL	;tm7
+;	add_mt HORN_DRILL	;tm7 NOT ADDED TO TUTOR
 	add_mt BODY_SLAM	;tm8
-;	add_mt TAKE_DOWN	;tm9
+;	add_mt TAKE_DOWN	;tm9 NOT ADDED TO TUTOR
 	add_mt DOUBLE_EDGE	;tm10
 	add_mt BUBBLEBEAM	;tm11
-;	add_mt WATER_GUN	;tm12
+;	add_mt WATER_GUN	;tm12 NOT ADDED TO TUTOR
 	; blizzard is already tm14
 	; hyper_beam is already tm15
 	add_mt PAY_DAY		;tm16
 	add_mt SUBMISSION	;tm17
 	add_mt COUNTER		;tm18
 	add_mt SEISMIC_TOSS	;tm19
-;	add_mt RAGE		;tm20
+	add_mt RAGE		;tm20 NOT ADDED TO TUTOR
 	add_mt MEGA_DRAIN	;tm21
 	; solar beam is already a tm22
 	add_mt DRAGON_RAGE	;tm23
 	; thunder is already a tm25
 	; earthquake is already a tm26
-;	add_mt FISSURE		;tm27
+;	add_mt FISSURE		;tm27 NOT ADDED TO TUTOR
 	; dig is already a tm28
 	; psychic is already a tm29
-;	add_mt TELEPORT		;tm30
+	add_mt TELEPORT		;tm30 NOT ADDED TO TUTOR
 	add_mt MIMIC		;tm31
 	; double team is already a tm32
 	add_mt REFLECT		;tm33
-;	add_mt BIDE		;tm34
+	add_mt BIDE		;tm34 NOT ADDED TO TUTOR
 	add_mt METRONOME	;tm35
-;	add_mt SELFDESTRUCT	;tm36
+;	add_mt SELFDESTRUCT	;tm36 NOT ADDED TO TUTOR
 	add_mt EGG_BOMB		;tm37
 	; fire blast is already a tm38
 	; swift is already a tm39
-;	add_mt SKULL_BASH	;tm40
+;	add_mt SKULL_BASH	;tm40 NOT ADDED TO TUTOR
 	add_mt SOFTBOILED	;tm41
 	; dream eater is already a tm42
 	add_mt SKY_ATTACK	;tm43
 	; rest is already a tm44
 	; thunder wave is added as tm21
-;	add_mt PSYWAVE		;tm46
+;	add_mt PSYWAVE		;tm46 NOT ADDED TO TUTOR
 	add_mt EXPLOSION	;tm47
 	add_mt ROCK_SLIDE	;tm48
 	add_mt TRI_ATTACK	;tm49

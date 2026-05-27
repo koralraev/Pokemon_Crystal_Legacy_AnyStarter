@@ -139,6 +139,11 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 + There is now a total of ~30% chance for a wild pokemon that has held items to have an item: rare items increased from ~2% to ~5%, and from ~23% to ~25% for the common item. 
 + All TMs can be purchased at marts before the E4. TMs are generally available at the first city after the where they can otherwise be found or obtained; e.g., TM49 Fury Cutter is obtained after beating Bugsy in Azalea, and can then be purchased in Goldenrod.
 	+ TMs that where only available in Kanto can now be purchased at the Indigo Plateau. 
++ A move tutor will appear in the Goldenrod Underground entrance to the Rocket Hideout after clearing the Radiotower. He teaches some of the moves that were TMs in gen1 to eligible gen1 pokemon only. Getting gen1 TM moves to gen2 pokemon still needs breeding. The tutor just circumvents the need for time-capsule trading with gen1.
+  <details>
+	  <summary>Gen1 TM tutor moves:</summary>
+	  Mega Punch, Mega Kick, Body Slam, Double Edge, Bubblebeam, Icebeam, Pay Day, Submission, Counter, Seismic Toss, Rage, Mega Drain, Dragon Rage, Thunderbolt, Teleport, Mimic, Reflect, Bide, Metronome, Egg Bomb, Softboiled, Sky Attack, Explosion, Rock Slide, Tri Attack and Substitute
+  </details>
 
 
 ### Planned 
