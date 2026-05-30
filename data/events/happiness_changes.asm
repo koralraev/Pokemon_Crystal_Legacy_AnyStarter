@@ -10,9 +10,9 @@ HappinessChanges:
 	db  -1,  -1,  -1 ; Lost to an enemy
 	db  -5,  -5, -10 ; Fainted due to poison
 	db  -5,  -5, -10 ; Lost to a much stronger enemy
-	db  +5,  +5,  +5 ; Haircut (older brother) 1
-	db  +5,  +5,  +5 ; Haircut (older brother) 2
-	db  +5,  +5,  +5 ; Haircut (older brother) 3
+	db +50, +50, +50 ; Haircut (older brother) 1
+	db +50, +50, +50 ; Haircut (older brother) 2
+	db +50, +50, +50 ; Haircut (older brother) 3
 	db  +5,  +5,  +5 ; Haircut (younger brother) 1
 	db  +7,  +7,  +7 ; Haircut (younger brother) 2
 	db +10, +10,  +9 ; Haircut (younger brother) 3

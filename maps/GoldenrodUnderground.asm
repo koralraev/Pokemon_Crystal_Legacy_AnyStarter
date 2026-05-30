@@ -1,4 +1,4 @@
-GOLDENRODUNDERGROUND_OLDER_HAIRCUT_PRICE   EQU 500
+GOLDENRODUNDERGROUND_OLDER_HAIRCUT_PRICE   EQU 700
 GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_PRICE EQU 300
 TUTORMONEYPAYAMOUNT EQU 5000
 
@@ -12,6 +12,7 @@ TUTORMONEYPAYAMOUNT EQU 5000
 	const GOLDENRODUNDERGROUND_OLDER_HAIRCUT_BROTHER
 	const GOLDENRODUNDERGROUND_YOUNGER_HAIRCUT_BROTHER
 	const GOLDENRODUNDERGROUND_GRANNY
+	const GOLDENRODUNDERGROUND_MAX_ELDER
 
 GoldenrodUnderground_MapScripts:
 	def_scene_scripts
@@ -185,15 +186,16 @@ BargainMerchantScript:
 
 OlderHaircutBrotherScript:
 	opentext
-	readvar VAR_WEEKDAY
-	ifequal TUESDAY, .DoHaircut
-	ifequal THURSDAY, .DoHaircut
-	ifequal SATURDAY, .DoHaircut
-	sjump GoldenrodUndergroundScript_ShopClosed
+	.DoHairCut
+;	readvar VAR_WEEKDAY
+;	ifequal TUESDAY, .DoHaircut
+;	ifequal THURSDAY, .DoHaircut
+;	ifequal SATURDAY, .DoHaircut
+;	sjump GoldenrodUndergroundScript_ShopClosed
 
 .DoHaircut:
-	checkflag ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT
-	iftrue .AlreadyGotHaircut
+;	checkflag ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT
+;	iftrue .AlreadyGotHaircut
 	special PlaceMoneyTopRight
 	writetext GoldenrodUndergroundOlderHaircutBrotherOfferHaircutText
 	yesorno
@@ -203,11 +205,12 @@ OlderHaircutBrotherScript:
 	writetext GoldenrodUndergroundOlderHaircutBrotherAskWhichMonText
 	promptbutton
 	special OlderHaircutBrother
-	ifequal $0, .Refused
-	ifequal $1, .Refused
-	setflag ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT
-	ifequal $2, .two
-	ifequal $3, .three
+	sjump .then
+;	ifequal $0, .Refused
+;	ifequal $1, .Refused
+;	setflag ENGINE_GOLDENROD_UNDERGROUND_GOT_HAIRCUT
+;	ifequal $2, .two
+;	ifequal $3, .three
 	sjump .else
 
 .two
@@ -242,10 +245,6 @@ OlderHaircutBrotherScript:
 	opentext
 	writetext GoldenrodUndergroundOlderHaircutBrotherAllDoneText
 	waitbutton
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue EitherHaircutBrotherScript_SlightlyHappier
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
-	iftrue EitherHaircutBrotherScript_Happier
 	sjump EitherHaircutBrotherScript_MuchHappier
 
 .Refused:
@@ -256,12 +255,6 @@ OlderHaircutBrotherScript:
 
 .NotEnoughMoney:
 	writetext GoldenrodUndergroundOlderHaircutBrotherYoullNeedMoreMoneyText
-	waitbutton
-	closetext
-	end
-
-.AlreadyGotHaircut:
-	writetext GoldenrodUndergroundOlderHaircutBrotherOneHaircutADayText
 	waitbutton
 	closetext
 	end
@@ -348,6 +341,7 @@ YoungerHaircutBrotherScript:
 	waitbutton
 	closetext
 	end
+	
 
 EitherHaircutBrotherScript_SlightlyHappier:
 	writetext HaircutBrosText_SlightlyHappier
@@ -417,7 +411,7 @@ GoldenrodUndergroundHiddenSuperPotion:
 	hiddenitem SUPER_POTION, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_SUPER_POTION
 
 GoldenrodUndergroundHiddenAntidote:
-	hiddenitem BASEMENT_KEY, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_ANTIDOTE
+	hiddenitem ANTIDOTE, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_ANTIDOTE
 	
 	
 ShadyTmGuyMoveTutorScript:
@@ -832,21 +826,28 @@ GoldenrodUndergroundBasementKeyOpenedDoorText:
 	done
 
 GoldenrodUndergroundOlderHaircutBrotherOfferHaircutText:
-	text "Welcome!"
+	text "Hello there!"
 
-	para "I run the #MON"
-	line "SALON!"
-
-	para "I'm the older and"
-	line "better of the two"
+	para "I'm the elder and"
+	line "father of the two"
 	cont "HAIRCUT BROTHERS."
+	
+	para "My oldest son"
+	line "went away to"
+	cont "perfect his art."
+	
+	para "So I manage his"
+	line "shop for now."
+	
+	para "Since I'm the elder"
+	line "I am much better"
+	cont "than both my sons."
 
 	para "I can make your"
-	line "#MON beautiful"
-	cont "for just ¥500."
+	line "#MON the best"
+	cont "for just ¥700."
 
-	para "Would you like me"
-	line "to do that?"
+	para "How about that?"
 	done
 
 GoldenrodUndergroundOlderHaircutBrotherAskWhichMonText:
@@ -855,28 +856,27 @@ GoldenrodUndergroundOlderHaircutBrotherAskWhichMonText:
 	done
 
 GoldenrodUndergroundOlderHaircutBrotherWatchItBecomeBeautifulText:
-	text "OK! Watch it"
-	line "become beautiful!"
+	text "OK! Observe"
+	line "PERFECTION!"
 	done
 
 GoldenrodUndergroundOlderHaircutBrotherAllDoneText:
 	text "There! All done!"
+	para "I don't tire like"
+	line "the young folks."
+	
+	para "I can keep doing"
+	line "haircuts all day!"
 	done
 
 GoldenrodUndergroundOlderHaircutBrotherThatsAShameText:
-	text "Is that right?"
-	line "That's a shame!"
+	text "Don't worry."
+	line "I'm here every day."
 	done
 
 GoldenrodUndergroundOlderHaircutBrotherYoullNeedMoreMoneyText:
 	text "You'll need more"
 	line "money than that."
-	done
-
-GoldenrodUndergroundOlderHaircutBrotherOneHaircutADayText:
-	text "I do only one"
-	line "haircut a day. I'm"
-	cont "done for today."
 	done
 
 GoldenrodUndergroundYoungerHaircutBrotherOfferHaircutText:
@@ -1053,7 +1053,7 @@ GoldenrodUnderground_MapEvents:
 	object_event  2,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacDonald, -1
 	object_event  7, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundCoinCase, EVENT_GOLDENROD_UNDERGROUND_COIN_CASE
 	object_event  7, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BargainMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRAMPS
-	object_event  7, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlderHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER
+	object_event  7, 14, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlderHaircutBrotherScript, -1
 	object_event  7, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, YoungerHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER
 	object_event  7, 21, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BitterMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRANNY
-	object_event  21,  27, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ShadyTmGuyMoveTutorScript, -1
+	object_event  21,  27, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ShadyTmGuyMoveTutorScript, EVENT_SHADY_MOVE_TUTOR_HIDDEN

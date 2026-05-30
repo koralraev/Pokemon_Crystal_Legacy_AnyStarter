@@ -628,6 +628,7 @@ GirafarigEggMoves:
 	db FORESIGHT
 	db FUTURE_SIGHT
 	db BEAT_UP
+	db NASTY_PLOT
 	db -1 ; end
 
 PinecoEggMoves:
