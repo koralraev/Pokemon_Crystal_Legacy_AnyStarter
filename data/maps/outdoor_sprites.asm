@@ -254,6 +254,7 @@ MahoganyGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
 	db SPRITE_SUICUNE
+	db SPRITE_ITEM_BELT
 	db 0 ; end
 
 BlackthornGroupSprites:

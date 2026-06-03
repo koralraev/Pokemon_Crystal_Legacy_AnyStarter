@@ -8,6 +8,8 @@
 	const ROUTE42_POKE_BALL1
 	const ROUTE42_POKE_BALL2
 	const ROUTE42_SUICUNE
+	const ROUTE42_FOCUS_BAND
+	const ROUTE42_BLACKBELT_I
 
 Route42_MapScripts:
 	def_scene_scripts
@@ -238,6 +240,59 @@ Route42SuicuneMovement:
 	fast_jump_step RIGHT
 	remove_sliding
 	step_end
+	
+Route42FocusBandScript:
+	checkevent EVENT_HIDDEN_FOCUS_BAND
+	iftrue .GotFocusBand
+	opentext
+	writetext Route42BeltsText
+	yesorno
+	iffalse .Refused
+	writetext TookBeltOfTreeText
+	waitbutton
+	verbosegiveitem FOCUS_BAND
+	iffalse .NoRoom
+	setevent EVENT_HIDDEN_FOCUS_BAND
+	disappear ROUTE42_FOCUS_BAND
+	closetext
+	end
+.GotFocusBand:
+	end
+.NoRoom:
+	closetext
+	end
+.Refused:
+	writetext LetItHangText
+	waitbutton
+	closetext
+	end
+	
+Route42BlackBeltScript:
+	checkevent EVENT_HIDDEN_BLACK_BELT
+	iftrue .GotFocusBand
+	opentext
+	writetext Route42BeltsText
+	yesorno
+	iffalse .Refused
+	writetext TookBeltOfTreeText
+	waitbutton
+	verbosegiveitem BLACKBELT_I
+	iffalse .NoRoom
+	setevent EVENT_HIDDEN_BLACK_BELT
+	disappear ROUTE42_BLACKBELT_I
+	closetext
+	end
+.GotFocusBand:
+	end
+.NoRoom:
+	closetext
+	end
+.Refused:
+	writetext LetItHangText
+	waitbutton
+	closetext
+	end
+	
 
 FisherTullySeenText:
 	text "Let me demonstrate"
@@ -331,6 +386,26 @@ Route42Sign2Text:
 	para "ECRUTEAK CITY -"
 	line "MAHOGANY TOWN"
 	done
+	
+Route42BeltsText:
+	text "Looks like someone"
+	line "had a fight here."
+	
+	para "For some reason"
+	line "they hung their"
+	cont "belt here."
+	
+	para "Take the belt?"
+	done
+	
+TookBeltOfTreeText:
+	text "You untie the belt"
+	line "from the tree."
+	done
+	
+LetItHangText:
+	text "You let it hang."
+	done
 
 Route42_MapEvents:
 	db 0, 0 ; filler
@@ -351,6 +426,8 @@ Route42_MapEvents:
 	bg_event 45,  9, BGEVENT_READ, MtMortarSign2
 	bg_event 54,  8, BGEVENT_READ, Route42Sign2
 	bg_event 16, 11, BGEVENT_ITEM, Route42HiddenMaxPotion
+	bg_event 25, 17, BGEVENT_READ, Route42FocusBandScript
+	bg_event 31, 17, BGEVENT_READ, Route42BlackBeltScript
 
 	def_object_events
 	object_event 40, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherTully, -1
@@ -362,3 +439,5 @@ Route42_MapEvents:
 	object_event  6,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42UltraBall, EVENT_ROUTE_42_ULTRA_BALL
 	object_event 33,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42SuperPotion, EVENT_ROUTE_42_SUPER_POTION
 	object_event 26, 16, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_42
+	object_event 25, 18, SPRITE_ITEM_BELT, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDDEN_FOCUS_BAND
+	object_event 31, 18, SPRITE_ITEM_BELT, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDDEN_BLACK_BELT
