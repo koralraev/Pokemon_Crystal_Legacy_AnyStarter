@@ -147,7 +147,17 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 + The Older Haircut Brother is replaced with their father. He increase happiness by 50 points, can do multiple haricuts and is there every day
 + The NPCs on the main street in Goldenrod City has been asked to keep to the sides of the street
 + Youngster Ian on route 34 is moved a bit to the left to act as a barrier to avoid going out in the grass when biking up and down Goldenrod City when breeding in the daycare.
-
++ Some items has been made more readily available: Leftovers, Blackbelt, Focus Band, Lucky Punch, Light Ball, Metal Powder
+  <details>
+	  <summary>Spoiler for items new locations:</summary>
+	  
+	  - Leftovers: Can be found behind one of the trashcans in National Park. Check the trashcans for a clue
+	  - Blackbelt: Route 42 area behind the cutable tree, next to the three berry trees
+	  - Focus Band: Route 42 area behind the cutable tree, next to the three berry trees
+	  - Lucky Punch: held by wild Chansey (5%)
+	  - Light Ball: held by wild Pichu and Pikachu (5%)
+	  - Metal Powder: help by wild Ditto (5%)
+  </details>
 
 ### Planned 
 

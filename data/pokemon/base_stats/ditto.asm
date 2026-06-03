@@ -6,7 +6,7 @@
 	db NORMAL, NORMAL ; type
 	db 35 ; catch rate
 	db 61 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, METAL_POWDER ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 5 ; step cycles to hatch
 	INCBIN "gfx/pokemon/ditto/front.dimensions"
