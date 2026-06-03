@@ -306,6 +306,15 @@ TrainerLassKrise:
 	waitbutton
 	closetext
 	end
+	
+TrashcanHiddenLeftovers:
+	checkevent EVENT_HIDDEN_LEFTOVERS
+	iftrue .AlreadyFound
+	jumptext TrashcanHintText
+	
+.AlreadyFound:
+	jumptext TrashcanEmptyText
+	
 
 NationalParkRelaxationSquareSign:
 	jumptext NationalParkRelaxationSquareText
@@ -324,6 +333,9 @@ NationalParkTMDig:
 
 NationalParkHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL
+	
+NationalParkHiddenLeftovers:
+	hiddenitem LEFTOVERS, EVENT_HIDDEN_LEFTOVERS
 
 NationalParkLassText:
 	text "Look! Check out my"
@@ -530,6 +542,23 @@ NationalParkTrainerTipsText:
 	line "opening it then"
 	cont "pressing START."
 	done
+	
+TrashcanEmptyText:
+	text "It is empty."
+	done
+	
+TrashcanHintText:
+	text "It is empty…"
+	
+	para "But somebody"
+	line "dropped some trash"
+	cont "behind the"
+	cont "trashcan, next to"
+	cont "that tree."
+	
+	para "Better go clean"
+	line "it up."
+	done
 
 NationalPark_MapEvents:
 	db 0, 0 ; filler
@@ -547,6 +576,8 @@ NationalPark_MapEvents:
 	bg_event 27, 31, BGEVENT_READ, NationalParkBattleNoticeSign
 	bg_event  6, 47, BGEVENT_ITEM, NationalParkHiddenFullHeal
 	bg_event 12,  4, BGEVENT_READ, NationalParkTrainerTipsSign
+	bg_event 12, 40, BGEVENT_READ, TrashcanHiddenLeftovers
+	bg_event 12, 38, BGEVENT_ITEM, NationalParkHiddenLeftovers
 
 	def_object_events
 	object_event 15, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkLassScript, -1
