@@ -1,6 +1,7 @@
 	object_const_def
 	const GOLDENRODMAGNETTRAINSTATION_OFFICER
 	const GOLDENRODMAGNETTRAINSTATION_GENTLEMAN
+	const STATION_HIDDEN_BRIGHT_POWDER
 
 GoldenrodMagnetTrainStation_MapScripts:
 	def_scene_scripts
@@ -68,6 +69,33 @@ Script_ArriveFromSaffron:
 
 GoldenrodMagnetTrainStationGentlemanScript:
 	jumptextfaceplayer GoldenrodMagnetTrainStationGentlemanText
+	
+	
+GoldenrodMagnetTrainStationHiddenBrightPowderScript:
+	checkevent EVENT_HIDDEN_BRIGHT_POWDER
+	iftrue .GotBrightPowder
+	opentext
+	writetext StationBrightPowderText
+	promptbutton
+	giveitem BRIGHTPOWDER
+	iffalse .NoRoom
+	itemnotify
+	setevent EVENT_HIDDEN_BRIGHT_POWDER
+	disappear STATION_HIDDEN_BRIGHT_POWDER
+	closetext
+	end
+.GotBrightPowder:
+	end
+.NoRoom:
+	jumpstd PackFullMScript
+	end
+	
+;StationHiddenBrightpowder:
+;	hiddenitem BRIGHTPOWDER, EVENT_HIDDEN_BRIGHT_POWDER
+;	setevent EVENT_HIDDEN_BRIGHT_POWDER
+;	disappear STATION_HIDDEN_BRIGHT_POWDER
+;	end
+	
 
 GoldenrodMagnetTrainStationOfficerApproachTrainDoorMovement:
 	step UP
@@ -161,6 +189,11 @@ GoldenrodMagnetTrainStationGentlemanText:
 	line "JOHTO much closer"
 	cont "to KANTO."
 	done
+	
+StationBrightPowderText:
+	text "<PLAYER> found"
+	line "Brightpowder!"
+	done
 
 GoldenrodMagnetTrainStation_MapEvents:
 	db 0, 0 ; filler
@@ -175,7 +208,9 @@ GoldenrodMagnetTrainStation_MapEvents:
 	coord_event 11,  6, SCENE_DEFAULT, Script_ArriveFromSaffron
 
 	def_bg_events
+	;bg_event 3, 14, BGEVENT_ITEM, StationHiddenBrightpowder
 
 	def_object_events
 	object_event  9,  9, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationOfficerScript, -1
 	object_event 11, 14, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationGentlemanScript, EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
+	object_event  4, 14, SPRITE_ITEM_SPARKLE, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationHiddenBrightPowderScript, EVENT_HIDDEN_BRIGHT_POWDER

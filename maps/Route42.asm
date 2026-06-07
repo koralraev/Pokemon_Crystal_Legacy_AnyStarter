@@ -249,7 +249,7 @@ Route42FocusBandScript:
 	yesorno
 	iffalse .Refused
 	writetext TookBeltOfTreeText
-	waitbutton
+	promptbutton
 	verbosegiveitem FOCUS_BAND
 	iffalse .NoRoom
 	setevent EVENT_HIDDEN_FOCUS_BAND
@@ -259,7 +259,8 @@ Route42FocusBandScript:
 .GotFocusBand:
 	end
 .NoRoom:
-	closetext
+	jumpstd PackFullMScript
+;	closetext
 	end
 .Refused:
 	writetext LetItHangText
@@ -275,7 +276,7 @@ Route42BlackBeltScript:
 	yesorno
 	iffalse .Refused
 	writetext TookBeltOfTreeText
-	waitbutton
+	promptbutton
 	verbosegiveitem BLACKBELT_I
 	iffalse .NoRoom
 	setevent EVENT_HIDDEN_BLACK_BELT
@@ -285,7 +286,8 @@ Route42BlackBeltScript:
 .GotFocusBand:
 	end
 .NoRoom:
-	closetext
+	jumpstd PackFullMScript
+;	closetext
 	end
 .Refused:
 	writetext LetItHangText
