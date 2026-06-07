@@ -479,8 +479,18 @@ _EggMoveReminderIntro::
     done
 
 _MoveReminderIntro::
-    text "Hiya, I'm the"
-    line "MOVE REMINDER!"
+    text "Oh, hey there."
+    para "Yes, I'm the"
+    line "MOVE REMINDER."
+    
+    para "I come here to"
+    line "get normal POTIONS"
+    
+    para "They don't have"
+    line "normal POTIONS"
+    cont "in Blackthorn!"
+    
+    para "Anyway."
 
     para "I can make #MON"
     line "rememember moves"
