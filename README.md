@@ -144,9 +144,9 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	  <summary>Gen1 TM tutor moves:</summary>
 	  Mega Punch, Mega Kick, Body Slam, Double Edge, Bubblebeam, Icebeam, Pay Day, Submission, Counter, Seismic Toss, Rage, Mega Drain, Dragon Rage, Thunderbolt, Teleport, Mimic, Reflect, Bide, Metronome, Egg Bomb, Softboiled, Sky Attack, Explosion, Rock Slide, Tri Attack and Substitute
   </details>
-+ The Older Haircut Brother is replaced with their father. He increase happiness by 50 points, can do multiple haricuts and is there every day
++ The Older Haircut Brother is replaced with their father. He increase happiness by 50 points, can do multiple haircuts and is there every day
 + The NPCs on the main street in Goldenrod City has been asked to keep to the sides of the street
-+ Youngster Ian on route 34 is moved a bit to the left to act as a barrier to avoid going out in the grass when biking up and down Goldenrod City when breeding in the daycare.
++ Youngster Ian on route 34 is moved a bit to the left to act as a barrier to avoid going out in the grass when biking up and down Goldenrod City when breeding in the daycare
 + Some items has been made more readily available: Leftovers, Blackbelt, Focus Band, Lucky Punch, Light Ball, Metal Powder, Polkadot Bow, Brightpowder
   <details>
 	  <summary>Spoiler for items new locations:</summary>
@@ -157,10 +157,11 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	  - Lucky Punch: held by wild Chansey (5%)
 	  - Light Ball: held by wild Pichu and Pikachu (5%)
 	  - Metal Powder: held by wild Ditto (5%)
-	  - Polkadot Bow: held by wild Jigglypuff 
+	  - Polkadot Bow: held by wild Jigglypuff (5%)
 	  - Brightpowder: Inside Goldenrod Magnet Train Station at the sparkling flowerpots
   </details>
 + Added a tutor teaching MIMIC in Cianwood house
++ Pokemons STATS menu item is now above list of HM moves
 
 ### Planned 
 

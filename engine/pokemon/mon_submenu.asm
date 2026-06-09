@@ -121,6 +121,8 @@ GetMonSubmenuItems:
 	jr z, .egg
 	ld a, [wLinkMode]
 	and a
+	ld a, MONMENUITEM_STATS ; places STATS menu above field moves
+	call AddMonMenuItem
 	jr nz, .skip_moves
 	ld a, MON_MOVES
 	call GetPartyParamLocation
@@ -147,8 +149,8 @@ GetMonSubmenuItems:
 	jr nz, .loop
 
 .skip_moves
-	ld a, MONMENUITEM_STATS
-	call AddMonMenuItem
+;	ld a, MONMENUITEM_STATS
+;	call AddMonMenuItem
 	ld a, MONMENUITEM_SWITCH
 	call AddMonMenuItem
 	ld a, MONMENUITEM_MOVE
