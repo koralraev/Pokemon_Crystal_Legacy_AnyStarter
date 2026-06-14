@@ -470,7 +470,7 @@ ShadyTmGuyMoveTutorScript:
 	closewindow
 	ifequal 1, .Mimic
 	ifequal 2, .Reflect
-	ifequal 3, .Bide
+	ifequal 3, .HC
 	ifequal 4, .Metronome
 	ifequal 5, .EggBomb
 	ifequal 6, .Page5
@@ -558,8 +558,8 @@ ShadyTmGuyMoveTutorScript:
 	setval REFLECT
 	sjump .TeachMove2
 	
-.Bide:
-	setval BIDE
+.HC:
+	setval HONE_CLAWS
 	sjump .TeachMove2
 	
 .Metronome:
@@ -700,7 +700,7 @@ ShadyTmGuyMoveTutorScript:
 	db 6 ; items + cancel options
 	db "MIMIC@"
 	db "REFLECT@"
-	db "BIDE@"
+	db "HC@"
 	db "METRONOME@"
 	db "EGG BOMB@"
 	db "NEXT@"

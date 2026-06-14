@@ -116,7 +116,7 @@ MoveNames::
 	li "HAZE"
 	li "REFLECT"
 	li "FOCUS ENERGY"
-	li "BIDE"
+	li "HONE CLAWS" ; prev BIDE
 	li "METRONOME"
 	li "MIRROR MOVE"
 	li "SELFDESTRUCT"

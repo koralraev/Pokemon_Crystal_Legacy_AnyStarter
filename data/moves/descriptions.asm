@@ -117,7 +117,7 @@ MoveDescriptions::
 	dw HazeDescription
 	dw ReflectDescription
 	dw FocusEnergyDescription
-	dw BideDescription
+	dw HoneClawsDescription ; prev BIDE
 	dw MetronomeDescription
 	dw MirrorMoveDescription
 	dw SelfdestructDescription
@@ -731,9 +731,11 @@ FocusEnergyDescription:
 	db   "Raises the criti-"
 	next "cal hit ratio.@"
 
-BideDescription:
-	db   "Waits 2-3 turns &"
-	next "hits back double.@"
+HoneClawsDescription:
+;	db   "Waits 2-3 turns &"
+;	next "hits back double.@"
+	db   "Sharpens claws to"
+	next "raise ATK and ACC.@"
 
 MetronomeDescription:
 	db   "Randomly uses any"
@@ -1275,7 +1277,7 @@ BeatUpDescription:
 	
 IronDefenseDescription:
     	db   "Hardens body to"
-    	next "sharply up Defense@"
+    	next "sharply raise DEF@"
     	
 NastyPlotDescription:
 	db   "Sharply increases"

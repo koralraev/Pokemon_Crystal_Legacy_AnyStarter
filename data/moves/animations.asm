@@ -118,7 +118,7 @@ BattleAnimations::
 	dw BattleAnim_Haze
 	dw BattleAnim_Reflect
 	dw BattleAnim_FocusEnergy
-	dw BattleAnim_Bide
+	dw BattleAnim_HoneClaws ; BIDE
 	dw BattleAnim_Metronome
 	dw BattleAnim_MirrorMove
 	dw BattleAnim_Selfdestruct
@@ -1518,6 +1518,22 @@ BattleAnim_Scratch:
 	anim_wait 32
 	anim_ret
 
+BattleAnim_HoneClaws:
+	anim_1gfx ANIM_GFX_CUT
+	anim_sound 0, 1, SFX_SCRATCH
+	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 72, 88, $0  ; x , y 
+	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 68, 84, $0  ; higher x means more to the right
+	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 64, 80, $0  ; higher y means lower
+	anim_wait 8
+	anim_sound 0, 1, SFX_SCRATCH
+	anim_obj ANIM_OBJ_CUT_DOWN_RIGHT, 22, 88, $0
+	anim_obj ANIM_OBJ_CUT_DOWN_RIGHT, 26, 84, $0
+	anim_obj ANIM_OBJ_CUT_DOWN_RIGHT, 30, 80, $0
+	anim_sound 0, 1, SFX_SCRATCH
+	anim_wait 32
+	anim_ret
+
+	
 BattleAnim_FurySwipes:
 	anim_1gfx ANIM_GFX_CUT
 	anim_if_param_equal $1, .alternate

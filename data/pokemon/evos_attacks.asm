@@ -77,6 +77,7 @@ CharmanderEvosAttacks:
 	db 19, FLAME_WHEEL
 	db 24, FIRE_SPIN
 	db 27, SCARY_FACE
+	db 30, HONE_CLAWS
 	db 34, FLAMETHROWER
 	db 40, SLASH
 	db 44, BODY_SLAM
@@ -95,6 +96,7 @@ CharmeleonEvosAttacks:
 	db 19, FLAME_WHEEL
 	db 24, FIRE_SPIN
 	db 27, SCARY_FACE
+	db 30, HONE_CLAWS
 	db 34, FLAMETHROWER
 	db 40, SLASH
 	db 44, BODY_SLAM
@@ -112,6 +114,7 @@ CharizardEvosAttacks:
 	db 19, FLAME_WHEEL
 	db 24, FIRE_SPIN
 	db 27, SCARY_FACE
+	db 30, HONE_CLAWS
 	db 34, FLAMETHROWER
 	db 36, WING_ATTACK
 	db 40, SLASH
@@ -411,6 +414,7 @@ SandshrewEvosAttacks:
 	db 25, SLASH
 	db 27, IRON_DEFENSE
 	db 30, CUT
+	db 32, HONE_CLAWS
 	db 35, SANDSTORM
 	db 38, SWORDS_DANCE
 	db 40, EARTHQUAKE
@@ -429,6 +433,7 @@ SandslashEvosAttacks:
 	db 25, SLASH
 	db 27, IRON_DEFENSE
 	db 30, CUT
+	db 32, HONE_CLAWS
 	db 35, SANDSTORM
 	db 40, EARTHQUAKE
 	db 43, SWORDS_DANCE
@@ -691,6 +696,7 @@ ParasEvosAttacks:
 	db 16, MEGA_DRAIN
 	db 19, LEECH_LIFE
 	db 24, SPORE
+	db 30, HONE_CLAWS
 	db 31, SLASH
 	db 36, GROWTH
 	db 40, GIGA_DRAIN
@@ -705,6 +711,7 @@ ParasectEvosAttacks:
 	db 16, MEGA_DRAIN
 	db 19, LEECH_LIFE
 	db 24, SPORE
+	db 30, HONE_CLAWS
 	db 31, SLASH
 	db 36, GROWTH
 	db 40, GIGA_DRAIN
@@ -752,6 +759,7 @@ DiglettEvosAttacks:
 	db 9, MAGNITUDE
 	db 17, DIG
 	db 25, SAND_ATTACK
+	db 30, HONE_CLAWS
 	db 33, SLASH
 	db 41, EARTHQUAKE
 	db 49, FISSURE
@@ -765,6 +773,7 @@ DugtrioEvosAttacks:
 	db 1, MAGNITUDE
 	db 17, DIG
 	db 25, SAND_ATTACK
+	db 30, HONE_CLAWS
 	db 33, SLASH
 	db 41, EARTHQUAKE
 	db 49, FISSURE
@@ -778,6 +787,7 @@ MeowthEvosAttacks:
 	db 1, BITE
 	db 20, PAY_DAY
 	db 28, FAINT_ATTACK
+	db 30, HONE_CLAWS
 	db 33, SLASH
 	db 38, SCREECH
 	db 40, NASTY_PLOT
@@ -793,6 +803,7 @@ PersianEvosAttacks:
 	db 11, BITE
 	db 20, PAY_DAY
 	db 28, FAINT_ATTACK
+	db 30, HONE_CLAWS
 	db 33, SLASH
 	db 38, SCREECH
 	db 41, FURY_SWIPES
@@ -811,6 +822,7 @@ PsyduckEvosAttacks:
 	db 15, CONFUSION
 	db 17, BUBBLEBEAM
 	db 23, SCREECH
+	db 30, HONE_CLAWS
 	db 31, PSYCH_UP
 	db 37, FURY_SWIPES
 	db 42, PSYCHIC_M
@@ -827,6 +839,7 @@ GolduckEvosAttacks:
 	db 15, CONFUSION
 	db 17, BUBBLEBEAM
 	db 23, SCREECH
+	db 30, HONE_CLAWS
 	db 31, PSYCH_UP
 	db 37, FURY_SWIPES
 	db 42, PSYCHIC_M
@@ -1485,6 +1498,7 @@ KrabbyEvosAttacks:
 	db 23, STOMP
 	db 27, GUILLOTINE
 	db 29, METAL_CLAW
+	db 30, HONE_CLAWS
 	db 37, PROTECT
 	db 45, IRON_DEFENSE
 	db 51, CRABHAMMER
@@ -1499,6 +1513,7 @@ KinglerEvosAttacks:
 	db 23, STOMP
 	db 27, CRABHAMMER
 	db 28, METAL_CLAW
+	db 30, HONE_CLAWS
 	db 37, PROTECT
 	db 44, GUILLOTINE
 	db 45, IRON_DEFENSE
@@ -2137,6 +2152,7 @@ KabutoEvosAttacks:
 	db 28, SAND_ATTACK
 	db 30, ANCIENTPOWER
 	db 33, IRON_DEFENSE
+	db 34, HONE_CLAWS
 	db 35, MEGA_DRAIN
 	db 37, ENDURE
 	db 43, SWORDS_DANCE
@@ -2155,6 +2171,7 @@ KabutopsEvosAttacks:
 	db 28, SAND_ATTACK
 	db 30, ANCIENTPOWER
 	db 33, IRON_DEFENSE
+	db 34, HONE_CLAWS
 	db 35, MEGA_DRAIN
 	db 37, ENDURE
 	db 40, SLASH
@@ -2171,6 +2188,7 @@ AerodactylEvosAttacks:
 	db 29, ANCIENTPOWER
 	db 32, WING_ATTACK
 	db 36, SCARY_FACE
+	db 38, HONE_CLAWS
 	db 40, ROCK_SLIDE
 	db 43, TAKE_DOWN
 	db 50, HYPER_BEAM
@@ -2273,6 +2291,7 @@ DragoniteEvosAttacks:
 	db 1, LEER
 	db 1, WRAP
 	db 1, THUNDER_WAVE
+	db 1, HONE_CLAWS
 	db 15, TWISTER
 	db 22, DRAGON_RAGE
 	db 29, SLAM
@@ -2280,6 +2299,7 @@ DragoniteEvosAttacks:
 	db 47, SAFEGUARD
 	db 55, WING_ATTACK
 	db 56, OUTRAGE
+	db 57, HONE_CLAWS
 	db 70, HYPER_BEAM
 	db 0 ; no more level-up moves
 
@@ -2418,6 +2438,7 @@ TotodileEvosAttacks:
 	db 12, RAGE
 	db 21, BITE
 	db 28, SCARY_FACE
+	db 31, HONE_CLAWS
 	db 37, SLASH
 	db 45, SCREECH
 	db 50, HYDRO_PUMP
@@ -2433,6 +2454,7 @@ CroconawEvosAttacks:
 	db 1, RAGE
 	db 21, BITE
 	db 28, SCARY_FACE
+	db 31, HONE_CLAWS
 	db 37, SLASH
 	db 45, SCREECH
 	db 50, HYDRO_PUMP
@@ -2447,6 +2469,7 @@ FeraligatrEvosAttacks:
 	db 12, RAGE
 	db 21, BITE
 	db 28, SCARY_FACE
+	db 31, HONE_CLAWS
 	db 37, SLASH
 	db 45, SCREECH
 	db 50, HYDRO_PUMP
@@ -2463,6 +2486,7 @@ SentretEvosAttacks:
 	db 12, FURY_SWIPES
 	db 16, HEADBUTT
 	db 20, DIG
+	db 22, HONE_CLAWS
 	db 25, PURSUIT
 	db 30, EXTREMESPEED
 	db 35, REST
@@ -2479,6 +2503,7 @@ FurretEvosAttacks:
 	db 12, FURY_SWIPES
 	db 16, HEADBUTT
 	db 20, DIG
+	db 22, HONE_CLAWS
 	db 25, PURSUIT
 	db 30, EXTREMESPEED
 	db 35, REST
@@ -2567,6 +2592,7 @@ SpinarakEvosAttacks:
 	db 17, NIGHT_SHADE
 	db 21, TWINEEDLE
 	db 25, FURY_SWIPES
+	db 29, HONE_CLAWS
 	db 33, SPIDER_WEB
 	db 38, GIGA_DRAIN
 	db 43, PSYCHIC_M
@@ -2584,6 +2610,7 @@ AriadosEvosAttacks:
 	db 17, NIGHT_SHADE
 	db 21, TWINEEDLE
 	db 25, FURY_SWIPES
+	db 29, HONE_CLAWS
 	db 33, SPIDER_WEB
 	db 38, GIGA_DRAIN
 	db 43, PSYCHIC_M
@@ -2902,6 +2929,7 @@ AipomEvosAttacks:
 	db 6, SAND_ATTACK
 	db 12, BATON_PASS
 	db 19, LOW_KICK
+	db 22, HONE_CLAWS
 	db 27, SWIFT
 	db 36, SCREECH
 	db 39, NASTY_PLOT
@@ -3101,7 +3129,7 @@ PinecoEvosAttacks:
 	db 19, TAKE_DOWN
 	db 22, RAPID_SPIN
 	db 25, SELFDESTRUCT
-	db 29, BIDE
+;	db 29, BIDE
 	db 34, IRON_DEFENSE
 	db 39, EXPLOSION
 	db 44, SPIKES
@@ -3118,7 +3146,7 @@ ForretressEvosAttacks:
 	db 19, TAKE_DOWN
 	db 22, RAPID_SPIN
 	db 25, SELFDESTRUCT
-	db 29, BIDE
+;	db 29, BIDE
 	db 33, SPIKE_CANNON
 	db 35, IRON_DEFENSE
 	db 39, EXPLOSION
@@ -3148,6 +3176,7 @@ GligarEvosAttacks:
 	db 20, QUICK_ATTACK
 	db 24, WING_ATTACK
 	db 28, FAINT_ATTACK
+	db 32, HONE_CLAWS
 	db 36, SLASH
 	db 38, EARTHQUAKE
 	db 44, SCREECH
@@ -3248,7 +3277,7 @@ ShuckleEvosAttacks:
 	db 23, SAFEGUARD
 	db 27, SANDSTORM
 	db 31, ACID_ARMOR
-	db 34, BIDE
+;	db 34, BIDE
 	db 37, REST
 	db 40, PROTECT
 	db 0 ; no more level-up moves
@@ -3278,6 +3307,7 @@ SneaselEvosAttacks:
 	db 17, SCREECH
 	db 20, ICY_WIND
 	db 25, FAINT_ATTACK
+	db 28, HONE_CLAWS
 	db 33, ICE_PUNCH
 	db 38, METAL_CLAW
 	db 41, AGILITY
@@ -3295,6 +3325,7 @@ TeddiursaEvosAttacks:
 	db 15, FURY_SWIPES
 	db 22, FAINT_ATTACK
 	db 29, REST
+	db 31, HONE_CLAWS
 	db 34, SNORE
 	db 39, SLASH
 	db 45, SUBMISSION
@@ -3309,6 +3340,7 @@ UrsaringEvosAttacks:
 	db 1, FURY_SWIPES
 	db 22, FAINT_ATTACK
 	db 29, REST
+	db 31, HONE_CLAWS
 	db 34, SNORE
 	db 39, SLASH
 	db 45, SUBMISSION
@@ -3649,7 +3681,7 @@ MiltankEvosAttacks:
 	db 8, DEFENSE_CURL
 	db 13, STOMP
 	db 19, MILK_DRINK
-	db 26, BIDE
+;	db 26, BIDE
 	db 34, ROLLOUT
 	db 43, BODY_SLAM
 	db 53, HEAL_BELL
@@ -3756,6 +3788,7 @@ TyranitarEvosAttacks:
 	db 40, ROCK_SLIDE
 	db 50, CRUNCH
 	db 55, EARTHQUAKE
+	db 60, HONE_CLAWS
 	db 65, HYPER_BEAM
 	db 0 ; no more level-up moves
 

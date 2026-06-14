@@ -340,7 +340,7 @@ MT01 EQU const_value
 	add_mt MIMIC		;tm31
 	; double team is already a tm32
 	add_mt REFLECT		;tm33
-	add_mt BIDE		;tm34
+;	add_mt BIDE		;tm34
 	add_mt METRONOME	;tm35
 ;	add_mt SELFDESTRUCT	;tm36 NOT ADDED TO TUTOR
 	add_mt EGG_BOMB		;tm37

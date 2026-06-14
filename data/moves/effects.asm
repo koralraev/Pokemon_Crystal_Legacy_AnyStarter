@@ -790,21 +790,20 @@ ResetStats:
 	resetstats
 	endmove
 
-Bide:
-	storeenergy
+HoneClaws: ;Bide
 	checkobedience
-	doturn
 	usedmovetext
-	unleashenergy
-	resettypematchup
-	checkhit
-	moveanim
-	bidefailtext
-	applydamage
-	checkfaint
-	buildopponentrage
-	kingsrock
+	doturn
+	statupanim
+	attackup
+	statupmessage
+	accuracyup
+	lowersub
+	raisesub
+	statupmessage
+	statupfailtext
 	endmove
+	
 
 Rampage:
 	checkrampage

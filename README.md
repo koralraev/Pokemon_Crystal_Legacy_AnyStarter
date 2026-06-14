@@ -136,6 +136,12 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	<summary>Thunder Wave added to TM learnsets of:</summary> 
 	Rattata, Raticate, Pikachu, Raichu, Clefairy, Clefable, Jigglypuff, Wigglytuff, Abra, Kadabra, Alakazam, Slowpoke, Slowbro, Magnemite, Magneton, Drowzee, Hypno, Voltorb, Electrode, Chansey, Staryu, Starmie, Mr. Mime, Electabuzz, Gyarados, Jolteon, Porygon, Zapdos, Dratini, Dragonair, Dragonite, Mewtwo, Mew, Chinchou, Lanturn, Pichu, Cleffa, Igglybuff, Togepi, Togetic, Natu, Xatu, Mareep, Flaaffy, Ampharos, Aipom, Murkrow, Slowking, Misdreavus, Girafarig, Dunsparce, Snubbull, Granbull, Qwilfish, Remoraid, Octillery, Porygon2, Stantler, Elekid, Miltank, Blissey, Raikou, Tyranitar, Lugia, Ho-oh and Celebi.
   </details>
++ Hone Claws replaces Bide. Bide removed from all pokemons learnset as it no longer exists
+  <details>
+	<summary>Hone Claws added to level up learnsets of:</summary> 
+	Charmander line, Sandshrew / Sandslash, Paras / Parasect, Diglett / Dugtrio, Meowth / Persian, Psyduck / Golduck, Krabby / Kingler, Kabuto / Kabutops, Aerodactyl, Dragonite,
+Totodile line, Sentret / Furret, Spinarak / Ariados, Aipom, Gligar, Sneasel, Teddiursa / Usaring and Tyranitar.
+  </details>
 + There is now a total of ~30% chance for a wild pokemon that has held items to have an item: rare items increased from ~2% to ~5%, and from ~23% to ~25% for the common item. 
 + All gen2 TMs can be purchased at marts before the E4. TMs are generally available at the first city after where they can otherwise be found or obtained; e.g., TM49 Fury Cutter is obtained after beating Bugsy in Azalea, it can then be purchased in Goldenrod
 	+ Gen2 TMs that where only available in Kanto can now be purchased at the Indigo Plateau. 
@@ -161,7 +167,7 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	  - Brightpowder: Inside Goldenrod Magnet Train Station at the sparkling flowerpots
   </details>
 + Added a tutor teaching MIMIC in Cianwood house
-+ Pokemons STATS menu item is now above list of HM moves
++ Pokemons STATS menu item is now above list of usable HM moves
 
 ### Planned 
 
