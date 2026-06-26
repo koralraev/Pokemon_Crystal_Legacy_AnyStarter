@@ -1894,6 +1894,7 @@ ScytherEvosAttacks:
     db 18, FALSE_SWIPE
     db 24, AGILITY
     db 30, WING_ATTACK
+    db 34, HONE_CLAWS
     db 36, SLASH
     db 42, TWINEEDLE
     db 48, DOUBLE_TEAM
@@ -3250,6 +3251,7 @@ QwilfishEvosAttacks:
 
 ScizorEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, HONE_CLAWS
 	db 1, QUICK_ATTACK
 	db 1, LEER
 	db 6, FOCUS_ENERGY
@@ -3259,6 +3261,7 @@ ScizorEvosAttacks:
 	db 24, DOUBLE_TEAM
 	db 30, METAL_CLAW
 	db 33, IRON_DEFENSE
+	db 34, HONE_CLAWS
 	db 36, SLASH
 	db 42, TWINEEDLE
 	db 48, SWORDS_DANCE
@@ -3283,20 +3286,20 @@ ShuckleEvosAttacks:
 	db 0 ; no more level-up moves
 
 HeracrossEvosAttacks:
-    db 0 ; no more evolutions
-    db 1, TACKLE
-    db 1, LEER
-    db 5, PIN_MISSILE
-    db 9, HORN_ATTACK
-    db 12, ENDURE
-    db 18, FURY_ATTACK
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, LEER
+	db 5, PIN_MISSILE
+	db 9, HORN_ATTACK
+	db 12, ENDURE
+	db 18, FURY_ATTACK
 	db 25, COUNTER
 	db 34, IRON_DEFENSE
-    db 35, TAKE_DOWN
-    db 44, REVERSAL
-    db 45, MEGAHORN
-    db 50, CROSS_CHOP
-    db 0 ; no more level-up moves
+	db 35, TAKE_DOWN
+	db 44, REVERSAL
+	db 45, MEGAHORN
+	db 50, CROSS_CHOP
+	db 0 ; no more level-up moves
 
 SneaselEvosAttacks:
 	db 0 ; no more evolutions

@@ -400,7 +400,7 @@ wAttackMissed::
 wPlayerSubStatus1:: db
 wPlayerSubStatus2:: db
 wPlayerSubStatus3:: db
-wPlayerSubStatus4:: db
+wPlayerSubStatus4:: db ; tracks mist
 wPlayerSubStatus5:: db
 
 wEnemySubStatus1:: db
@@ -466,7 +466,8 @@ wPlayerSAtkLevel:: db
 wPlayerSDefLevel:: db
 wPlayerAccLevel::  db
 wPlayerEvaLevel::  db
-	ds 1
+;	ds 1
+wBattleMenuStartEnabled:: db  ;for inbattle stat change menu
 
 wEnemyStatLevels::
 wEnemyAtkLevel::  db
@@ -476,7 +477,8 @@ wEnemySAtkLevel:: db
 wEnemySDefLevel:: db
 wEnemyAccLevel::  db
 wEnemyEvaLevel::  db
-	ds 1
+;	ds 1
+wBattleMenuStartPressed:: db  ;for inbattle stat change menu
 
 wEnemyTurnsTaken::  db
 wPlayerTurnsTaken:: db

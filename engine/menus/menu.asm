@@ -65,6 +65,14 @@ Draw2DMenu:
 Get2DMenuSelection:
 	call Init2DMenuCursorPosition
 	call StaticMenuJoypad
+	
+	ld a, [wBattleMenuStartPressed]
+	and a
+	jr z, .no_start_exit
+	scf
+	ret
+.no_start_exit
+	
 	call MenuClickSound
 Mobile_GetMenuSelection:
 	ld a, [wMenuDataFlags]
@@ -376,7 +384,7 @@ _2DMenuInterpretJoypad:
 	bit SELECT_F, a
 	jp nz, .a_b_start_select
 	bit START_F, a
-	jp nz, .a_b_start_select
+	jp nz, .start_button
 	bit D_RIGHT_F, a
 	jr nz, .d_right
 	bit D_LEFT_F, a
@@ -486,6 +494,17 @@ _2DMenuInterpretJoypad:
 .wrap_around_right
 	ld [hl], $1
 	xor a
+	ret
+	
+.start_button
+	ld a, [wBattleMenuStartEnabled]
+	and a
+	jr z, .a_b_start_select
+	xor a
+	ld [wBattleMenuStartEnabled], a
+	ld a, 1
+	ld [wBattleMenuStartPressed], a
+	scf
 	ret
 
 .a_b_start_select

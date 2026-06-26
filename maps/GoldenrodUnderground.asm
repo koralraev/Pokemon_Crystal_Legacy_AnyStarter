@@ -470,9 +470,9 @@ ShadyTmGuyMoveTutorScript:
 	closewindow
 	ifequal 1, .Mimic
 	ifequal 2, .Reflect
-	ifequal 3, .HC
-	ifequal 4, .Metronome
-	ifequal 5, .EggBomb
+	ifequal 3, .Metronome
+	ifequal 4, .EggBomb
+	ifequal 5, .Softboiled
 	ifequal 6, .Page5
 	sjump .Refused
 	
@@ -480,12 +480,11 @@ ShadyTmGuyMoveTutorScript:
 	loadmenu .MoveMenuHeaderPage5
 	verticalmenu
 	closewindow
-	ifequal 1, .Softboiled
-	ifequal 2, .SkyAttack
-	ifequal 3, .Explosion
-	ifequal 4, .RockSlide
-	ifequal 5, .TriAttack
-	ifequal 6, .Substitute
+	ifequal 1, .SkyAttack
+	ifequal 2, .Explosion
+	ifequal 3, .RockSlide
+	ifequal 4, .TriAttack
+	ifequal 5, .Substitute
 	sjump .Refused
 	
 
@@ -558,10 +557,8 @@ ShadyTmGuyMoveTutorScript:
 	setval REFLECT
 	sjump .TeachMove2
 	
-.HC:
-	setval HONE_CLAWS
-	sjump .TeachMove2
-	
+; BIDE removed from game
+
 .Metronome:
 	setval METRONOME
 	sjump .TeachMove2
@@ -700,9 +697,9 @@ ShadyTmGuyMoveTutorScript:
 	db 6 ; items + cancel options
 	db "MIMIC@"
 	db "REFLECT@"
-	db "HC@"
 	db "METRONOME@"
 	db "EGG BOMB@"
+	db "SOFTBOILED@"
 	db "NEXT@"
 	
 .MoveMenuHeaderPage5:
@@ -713,8 +710,7 @@ ShadyTmGuyMoveTutorScript:
 	
 .MenuDataPage5:
 	db STATICMENU_CURSOR ; flags
-	db 6 ; items + cancel options
-	db "SOFTBOILED@"
+	db 5 ; items + cancel options
 	db "SKY ATTACK@"
 	db "EXPLOSION@"
 	db "ROCK SLIDE@"

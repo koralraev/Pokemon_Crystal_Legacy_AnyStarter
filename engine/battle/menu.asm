@@ -1,12 +1,35 @@
 LoadBattleMenu:
+	xor a
+	ld [wBattleMenuStartPressed], a
+
+.loop
+	call ClearBattleMenuStrip
 	ld hl, BattleMenuHeader
 	call LoadMenuHeader
 	ld a, [wBattleMenuCursorPosition]
 	ld [wMenuCursorPosition], a
+
+	ld a, 1
+	ld [wBattleMenuStartEnabled], a
+
 	call InterpretBattleMenu
+
 	ld a, [wMenuCursorPosition]
 	ld [wBattleMenuCursorPosition], a
 	call ExitMenu
+
+	ld a, [wBattleMenuStartPressed]
+	and a
+	jr z, .done
+
+	xor a
+	ld [wBattleMenuStartPressed], a
+	call ShowBattleStatStages
+	jr .loop
+
+.done
+	xor a
+	ld [wBattleMenuStartEnabled], a
 	ret
 
 SafariBattleMenu: ; unreferenced
@@ -98,3 +121,165 @@ ContestBattleMenuHeader:
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
 	call PrintNum
 	ret
+	
+; blanks the entire battle menu text
+ClearBattleMenuStrip:
+;	hlcoord 0, 12	; top row of battle menu
+;	ld c, 20
+;	call .ClearRow
+	hlcoord 1, 13
+	ld c, 19
+	call .ClearRow
+	hlcoord 1, 14
+	ld c, 19
+	call .ClearRow
+	hlcoord 1, 15
+	ld c, 19
+	call .ClearRow
+	hlcoord 1, 16
+	ld c, 19
+	call .ClearRow
+;	hlcoord 0, 17	;bottom row of battle menu
+;	ld c, 20
+;	call .ClearRow
+	ret
+
+.ClearRow:
+	ld a, " "
+	ld [hli], a
+	dec c
+	jr nz, .ClearRow
+	ret
+	
+; =======================================================================
+; ShowBattleStatStages
+; Draws a box over the same bottom strip the battle menu uses, showing
+; the player's current stat stage modifiers (-6 to +6). Waits for any
+; button press, then returns.
+; =======================================================================
+ShowBattleStatStages:
+	push af
+	push bc
+	push de
+	push hl
+	
+	call ClearBattleMenuStrip
+	hlcoord 0, 12
+	lb bc, 4, 18
+	call MenuBox
+
+	; Left column
+	hlcoord 2, 13
+	ld de, .LabelATK
+	call PlaceString
+	hlcoord 6, 13
+	ld a, [wPlayerAtkLevel]
+	call .PrintStage
+
+	hlcoord 2, 14
+	ld de, .LabelSPA
+	call PlaceString
+	hlcoord 6, 14
+	ld a, [wPlayerSAtkLevel]
+	call .PrintStage
+
+	hlcoord 2, 15
+	ld de, .LabelSPE
+	call PlaceString
+	hlcoord 6, 15
+	ld a, [wPlayerSpdLevel]
+	call .PrintStage
+
+	hlcoord 2, 16
+	ld de, .LabelEVA
+	call PlaceString
+	hlcoord 6, 16
+	ld a, [wPlayerEvaLevel]
+	call .PrintStage
+
+	; Right column
+	hlcoord 11, 13
+	ld de, .LabelDEF
+	call PlaceString
+	hlcoord 15, 13
+	ld a, [wPlayerDefLevel]
+	call .PrintStage
+
+	hlcoord 11, 14
+	ld de, .LabelSPD
+	call PlaceString
+	hlcoord 15, 14
+	ld a, [wPlayerSDefLevel]
+	call .PrintStage
+
+	hlcoord 11, 15
+	ld de, .LabelACC
+	call PlaceString
+	hlcoord 15, 15
+	ld a, [wPlayerAccLevel]
+	call .PrintStage
+	
+	call UpdateSprites
+	call ApplyTilemap
+
+.wait:
+	call JoyTextDelay
+	call GetMenuJoypad
+	and a
+	jr z, .wait
+
+	pop hl
+	pop de
+	pop bc
+	pop af
+	ret
+
+; Input : A = raw stage level (0-12, 6 = neutral)
+;         HL = destination tile address
+; Output: writes sign tile then digit tile
+.PrintStage:
+	sub 7
+	jr z, .stage_zero
+	jr c, .stage_negative
+
+.stage_positive:
+	push af
+	ld a, "+"
+	ld [hli], a
+	pop af
+	add a, "0"
+	ld [hl], a
+	ret
+
+.stage_zero:
+	ld a, " "
+	ld [hli], a
+	ld a, "0"
+	ld [hl], a
+	ret
+
+.stage_negative:
+	push af
+	ld a, "-"
+	ld [hli], a
+	pop af
+	cpl
+	inc a
+	add a, "0"
+	ld [hl], a
+	ret
+
+.LabelATK:
+	db "ATK@"
+.LabelDEF:
+	db "DEF@"
+.LabelSPA:
+	db "SPA@"
+.LabelSPD:
+	db "SPD@"
+.LabelSPE:
+	db "SPE@"
+.LabelACC:
+	db "ACC@"
+.LabelEVA:
+	db "EVA@"

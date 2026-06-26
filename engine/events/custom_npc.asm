@@ -58,6 +58,12 @@ CustomNPC_SelectLevelUI::
 	ldh a, [hJoyPressed]
 	and D_DOWN
 	jr nz, .down
+	ldh a, [hJoyPressed]
+	and D_RIGHT
+	jr nz, .up10
+	ldh a, [hJoyPressed]
+	and D_LEFT
+	jr nz, .down10
 	jr .loop
 
 .up
@@ -67,12 +73,34 @@ CustomNPC_SelectLevelUI::
 	inc a
 	ld [wScriptVar], a
 	jr .loop
+	
+.up10
+	ld a, [wScriptVar]
+	add a, 10
+	cp 101
+	jr c, .up10store
+	ld a, 100
+.up10store
+	ld [wScriptVar], a
+	jr .loop
 
 .down
 	ld a, [wScriptVar]
 	cp 1
 	jr z, .loop
 	dec a
+	ld [wScriptVar], a
+	jr .loop
+
+.down10
+	ld a, [wScriptVar]
+	cp 11
+	jr nc, .down10sub
+	ld a, 1
+	jr .down10store
+.down10sub
+	sub 10
+.down10store
 	ld [wScriptVar], a
 	jr .loop
 

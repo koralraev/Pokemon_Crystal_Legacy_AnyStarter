@@ -117,7 +117,7 @@ BattleAnimations::
 	dw BattleAnim_LightScreen
 	dw BattleAnim_Haze
 	dw BattleAnim_Reflect
-	dw BattleAnim_FocusEnergy
+	dw BattleAnim_FocusEnergy ;-------
 	dw BattleAnim_HoneClaws ; BIDE
 	dw BattleAnim_Metronome
 	dw BattleAnim_MirrorMove
@@ -135,7 +135,7 @@ BattleAnimations::
 	dw BattleAnim_SpikeCannon
 	dw BattleAnim_Constrict
 	dw BattleAnim_Amnesia
-	dw BattleAnim_Kinesis
+	dw BattleAnim_Kinesis ;--------
 	dw BattleAnim_Softboiled
 	dw BattleAnim_HiJumpKick
 	dw BattleAnim_Glare
@@ -198,7 +198,7 @@ BattleAnimations::
 	dw BattleAnim_DestinyBond
 	dw BattleAnim_PerishSong
 	dw BattleAnim_IcyWind
-	dw BattleAnim_Detect
+	dw BattleAnim_Detect ;--------
 	dw BattleAnim_BoneRush
 	dw BattleAnim_LockOn
 	dw BattleAnim_Outrage
@@ -230,7 +230,7 @@ BattleAnimations::
 	dw BattleAnim_BatonPass
 	dw BattleAnim_Encore
 	dw BattleAnim_Pursuit
-	dw BattleAnim_RapidSpin
+	dw BattleAnim_RapidSpin ;-------
 	dw BattleAnim_SweetScent
 	dw BattleAnim_IronTail
 	dw BattleAnim_MetalClaw
@@ -1519,20 +1519,23 @@ BattleAnim_Scratch:
 	anim_ret
 
 BattleAnim_HoneClaws:
-	anim_1gfx ANIM_GFX_CUT
+	anim_1gfx ANIM_GFX_WIND
+	anim_obp0 $e4
 	anim_sound 0, 1, SFX_SCRATCH
-	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 72, 88, $0  ; x , y 
-	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 68, 84, $0  ; higher x means more to the right
-	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 64, 80, $0  ; higher y means lower
+	anim_obj ANIM_OBJ_RAPID_SPIN, 44, 112, $0
+	anim_wait 20
+	anim_1gfx ANIM_GFX_SHINE
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
+	anim_sound 0, 0, SFX_FORESIGHT
+	anim_obj ANIM_OBJ_FORESIGHT, 76, 92, $0  ; x , y 
 	anim_wait 8
-	anim_sound 0, 1, SFX_SCRATCH
-	anim_obj ANIM_OBJ_CUT_DOWN_RIGHT, 22, 88, $0
-	anim_obj ANIM_OBJ_CUT_DOWN_RIGHT, 26, 84, $0
-	anim_obj ANIM_OBJ_CUT_DOWN_RIGHT, 30, 80, $0
-	anim_sound 0, 1, SFX_SCRATCH
-	anim_wait 32
+	anim_sound 0, 0, SFX_FORESIGHT
+	anim_obj ANIM_OBJ_FORESIGHT, 68, 84, $0  ; higher x means more to the right
+	anim_wait 8
+	anim_sound 0, 0, SFX_FORESIGHT
+	anim_obj ANIM_OBJ_FORESIGHT, 60, 76, $0  ; higher y means lower
+	anim_wait 16
 	anim_ret
-
 	
 BattleAnim_FurySwipes:
 	anim_1gfx ANIM_GFX_CUT
@@ -1553,6 +1556,8 @@ BattleAnim_FurySwipes:
 	anim_sound 0, 1, SFX_SCRATCH
 	anim_wait 32
 	anim_ret
+	
+
 
 BattleAnim_Cut:
 	anim_1gfx ANIM_GFX_CUT

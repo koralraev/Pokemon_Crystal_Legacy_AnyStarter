@@ -39,6 +39,14 @@ CherrygroveMartCooltrainerMScript:
 
 CherrygroveMartYoungsterScript:
 	jumptextfaceplayer CherrygroveMartYoungsterText
+	
+MoveRelearner:
+	faceplayer
+	opentext
+	special MoveReminder
+	waitbutton
+	closetext
+	end
 
 CherrygroveMartCooltrainerMText:
 	text "They're fresh out"
@@ -69,13 +77,7 @@ CherrygroveMartYoungsterText:
 	line "ANTIDOTE with you."
 	done
 	
-MoveRelearner:
-	faceplayer
-	opentext
-	special MoveReminder
-	waitbutton
-	closetext
-	end
+
 
 CherrygroveMart_MapEvents:
 	db 0, 0 ; filler
