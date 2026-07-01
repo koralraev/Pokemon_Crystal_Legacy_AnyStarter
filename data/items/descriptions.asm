@@ -135,9 +135,9 @@ ItemDescriptions:
 	dw StarPieceDesc
 	dw BasementKeyDesc
 	dw PassDesc
-	dw TeruSama9Desc
-	dw TeruSama10Desc
-	dw TeruSama11Desc
+	dw HeatRockDesc
+	dw DampRockDesc
+	dw SmoothRockDesc
 	dw CharcoalDesc
 	dw BerryJuiceDesc
 	dw ScopeLensDesc
@@ -781,14 +781,17 @@ PassDesc:
 	db   "A ticket for the"
 	next "MAGNET TRAIN.@"
 
-TeruSama9Desc:
-	db   "?@"
+HeatRockDesc:
+	db   "Extends SUNNY"
+	next "DAY duration.@"
 
-TeruSama10Desc:
-	db   "?@"
+DampRockDesc:
+	db   "Extends RAIN"
+	next "DANCE duration.@"
 
-TeruSama11Desc:
-	db   "?@"
+SmoothRockDesc:
+	db   "Extends SAND-"
+	next "STORM duration.@"
 
 CharcoalDesc:
 	db   "Powers up fire-"
