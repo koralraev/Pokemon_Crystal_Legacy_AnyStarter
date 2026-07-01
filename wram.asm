@@ -539,7 +539,7 @@ wEnemyScreens::
 ; see wPlayerScreens
 	db
 
-wPlayerSafeguardCount:: db
+wPlayerSafeguardCount:: db  ; trach these with stat menu
 wPlayerLightScreenCount:: db
 wPlayerReflectCount:: db
 	ds 1
@@ -551,7 +551,7 @@ wEnemyReflectCount:: db
 
 	ds 1
 
-wBattleWeather::
+wBattleWeather:: ; track with stat menu
 ; 00 normal
 ; 01 rain
 ; 02 sun

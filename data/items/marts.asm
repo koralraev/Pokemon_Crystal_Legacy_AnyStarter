@@ -72,7 +72,7 @@ MartViolet:
 	db -1 ; end
 
 MartAzalea:
-	db 11 ; # items
+	db 12 ; # items
 	db POKE_BALL
 	db POTION
 	db SUPER_POTION
@@ -84,6 +84,7 @@ MartAzalea:
 	db CHARCOAL
 	db TM_SWEET_SCENT
 	db TM_MUD_SLAP
+	db TM_SWIFT
 	db -1 ; end
 
 MartCianwood:
@@ -252,13 +253,12 @@ MartMahogany1:
 	db -1 ; end
 
 MartMahogany2:
-	db 12 ; # items
+	db 11 ; # items
 	db RAGECANDYBAR
 	db METAL_COAT
 	db UP_GRADE
 	db BRICK_PIECE
 	db TM_DIG
-	db TM_SWIFT
 	db TM_NIGHTMARE
 	db TM_DETECT
 	db TM_ROAR

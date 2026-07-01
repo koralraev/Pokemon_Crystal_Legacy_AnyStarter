@@ -168,56 +168,92 @@ ShowBattleStatStages:
 	lb bc, 4, 18
 	call MenuBox
 
-	; Left column
+	; Left column: attack, sp.attack, speed, evasion
 	hlcoord 2, 13
 	ld de, .LabelATK
 	call PlaceString
-	hlcoord 6, 13
+	hlcoord 5, 13
 	ld a, [wPlayerAtkLevel]
 	call .PrintStage
 
 	hlcoord 2, 14
 	ld de, .LabelSPA
 	call PlaceString
-	hlcoord 6, 14
+	hlcoord 5, 14
 	ld a, [wPlayerSAtkLevel]
 	call .PrintStage
 
 	hlcoord 2, 15
 	ld de, .LabelSPE
 	call PlaceString
-	hlcoord 6, 15
+	hlcoord 5, 15
 	ld a, [wPlayerSpdLevel]
 	call .PrintStage
 
 	hlcoord 2, 16
 	ld de, .LabelEVA
 	call PlaceString
-	hlcoord 6, 16
+	hlcoord 5, 16
 	ld a, [wPlayerEvaLevel]
 	call .PrintStage
 
-	; Right column
-	hlcoord 11, 13
+	; center column: def, sp.def, acc, mist
+	hlcoord 9, 13 ; 11
 	ld de, .LabelDEF
 	call PlaceString
-	hlcoord 15, 13
+	hlcoord 12, 13 ; 15
 	ld a, [wPlayerDefLevel]
 	call .PrintStage
 
-	hlcoord 11, 14
+	hlcoord 9, 14
 	ld de, .LabelSPD
 	call PlaceString
-	hlcoord 15, 14
+	hlcoord 12, 14
 	ld a, [wPlayerSDefLevel]
 	call .PrintStage
 
-	hlcoord 11, 15
+	hlcoord 9, 15
 	ld de, .LabelACC
 	call PlaceString
-	hlcoord 15, 15
+	hlcoord 12, 15
 	ld a, [wPlayerAccLevel]
 	call .PrintStage
+	
+	hlcoord 9, 16
+	ld de, .LabelMST
+	call PlaceString
+	hlcoord 13, 16
+	ld a, [wPlayerSubStatus4] ; mist
+	call .PrintMist
+	
+	; right column: remaining: weather, safeguard, light screen, reflect
+	hlcoord 15, 13
+	ld de, .LabelWEA
+	call PlaceString
+	hlcoord 18, 13
+	ld a, [wWeatherCount]
+	call .PrintCount
+	
+	hlcoord 15, 14
+	ld de, .LabelSG
+	call PlaceString
+	hlcoord 18, 14
+	ld a, [wPlayerSafeguardCount]
+	call .PrintCount
+	
+	hlcoord 15, 15
+	ld de, .LabelLS
+	call PlaceString
+	hlcoord 18, 15
+	ld a, [wPlayerLightScreenCount]
+	call .PrintCount
+	
+	hlcoord 15, 16
+	ld de, .LabelREF
+	call PlaceString
+	hlcoord 18, 16
+	ld a, [wPlayerReflectCount]
+	call .PrintCount
 	
 	call UpdateSprites
 	call ApplyTilemap
@@ -268,6 +304,35 @@ ShowBattleStatStages:
 	add a, "0"
 	ld [hl], a
 	ret
+	
+; Input : A = remaining turn count (0 = inactive)
+;         HL = destination tile address
+; Output: writes ONE tile: "1"-"9" for active, "-" for zero/inactive
+.PrintCount:
+	and a
+	jr z, .count_inactive
+	add a, "0"
+	ld [hl], a
+	ret
+.count_inactive:
+	ld a, "-"
+	ld [hl], a
+	ret
+	
+
+; Input : A = substatus byte
+;         HL = destination tile address
+; Output: writes ONE tile: "+" if mist active, "-" if not
+.PrintMist:
+	and a
+	jr z, .mist_off
+	ld a, "+"
+	ld [hl], a
+	ret
+.mist_off:
+	ld a, "-"
+	ld [hl], a
+	ret
 
 .LabelATK:
 	db "ATK@"
@@ -283,3 +348,13 @@ ShowBattleStatStages:
 	db "ACC@"
 .LabelEVA:
 	db "EVA@"
+.LabelWEA:
+	db "WEA@"
+.LabelSG:
+	db "SG @"
+.LabelLS:
+	db "LS @"
+.LabelREF:
+	db "REF@"
+.LabelMST:
+	db "MST@"
