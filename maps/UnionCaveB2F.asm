@@ -5,6 +5,7 @@
 	const UNIONCAVEB2F_POKE_BALL1
 	const UNIONCAVEB2F_POKE_BALL2
 	const UNIONCAVEB2F_LAPRAS
+	const SPARKLE_HIDDEN_DAMP_ROCK
 
 UnionCaveB2F_MapScripts:
 	def_scene_scripts
@@ -66,6 +67,25 @@ TrainerCooltrainerfEmma:
 	writetext CooltrainerfEmmaAfterBattleText
 	waitbutton
 	closetext
+	end
+	
+UnionCaveHiddenDampRockScript:
+	checkevent EVENT_HIDDEN_DAMP_ROCK
+	iftrue .GotDampRock
+	opentext
+	writetext HiddenDampRockText
+	promptbutton
+	giveitem DAMP_ROCK
+	iffalse .NoRoom
+	itemnotify
+	setevent EVENT_HIDDEN_DAMP_ROCK
+	disappear SPARKLE_HIDDEN_DAMP_ROCK
+	closetext
+	end
+.GotDampRock:
+	end
+.NoRoom:
+	jumpstd PackFullMScript
 	end
 
 UnionCaveB2FElixer:
@@ -138,6 +158,19 @@ CooltrainerfEmmaAfterBattleText:
 	para "I wanted to see"
 	line "that #MON…"
 	done
+	
+HiddenDampRockText:
+	text "There is a small"
+	line "hole here."
+	cont "You reach in and"
+	cont "feel something..."
+	
+	para "<PLAYER> found a"
+	line "DAMP ROCK!"
+	
+	para "It is oddly"
+	line "damp for a rock."
+	done
 
 UnionCaveB2F_MapEvents:
 	db 0, 0 ; filler
@@ -156,3 +189,4 @@ UnionCaveB2F_MapEvents:
 	object_event 16,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB2FElixer, EVENT_UNION_CAVE_B2F_ELIXER
 	object_event 12, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB2FHyperPotion, EVENT_UNION_CAVE_B2F_HYPER_POTION
 	object_event 11, 31, SPRITE_SURF, SPRITEMOVEDATA_SWIM_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, UnionCaveLapras, EVENT_UNION_CAVE_B2F_LAPRAS
+	object_event 18, 30, SPRITE_ITEM_SPARKLE, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, UnionCaveHiddenDampRockScript, EVENT_HIDDEN_DAMP_ROCK

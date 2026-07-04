@@ -167,7 +167,17 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
   </details>
 + Added a tutor teaching MIMIC in Cianwood house
 + Pokemons STATS menu option is now above list of usable HM moves
-+ Added an in-battle stat menu to track battle stat changes. Opened by pressing START while on the battle menu (FIGHT/PKMN/PACK/RUN)
++ Added an in-battle stat menu to track battle stat changes and remaining turns for screens, safeguard and current weather. Opened by pressing START while on the battle menu (FIGHT/PKMN/PACK/RUN)
 + Added Egg Move Reminder to Blackthorn City at Move Deleter's house. All evolution lines can now learn their first stages egg moves, just as the PokeDex states. E.g. Crobat can learn Zubat's egg moves at the Egg Move Reminder
 + The Teleport Guy with an Abra at the Indigo Plateau stays to allow more easily getting back to Johto
++ Added weather rocks: Heat Rock, Damp Rock, Smooth Rock and Icy Rock. Extends their corresponding weather type to 8 turns like later generations. They can be found in caves around Johto. Look for sparkling spots. Also Rain Dance and Sunny Day now has 100% accuracy.
+<details>
+	  <summary>Spoiler for weather rock locations:</summary>
+	  
+	  - Heat Rock: Left side of Burned Tower basement
+	  - Damp Rock: Union Cave back of Lapras' pool
+	  - Smooth Rock: Left tof the waterfalls in Tohjo Falls
+	  - Icy Rock: In Ice Path in the sount/east corner of where the boulders fall through to
+  </details>
+
 

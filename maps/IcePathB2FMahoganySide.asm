@@ -5,6 +5,7 @@
 	const ICEPATHB2FMAHOGANYSIDE_BOULDER4
 	const ICEPATHB2FMAHOGANYSIDE_POKE_BALL1
 	const ICEPATHB2FMAHOGANYSIDE_POKE_BALL2
+	const SPARKLE_HIDDEN_ICY_ROCK
 
 IcePathB2FMahoganySide_MapScripts:
 	def_scene_scripts
@@ -22,10 +23,42 @@ IcePathB2FMahoganySideMaxPotion:
 
 IcePathB2FMahoganySideHiddenCarbos:
 	hiddenitem CARBOS, EVENT_ICE_PATH_B2F_MAHOGANY_SIDE_HIDDEN_CARBOS
+	
+IcePathHiddenIcyRockScript:
+	checkevent EVENT_HIDDEN_ICY_ROCK
+	iftrue .GotIcyRock
+	opentext
+	writetext HiddenIcyRockText
+	promptbutton
+	giveitem ICY_ROCK
+	iffalse .NoRoom
+	itemnotify
+	setevent EVENT_HIDDEN_ICY_ROCK
+	disappear SPARKLE_HIDDEN_ICY_ROCK
+	closetext
+	end
+.GotIcyRock:
+	end
+.NoRoom:
+	jumpstd PackFullMScript
+	end
 
 IcePathB2FMahoganySideBoulderText:
 	text "It's immovably"
 	line "imbedded in ice."
+	done
+	
+HiddenIcyRockText:
+	text "There is a small"
+	line "hole here."
+	cont "You reach in and"
+	cont "feel something..."
+	
+	para "<PLAYER> found an"
+	line "ICY ROCK!"
+	
+	para "It's so cold"
+	line "it almost burns!"
 	done
 
 IcePathB2FMahoganySide_MapEvents:
@@ -51,3 +84,4 @@ IcePathB2FMahoganySide_MapEvents:
 	object_event 12, 13, SPRITE_BOULDER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB2FMahoganySideBoulder, EVENT_BOULDER_IN_ICE_PATH_4A
 	object_event  8,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePathB2FMahoganySideFullHeal, EVENT_ICE_PATH_B2F_MAHOGANY_SIDE_FULL_HEAL
 	object_event  0,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePathB2FMahoganySideMaxPotion, EVENT_ICE_PATH_B2F_MAHOGANY_SIDE_MAX_POTION
+	object_event 18, 17, SPRITE_ITEM_SPARKLE, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IcePathHiddenIcyRockScript, EVENT_HIDDEN_ICY_ROCK

@@ -8,6 +8,7 @@
 	const BURNEDTOWERB1F_SUICUNE2
 	const BURNEDTOWERB1F_POKE_BALL
 	const BURNEDTOWERB1F_EUSINE
+	const SPARKLE_HIDDEN_HEAT_ROCK
 
 BurnedTowerB1F_MapScripts:
 	def_scene_scripts
@@ -114,6 +115,25 @@ BurnedTowerB1FEusine:
 	disappear BURNEDTOWERB1F_EUSINE
 	playsound SFX_EXIT_BUILDING
 	waitsfx
+	end
+	
+BurnedTowerHiddenHeatRockScript:
+	checkevent EVENT_HIDDEN_HEAT_ROCK
+	iftrue .GotHeatRock
+	opentext
+	writetext HiddenHeatRockText
+	promptbutton
+	giveitem HEAT_ROCK
+	iffalse .NoRoom
+	itemnotify
+	setevent EVENT_HIDDEN_HEAT_ROCK
+	disappear SPARKLE_HIDDEN_HEAT_ROCK
+	closetext
+	end
+.GotHeatRock:
+	end
+.NoRoom:
+	jumpstd PackFullMScript
 	end
 
 BurnedTowerB1FTMEndure:
@@ -232,6 +252,19 @@ BurnedTowerB1FEusineText:
 
 	para "Farewell!"
 	done
+	
+HiddenHeatRockText:
+	text "There is a small"
+	line "hole here."
+	cont "You reach in and"
+	cont "feel something..."
+	
+	para "<PLAYER> found a"
+	line "HEAT ROCK!"
+	
+	para "It is warm."
+	line "Why is it warm?"
+	done
 
 BurnedTowerB1F_MapEvents:
 	db 0, 0 ; filler
@@ -259,3 +292,4 @@ BurnedTowerB1F_MapEvents:
 	object_event 10,  4, SPRITE_SUICUNE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURNED_TOWER_B1F_BEASTS_2
 	object_event 16,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurnedTowerB1FTMEndure, EVENT_BURNED_TOWER_B1F_TM_ENDURE
 	object_event 10, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BurnedTowerB1FEusine, EVENT_EUSINE_IN_BURNED_TOWER
+	object_event  5,  1, SPRITE_ITEM_SPARKLE, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BurnedTowerHiddenHeatRockScript, EVENT_HIDDEN_HEAT_ROCK
