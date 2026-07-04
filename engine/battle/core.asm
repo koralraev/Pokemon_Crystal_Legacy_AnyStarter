@@ -1706,31 +1706,39 @@ HandleWeather:
 
 	ld hl, wWeatherCount
 	dec [hl]
-	jr z, .ended
+	jp z, .ended
 
 	ld hl, .WeatherMessages
 	call .PrintWeatherMessage
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
+	jr z, .sandstorm
+	cp WEATHER_HAIL
 	ret nz
 
+.sandstorm
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, .enemy_first
 
 ; player first
 	call SetPlayerTurn
-	call .SandstormDamage
+	call .WeatherDamage
 	call SetEnemyTurn
-	jr .SandstormDamage
+	jr .WeatherDamage
 
 .enemy_first
 	call SetEnemyTurn
-	call .SandstormDamage
+	call .WeatherDamage
 	call SetPlayerTurn
 
-.SandstormDamage:
+.WeatherDamage:
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	jr z, .HailDamage
+
+; Sandstorm damage
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
 	bit SUBSTATUS_UNDERGROUND, a
@@ -1739,9 +1747,9 @@ HandleWeather:
 	ld hl, wBattleMonType1
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .ok
+	jr z, .ok_sandstorm
 	ld hl, wEnemyMonType1
-.ok
+.ok_sandstorm
 	ld a, [hli]
 	cp ROCK
 	ret z
@@ -1770,6 +1778,39 @@ HandleWeather:
 	ld hl, SandstormHitsText
 	jp StdBattleTextbox
 
+.HailDamage:
+; Hail damage - only affects non-Ice types
+	ld a, BATTLE_VARS_SUBSTATUS3
+	call GetBattleVar
+	bit SUBSTATUS_UNDERGROUND, a
+	ret nz
+
+	ld hl, wBattleMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok_hail
+	ld hl, wEnemyMonType1
+.ok_hail
+	ld a, [hli]
+	cp ICE
+	ret z
+
+	ld a, [hl]
+	cp ICE
+	ret z
+
+	call SwitchTurnCore
+	xor a
+	ld [wNumHits], a
+	ld de, ANIM_IN_HAIL
+	call Call_PlayBattleAnim
+	call SwitchTurnCore
+	call GetSixteenthMaxHP
+	call SubtractHPFromUser
+
+	ld hl, PeltedByHailText
+	jp StdBattleTextbox
+
 .ended
 	ld hl, .WeatherEndedMessages
 	call .PrintWeatherMessage
@@ -1794,12 +1835,14 @@ HandleWeather:
 	dw BattleText_RainContinuesToFall
 	dw BattleText_TheSunlightIsStrong
 	dw BattleText_TheSandstormRages
+	dw BattleText_HailContinuesToFall
 
 .WeatherEndedMessages:
 ; entries correspond to WEATHER_* constants
 	dw BattleText_TheRainStopped
 	dw BattleText_TheSunlightFaded
 	dw BattleText_TheSandstormSubsided
+	dw BattleText_TheHailStopped
 
 SubtractHPFromTarget:
 	call SubtractHP
@@ -9288,6 +9331,11 @@ GetWeatherImage:
 	ld de, SandstormWeatherImage
 	ld b, PAL_BATTLE_OB_BROWN
 	dec a
+	jr z, .done
+	ld de, HailWeatherImage
+	ld b, PAL_BATTLE_OB_BLUE
+	dec a
+	jr z, .done
 	ret nz
 	
 .done

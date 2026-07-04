@@ -119,7 +119,7 @@ ItemNames::
 	li "MIRACLE SEED"
 	li "THICK CLUB"
 	li "FOCUS BAND"
-	li "TERU-SAMA"
+	li "ICY ROCK"
 	li "ENERGYPOWDER"
 	li "ENERGY ROOT"
 	li "HEAL POWDER"

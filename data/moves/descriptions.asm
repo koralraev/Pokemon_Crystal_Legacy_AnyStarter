@@ -254,13 +254,12 @@ MoveDescriptions::
 	dw BeatUpDescription
 	dw IronDefenseDescription
 	dw NastyPlotDescription
+	dw HailDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFEDescription:
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -1282,3 +1281,7 @@ IronDefenseDescription:
 NastyPlotDescription:
 	db   "Sharply increases"
 	next "user's SPCL.ATK.@"
+	
+HailDescription:
+	db   "Hurts all types"
+	next "except ICE.@"

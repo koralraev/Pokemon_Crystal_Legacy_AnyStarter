@@ -1577,6 +1577,9 @@ BattleCommand_CheckHit:
 
 	call .ThunderRain
 	ret z
+	
+	call .BlizzardHail
+	ret z
 
 	call .XAccuracy
 	ret nz
@@ -1763,6 +1766,17 @@ BattleCommand_CheckHit:
 
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
+	ret
+	
+.BlizzardHail:
+; Return z if the current move always hits in hail, and it is hailing.
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_BLIZZARD
+	ret nz
+
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
 	ret
 
 .XAccuracy:
@@ -1957,7 +1971,7 @@ BattleCommand_LowerSub:
 .rollout_rampage
 	ld a, [wSomeoneIsRampaging]
 	and a
-	ld a, 0
+	xor a ; was ld a, 0 should save 1 byte
 	ld [wSomeoneIsRampaging], a
 	ret
 
@@ -2400,7 +2414,7 @@ BattleCommand_CheckFaint:
 	and a
 	ld hl, wEnemyMonMaxHP + 1
 	bccoord 2, 2 ; hp bar
-	ld a, 0
+	xor a ; was ld a, 0 should save 1 byte
 	jr nz, .got_max_hp
 	ld hl, wBattleMonMaxHP + 1
 	bccoord 10, 9 ; hp bar
@@ -3238,7 +3252,7 @@ BattleCommand_ConstantDamage:
 	call GetBattleVar
 	cp EFFECT_LEVEL_DAMAGE
 	ld b, [hl]
-	ld a, 0
+	xor a ; was ld a, 0 should save 1 byte
 	jr z, .got_power
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
@@ -3272,7 +3286,7 @@ BattleCommand_ConstantDamage:
 	cp b
 	jr nc, .psywave_loop ; if a >= 1.5xlevel, generate another random number
 	ld b, a
-	ld a, 0
+	xor a ; was ld a, 0 should save 1 byte
 	pop de
 	jr .got_power
 
@@ -3294,7 +3308,7 @@ BattleCommand_ConstantDamage:
 	and a
 	jr nz, .got_power
 	or b
-	ld a, 0
+	xor a ; was ld a, 0 should save 1 byte
 	jr nz, .got_power
 	ld b, 1
 	jr .got_power
@@ -5753,23 +5767,23 @@ BattleCommand_Charge:
 	call GetBattleVar
 	cp RAZOR_WIND
 	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
+	ret z ;was jr z, .done should save 1 byte
 
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
-	jr z, .done
+	ret z ;was jr z, .done should save 1 byte (bit?)
 
 	cp SKULL_BASH
 	ld hl, .BattleLoweredHeadText
-	jr z, .done
+	ret z ;was jr z, .done should save 1 byte
 
 	cp SKY_ATTACK
 	ld hl, .BattleGlowingText
-	jr z, .done
+	ret z ;was jr z, .done should save 1 byte
 
 	cp FLY
 	ld hl, .BattleFlewText
-	jr z, .done
+	ret z ;was jr z, .done should save 1 byte
 
 	cp DIG
 	ld hl, .BattleDugText
@@ -6768,6 +6782,8 @@ INCLUDE "engine/battle/move_effects/future_sight.asm"
 
 INCLUDE "engine/battle/move_effects/thunder.asm"
 
+INCLUDE "engine/battle/move_effects/hail.asm"
+
 CheckHiddenOpponent:
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVar
@@ -7002,11 +7018,5 @@ AppearUserRaiseSub:
 
 _CheckBattleScene:
 ; Checks the options.  Returns carry if battle animations are disabled.
-	push hl
-	push de
-	push bc
 	farcall CheckBattleScene
-	pop bc
-	pop de
-	pop hl
 	ret

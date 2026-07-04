@@ -551,17 +551,19 @@ wEnemyReflectCount:: db
 
 	ds 1
 
-wBattleWeather:: ; track with stat menu
+wBattleWeather:: 
 ; 00 normal
 ; 01 rain
 ; 02 sun
 ; 03 sandstorm
-; 04 rain stopped
-; 05 sunliight faded
-; 06 sandstorm subsided
+; new 4 should be hail
+; 04 rain stopped ; -> 5
+; 05 sunliight faded ; -> 6
+; 06 sandstorm subsided ; -> 7
+; 08 hail stopped
 	db
 
-wWeatherCount::
+wWeatherCount:: 	; track with stat menu
 ; # turns remaining
 	db
 

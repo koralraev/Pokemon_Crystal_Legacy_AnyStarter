@@ -71,7 +71,7 @@ Moves:
 	move HYDRO_PUMP,   EFFECT_NORMAL_HIT,        120, WATER,         85, 10,   0
 	move SURF,         EFFECT_NORMAL_HIT,         95, WATER,        100, 15,   0
 	move ICE_BEAM,     EFFECT_FREEZE_HIT,         95, ICE,          100, 15,  10
-	move BLIZZARD,     EFFECT_FREEZE_HIT,        120, ICE,           85,  5,  10
+	move BLIZZARD,     EFFECT_BLIZZARD,          120, ICE,           85,  5,  10
 	move PSYBEAM,      EFFECT_CONFUSE_HIT,        65, PSYCHIC_TYPE, 100, 20,  10
 	move BUBBLEBEAM,   EFFECT_SPEED_DOWN_HIT,     65, WATER,        100, 20,  10
 	move AURORA_BEAM,  EFFECT_ATTACK_DOWN_HIT,    65, ICE,          100, 20,  10
@@ -252,8 +252,8 @@ Moves:
 	move HIDDEN_POWER, EFFECT_HIDDEN_POWER,        1, NORMAL,       100, 15,   0
 	move CROSS_CHOP,   EFFECT_NORMAL_HIT,        100, FIGHTING,      85, 10,   0
 	move TWISTER,      EFFECT_TWISTER,            70, DRAGON,       100, 20,  20
-	move RAIN_DANCE,   EFFECT_RAIN_DANCE,          0, WATER,         90, 10,   0
-	move SUNNY_DAY,    EFFECT_SUNNY_DAY,           0, FIRE,          90, 10,   0
+	move RAIN_DANCE,   EFFECT_RAIN_DANCE,          0, WATER,        100, 10,   0
+	move SUNNY_DAY,    EFFECT_SUNNY_DAY,           0, FIRE,         100, 10,   0
 	move CRUNCH,       EFFECT_DEFENSE_DOWN_HIT,    80, DARK,        100, 15,  20
 	move MIRROR_COAT,  EFFECT_MIRROR_COAT,         1, PSYCHIC_TYPE, 100, 20,   0
 	move PSYCH_UP,     EFFECT_PSYCH_UP,            0, NORMAL,       100, 10,   0
@@ -266,4 +266,5 @@ Moves:
 	move BEAT_UP,      EFFECT_BEAT_UP,            20, DARK,         100, 10,   0
 	move IRON_DEFENSE, EFFECT_DEFENSE_UP_2,        0, STEEL,        100, 15,   0
 	move NASTY_PLOT,   EFFECT_SP_ATK_UP_2,         0, DARK,     	100, 20,   0
+	move HAIL,	   EFFECT_HAIL,	               0, ICE,          100, 10,   0
 	assert_table_length NUM_ATTACKS

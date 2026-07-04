@@ -253,4 +253,5 @@ MoveNames::
 	li "BEAT UP"
 	li "IRON DEFENSE"
 	li "NASTY PLOT"
+	li "HAIL"
 	assert_list_length NUM_ATTACKS

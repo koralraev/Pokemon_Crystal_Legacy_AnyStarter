@@ -2097,3 +2097,10 @@ DefenseCurl:
 	statupmessage
 	statupfailtext
 	endmove
+	
+Hail:
+	checkobedience
+	usedmovetext
+	doturn
+	starthail
+	endmove

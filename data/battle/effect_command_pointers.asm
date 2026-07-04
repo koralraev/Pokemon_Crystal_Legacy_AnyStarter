@@ -1,6 +1,5 @@
 ; battle commands are defined in engine/battle/effect_commands.asm
 
-	dw 0 ; padding
 
 BattleCommandPointers:
 ; entries correspond to macros/scripts/battle_commands.asm
@@ -181,4 +180,5 @@ BattleCommandPointers:
 	dw BattleCommand_SuperEffectiveLoopText
 	dw BattleCommand_StartLoop
 	dw BattleCommand_Curl
+	dw BattleCommand_StartHail
 	assert_table_length NUM_EFFECT_COMMANDS
