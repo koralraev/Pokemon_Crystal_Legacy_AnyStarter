@@ -1,5 +1,6 @@
 Marts:
 ; entries correspond to MART_* constants (see constants/mart_constants.asm)
+; WRAM.asm is edited to allow marts to sell upto 20 items
 	table_width 2, Marts
 	dw MartCherrygrove
 	dw MartCherrygroveDex
@@ -269,7 +270,7 @@ MartMahogany2:
 	db -1 ; end
 
 MartBlackthorn:
-	db 16 ; # items
+	db 17 ; # items
 	db ULTRA_BALL
 	db HYPER_POTION
 	db MAX_REPEL
@@ -280,6 +281,7 @@ MartBlackthorn:
 	db TM_ICY_WIND
 	db TM_RAIN_DANCE
 	db TM_SUNNY_DAY
+	db TM_HAIL
 	db TM_IRON_TAIL
 	db TM_REST
 	db TM_NASTY_PLOT

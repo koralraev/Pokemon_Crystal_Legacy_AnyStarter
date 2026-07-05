@@ -116,6 +116,15 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	Squirtle line, Metapod, Kakuna, Sandshrew / Sandslash, Diglett / Dugtrio, Geodude line, Slowbro, Magnemite / Magneton, Shellder / Cloyster, Krabby / Kingler, Cubone / Marowak, Rhydon, Mr.Mime, Pinsir, Omanyte / Omastar, Kabuto / Kabutops, Mew, Sudowoodo, Pineco / Forretress, Slowking, Steelix, Scizor, Shuckle, Heracross, Magcargo, Corsola, Skarmory, Donphan, Larvitar line 
 	</details>
 	Added to egg moves of Larvitar
++ Added move Hail (TM55)
+	<details>
+	<summary>Added to level up learnset of:</summary>
+	Seel / Dewgong, Piloswine, Articuno
+	</details>
+	<details>
+	<summary>Added to TM learnsets of:</summary>
+	SSquirtle line, Psyduck/Golduck, Poliwag line, Tentacool/Tentacruel, Slowpoke line, Seel/Dewgong, Shellder/Cloyster, Krabby/Kingler, Chansey/Blissey, Kangaskhan, Horsea line, Goldeen/Seaking, Staryu/Starmie, Smoochum/Jynx, Gyarados, Lapras, Vaporeon, Omanyte/Omastar, Kabuto/Kabutops, Articuno, Dratini line, Mewtwo, Mew, Totodile line, Chinchou/Lanturn, Marill/Azumarill, Wooper/Quagsire, Qwilfish, Sneasel, Swinub/Piloswine, Corsola, Delibird, Mantine, Suicune and Lugia 
+	</details>
 + The Move Relearner NPC has been moved from Blackthorne City to Cherrygrove Mart
 + Changes to some moves:
   <details>
@@ -176,8 +185,9 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	  
 	  - Heat Rock: Left side of Burned Tower basement
 	  - Damp Rock: Union Cave back of Lapras' pool
-	  - Smooth Rock: Left tof the waterfalls in Tohjo Falls
+	  - Smooth Rock: Left of the waterfalls in Tohjo Falls
 	  - Icy Rock: In Ice Path in the sount/east corner of where the boulders fall through to
   </details>
++ Articuno, Zapdos and Moltres respectively learns Hail, Rain Dance and Sunny Day at lvl 57
 
 

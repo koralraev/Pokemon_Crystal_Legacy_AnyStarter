@@ -273,6 +273,7 @@ TM01 EQU const_value
 	add_tm SWORDS_DANCE ; f4
 	add_tm AMNESIA	    ; f5
 	add_tm IRON_DEFENSE ; f6
+	add_tm HAIL	    ; f7
 NUM_TMS EQU __tmhm_value__ - 1
 
 add_hm: MACRO
@@ -340,7 +341,7 @@ MT01 EQU const_value
 	add_mt MIMIC		;tm31
 	; double team is already a tm32
 	add_mt REFLECT		;tm33
-;	add_mt BIDE		;tm34
+;	add_mt BIDE		;tm34 ; replaced by Hone Claws
 	add_mt METRONOME	;tm35
 ;	add_mt SELFDESTRUCT	;tm36 NOT ADDED TO TUTOR
 	add_mt EGG_BOMB		;tm37

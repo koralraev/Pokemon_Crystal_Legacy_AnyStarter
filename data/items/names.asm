@@ -247,6 +247,7 @@ ItemNames::
 	li "TM52"
 	li "TM53"
 	li "TM54"
+	li "TM55"
 	assert_list_length NUM_ITEMS + NUM_TMS
 	li "HM01"
 	li "HM02"
@@ -256,7 +257,7 @@ ItemNames::
 	li "HM06"
 	li "HM07"
 	assert_list_length NUM_ITEMS + NUM_TMS + NUM_HMS
-	li "TERU-SAMA"
-	li "TERU-SAMA"
+;	li "TERU-SAMA" ; tm55
+	li "TERU-SAMA" ; !!!-this is the last possible item to add-!!!
 	li "?"
 	assert_list_length $100

@@ -1318,6 +1318,7 @@ SeelEvosAttacks:
 	db 21, REST
 	db 25, BUBBLEBEAM
 	db 32, TAKE_DOWN
+	db 34, HAIL
 	db 40, ICE_BEAM
 	db 44, SAFEGUARD
 	db 54, BLIZZARD
@@ -1332,6 +1333,7 @@ DewgongEvosAttacks:
 	db 21, REST
 	db 25, BUBBLEBEAM
 	db 32, TAKE_DOWN
+	db 34, HAIL
 	db 40, ICE_BEAM
 	db 44, SAFEGUARD
 	db 54, BLIZZARD
@@ -2218,6 +2220,7 @@ ArticunoEvosAttacks:
 	db 37, MIND_READER
 	db 49, ICE_BEAM
 	db 55, DRILL_PECK
+	db 57, HAIL
 	db 61, REFLECT
 	db 65, NASTY_PLOT
 	db 73, BLIZZARD
@@ -2233,6 +2236,7 @@ ZapdosEvosAttacks:
 	db 37, DETECT
 	db 49, THUNDERBOLT
 	db 55, DRILL_PECK
+	db 57, RAIN_DANCE
 	db 61, LIGHT_SCREEN
 	db 65, NASTY_PLOT
 	db 73, THUNDER
@@ -2248,6 +2252,7 @@ MoltresEvosAttacks:
 	db 37, ENDURE
 	db 49, FLAMETHROWER
 	db 55, DRILL_PECK
+	db 57, SUNNY_DAY
 	db 61, SAFEGUARD
 	db 65, NASTY_PLOT
 	db 73, FIRE_BLAST
@@ -2435,7 +2440,6 @@ TotodileEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, LEER
-	db 1, HAIL
 	db 7, WATER_GUN
 	db 12, RAGE
 	db 21, BITE
@@ -3391,6 +3395,7 @@ SwinubEvosAttacks:
 	db 18, ENDURE
 	db 21, ICY_WIND
 	db 28, TAKE_DOWN
+	db 35, HAIL
 	db 39, EARTHQUAKE
 	db 42, MIST
 	db 50, BLIZZARD
@@ -3406,6 +3411,7 @@ PiloswineEvosAttacks:
 	db 21, ICY_WIND
 	db 28, TAKE_DOWN
 	db 33, FURY_ATTACK
+	db 35, HAIL
 	db 39, EARTHQUAKE
 	db 42, MIST
 	db 50, BLIZZARD

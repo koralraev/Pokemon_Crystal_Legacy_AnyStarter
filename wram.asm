@@ -3315,7 +3315,7 @@ wPartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
 endr
 wPartyMonNicknamesEnd::
 
-	ds 22
+;	ds 21 ; removed to allow for ~20 more tms/hms. Careful changing cause saves to corrupt
 
 wPokedexCaught:: flag_array NUM_POKEMON
 wEndPokedexCaught::
