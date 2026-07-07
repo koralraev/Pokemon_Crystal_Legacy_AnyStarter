@@ -11,7 +11,24 @@ IlexForestAzaleaGateOfficerScript:
 	jumptextfaceplayer IlexForestAzaleaGateOfficerText
 
 IlexForestAzaleaGateGrannyScript:
-	jumptextfaceplayer IlexForestAzaleaGateGrannyText
+;	jumptextfaceplayer IlexForestAzaleaGateGrannyText
+	faceplayer
+	opentext
+	checkevent EVENT_HIDDEN_CLEANSE_TAG
+	iftrue .GotCleanseTag
+	writetext IlexForestAzaleaGateGrannyText
+	promptbutton
+	verbosegiveitem CLEANSE_TAG
+	setevent EVENT_HIDDEN_CLEANSE_TAG
+	writetext IlexForestAzaleaGateGrannyGotCleanseTagText
+	waitbutton
+	closetext
+	end
+.GotCleanseTag:
+	writetext IlexForestAzaleaGateGrannyGotCleanseTagText
+	waitbutton
+	closetext
+	end
 
 IlexForestAzaleaGateOfficerText:
 	text "ILEX FOREST is"
@@ -24,7 +41,23 @@ IlexForestAzaleaGateGrannyText:
 	line "watched over by"
 	cont "its protector."
 
-	para "Stay out of"
+	para "And when it is"
+	line "not here I like"
+	cont "to walk around the"
+	cont "forest and perform"
+	cont "cleansing rites."
+	
+	para "Here take this"
+	line "CLEANSE TAG."
+	
+	para "It will keep"
+	line "wild #mon away"
+	cont "and extend your"
+	cont "#mon's SAFEGUARD."
+	done
+	
+IlexForestAzaleaGateGrannyGotCleanseTagText:
+	text "Stay out of"
 	line "mischief!"
 	done
 

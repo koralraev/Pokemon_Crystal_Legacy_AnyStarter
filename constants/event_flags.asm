@@ -1474,21 +1474,20 @@
 	const EVENT_ROUTE_24_MEW
 	const EVENT_ROUTE_24_MEW_CAUGHT
 ; new hidden hold items
-	const EVENT_HIDDEN_BLACK_BELT
-	const EVENT_HIDDEN_BRIGHT_POWDER
-	const EVENT_HIDDEN_CLEANSE_TAG
-	const EVENT_HIDDEN_FOCUS_BAND
-	const EVENT_HIDDEN_LEFTOVERS
-	const EVENT_HIDDEN_MAGNET
-	const EVENT_HIDDEN_SCOPE_LENS
-	const EVENT_ENTEI_ITEM
-	const EVENT_RAIKOU_ITEM
-	const EVENT_SUICUNE_ITEM
-	const EVENT_HIDDEN_SMOOTH_ROCK
-	const EVENT_HIDDEN_HEAT_ROCK
-	const EVENT_HIDDEN_DAMP_ROCK
-	const EVENT_HIDDEN_ICY_ROCK
-	const EVENT_JOHTO_GOT_CLEANSE_TAG
+	const EVENT_HIDDEN_BLACK_BELT		; route42
+	const EVENT_HIDDEN_BRIGHT_POWDER	; goldenrod train station
+	const EVENT_HIDDEN_CLEANSE_TAG		; ilex azela gate
+	const EVENT_HIDDEN_FOCUS_BAND		; route42
+	const EVENT_HIDDEN_LEFTOVERS		; national park trashcan
+	const EVENT_HIDDEN_MAGNET		;
+	const EVENT_HIDDEN_SCOPE_LENS		; olivine cafe
+	const EVENT_ENTEI_ITEM			;
+	const EVENT_RAIKOU_ITEM			;
+	const EVENT_SUICUNE_ITEM		;
+	const EVENT_HIDDEN_SMOOTH_ROCK		; tohjo falls
+	const EVENT_HIDDEN_HEAT_ROCK		; burned tower basement
+	const EVENT_HIDDEN_DAMP_ROCK 		; union cave lapras pool
+	const EVENT_HIDDEN_ICY_ROCK 		; ice path
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800

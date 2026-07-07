@@ -1,7 +1,8 @@
 	object_const_def
 	const OLIVINECAFE_SAILOR1
 	const OLIVINECAFE_FISHING_GURU
-	const OLIVINECAFE_SAILOR2
+;	const OLIVINECAFE_SAILOR2
+	const OLIVINECAFE_SILPHCO_WORKER
 
 OlivineCafe_MapScripts:
 	def_scene_scripts
@@ -26,8 +27,27 @@ OlivineCafeStrengthSailorScript:
 OlivineCafeFishingGuruScript:
 	jumptextfaceplayer OlivineCafeFishingGuruText
 
-OlivineCafeSailorScript:
-	jumptextfaceplayer OlivineCafeSailorText
+;OlivineCafeSailorScript:
+;	jumptextfaceplayer OlivineCafeSailorText
+	
+OlivineCafeSilphCoWorkerScopeLens:
+	faceplayer
+	opentext
+	checkevent EVENT_HIDDEN_SCOPE_LENS
+	iftrue .GotScopeLens
+	writetext OlivineCafeGiveScopeLens
+	promptbutton
+	verbosegiveitem SCOPE_LENS
+	setevent EVENT_HIDDEN_SCOPE_LENS
+	writetext OlivineCafeGotScopeLens
+	waitbutton
+	closetext
+	end
+.GotScopeLens:
+	writetext OlivineCafeGotScopeLens
+	waitbutton
+	closetext
+	end
 
 OlivineCafeStrengthSailorText:
 	text "Hah! Your #MON"
@@ -62,19 +82,73 @@ OlivineCafeFishingGuruText:
 	line "beefy SAILORS!"
 	done
 
-OlivineCafeSailorText:
-	text "Whenever I roll"
-	line "into this town, I"
+;OlivineCafeSailorText:
+;	text "Whenever I roll"
+;	line "into this town, I"
 
-	para "always visit the"
-	line "OLIVINE CAFE."
+;	para "always visit the"
+;	line "OLIVINE CAFE."
 
-	para "Everything on the"
-	line "menu makes me feel"
+;	para "Everything on the"
+;	line "menu makes me feel"
 
-	para "stronger. I can't"
-	line "stop eating!"
+;	para "stronger. I can't"
+;	line "stop eating!"
+;	done
+	
+OlivineCafeGiveScopeLens:
+	text "What am I to do?"
+	
+	line "I work for Silph"
+	cont "in Kanto, but with"
+	cont "the Magnet Train"
+	cont "not running I can't"
+	cont "get back!"
+	
+	para "I have been here in"
+	line "Johto to research"
+	cont "and develop a brand"
+	cont "new battle item."
+	
+	para "I call it the"
+	line "SCOPE LENS!"
+	
+	para "It inceases the"
+	line "chance of landing"
+	cont "critical hits!"
+	
+;	para "..."
+	
+	para "Hey, you are a"
+	line "#MON trainer!"
+
+	para "Why don't you take"
+	line "this prototype?"
+	
+;	para "It works perfectly"
+;	line "and I have the"
+;	cont "materials back at"
+;	cont "Silph to make a"
+;	cont "new one to show"
+;	cont "the President."
 	done
+	
+OlivineCafeGotScopeLens:
+	text "The SCOPE LENS"
+	line "increase critical"
+	cont "hit chance."
+	
+	para "Don't worry."
+	line "I can make a new"
+	cont "back at Silph Co."
+	
+	para "I'm sure the"
+	line "President won't mind"
+	cont "it beeing promoted"
+	cont "a bit before it"
+	cont "hits the shelves."
+	done
+	
 
 OlivineCafe_MapEvents:
 	db 0, 0 ; filler
@@ -90,4 +164,5 @@ OlivineCafe_MapEvents:
 	def_object_events
 	object_event  4,  3, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeStrengthSailorScript, -1
 	object_event  7,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeFishingGuruScript, -1
-	object_event  6,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeSailorScript, -1
+;	object_event  6,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeSailorScript, -1
+	object_event  7,  7, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeSilphCoWorkerScopeLens, -1

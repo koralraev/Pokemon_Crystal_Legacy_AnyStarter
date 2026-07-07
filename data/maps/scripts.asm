@@ -210,12 +210,13 @@ INCLUDE "maps/Route2Gate.asm"
 INCLUDE "maps/OlivinePokecenter1F.asm"
 
 
+
 SECTION "Map Scripts 12", ROMX
 
 INCLUDE "maps/OlivineGym.asm"
 INCLUDE "maps/OlivineTimsHouse.asm"
-INCLUDE "maps/OlivineHouseBeta.asm"
-INCLUDE "maps/OlivinePunishmentSpeechHouse.asm"
+; INCLUDE "maps/OlivineHouseBeta.asm"
+; INCLUDE "maps/OlivinePunishmentSpeechHouse.asm"
 INCLUDE "maps/OlivineGoodRodHouse.asm"
 INCLUDE "maps/OlivineCafe.asm"
 INCLUDE "maps/OlivineMart.asm"
@@ -484,3 +485,5 @@ SECTION "Map Scripts 25", ROMX
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
 INCLUDE "maps/Route36NationalParkGate.asm"
+INCLUDE "maps/OlivinePunishmentSpeechHouse.asm" ;moved from section 13
+INCLUDE "maps/OlivineHouseBeta.asm"		;moved from section 13

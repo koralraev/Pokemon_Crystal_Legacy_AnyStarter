@@ -25,7 +25,7 @@ ItemDescriptions:
 	dw FireStoneDesc
 	dw ThunderStoneDesc
 	dw WaterStoneDesc
-	dw TeruSama2Desc
+	dw LightClayDesc
 	dw HPUpDesc
 	dw ProteinDesc
 	dw IronDesc
@@ -354,8 +354,9 @@ WaterStoneDesc:
 	db   "Evolves certain"
 	next "kinds of #MON.@"
 
-TeruSama2Desc:
-	db   "?@"
+LightClayDesc:
+	db   "Extends duration"
+	next "of barrier moves.@"
 
 HPUpDesc:
 	db   "Raises the HP of"
@@ -622,8 +623,10 @@ GrnApricornDesc:
 	db   "A green APRICORN.@"
 
 CleanseTagDesc:
-	db   "Helps repel wild"
-	next "#MON. (HOLD)@"
+;	db   "Helps repel wild"
+;	next "#MON. (HOLD)@"
+	db   "Extends SG. Repels"
+	next "wild #MON. (HOLD)@"
 
 MysticWaterDesc:
 	db   "Powers up water-"

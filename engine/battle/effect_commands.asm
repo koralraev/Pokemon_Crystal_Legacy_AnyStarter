@@ -2643,6 +2643,8 @@ PlayerAttackDamage:
 	jr z, .specialcrit
 	sla c
 	rl b
+	
+	call SandstormSpDefBoost
 
 .specialcrit
 	ld hl, wBattleMonSpclAtk
@@ -2706,17 +2708,17 @@ TruncateHL_BC:
 	inc l
 
 .finish
-	ld a, [wLinkMode]
-	cp LINK_COLOSSEUM
-	jr z, .done
+; BUG: Reflect and Light Screen can make (Special) Defense wrap around above 1024 (see docs/bugs_and_glitches.md)
+;	ld a, [wLinkMode] 	--- removed to fix bug
+;	cp LINK_COLOSSEUM 	--- removed to fix bug
+;	jr z, .done 		--- removed to fix bug
 ; If we go back to the loop point,
 ; it's the same as doing this exact
 ; same check twice.
 	ld a, h
 	or b
 	jr nz, .loop
-
-.done
+;.done 				--- removed to fix bug
 	ld b, l
 	ret
 
@@ -2914,6 +2916,8 @@ EnemyAttackDamage:
 	jr z, .specialcrit
 	sla c
 	rl b
+	
+	call SandstormSpDefBoost
 
 .specialcrit
 	ld hl, wEnemyMonSpclAtk
@@ -2942,8 +2946,6 @@ EnemyAttackDamage:
 	ld a, 1
 	and a
 	ret
-
-INCLUDE "engine/battle/move_effects/beat_up.asm"
 
 BattleCommand_ClearMissDamage:
 ; clearmissdamage
@@ -6332,8 +6334,6 @@ BattleCommand_Heal:
 	ld hl, HPIsFullText
 	jp StdBattleTextbox
 
-INCLUDE "engine/battle/move_effects/transform.asm"
-
 BattleEffect_ButItFailed:
 	call AnimateFailedMove
 	jp PrintButItFailed
@@ -6386,7 +6386,16 @@ BattleCommand_Screen:
 	bit SCREENS_LIGHT_SCREEN, [hl]
 	jr nz, .failed
 	set SCREENS_LIGHT_SCREEN, [hl]
+	; extend light screen if user is holding light clay
+	push bc
+	call GetUserItem
+	ld a, [hl]
+	cp LIGHT_CLAY
+	pop bc
+	ld a, 8
+	jr z, .up_lightscreen_duration
 	ld a, 5
+.up_lightscreen_duration
 	ld [bc], a
 	ld hl, LightScreenEffectText
 	jr .good
@@ -6398,8 +6407,16 @@ BattleCommand_Screen:
 
 	; LightScreenCount -> ReflectCount
 	inc bc
-
+; extend light screen if user is holding light clay
+	push bc
+	call GetUserItem
+	ld a, [hl]
+	cp LIGHT_CLAY
+	pop bc
+	ld a, 8
+	jr z, .up_reflect_duration
 	ld a, 5
+.up_reflect_duration
 	ld [bc], a
 	ld hl, ReflectEffectText
 
@@ -6633,8 +6650,6 @@ BattleCommand_CheckSafeguard:
 
 INCLUDE "engine/battle/move_effects/magnitude.asm"
 
-INCLUDE "engine/battle/move_effects/baton_pass.asm"
-
 INCLUDE "engine/battle/move_effects/pursuit.asm"
 
 INCLUDE "engine/battle/move_effects/rapid_spin.asm"
@@ -6783,6 +6798,36 @@ INCLUDE "engine/battle/move_effects/future_sight.asm"
 INCLUDE "engine/battle/move_effects/thunder.asm"
 
 INCLUDE "engine/battle/move_effects/hail.asm"
+
+SandstormSpDefBoost: 
+; First, check if Sandstorm is active.
+	ld a, [wBattleWeather]
+	cp WEATHER_SANDSTORM
+	ret nz
+
+; Then, check the opponent's types.
+	ld hl, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wBattleMonType1
+.ok
+	ld a, [hli]
+	cp ROCK
+	jr z, .start_boost
+	ld a, [hl]
+	cp ROCK
+	ret nz
+
+.start_boost
+	ld h, b
+	ld l, c
+	srl b
+	rr c
+	add hl, bc
+	ld b, h
+	ld c, l
+	ret
 
 CheckHiddenOpponent:
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP

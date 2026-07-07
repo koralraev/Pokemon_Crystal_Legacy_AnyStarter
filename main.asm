@@ -150,6 +150,11 @@ SECTION "Effect Commands", ROMX
 
 INCLUDE "engine/battle/effect_commands.asm"
 
+SECTION "Effect Commands 2", ROMX
+
+INCLUDE "engine/battle/move_effects/baton_pass.asm"
+INCLUDE "engine/battle/move_effects/beat_up.asm"
+INCLUDE "engine/battle/move_effects/transform.asm"
 
 SECTION "Enemy Trainers", ROMX
 

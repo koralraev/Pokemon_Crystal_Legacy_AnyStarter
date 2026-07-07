@@ -94,6 +94,10 @@ CianwoodGymChuckScript:
 	setevent EVENT_BEAT_BLACKBELT_LAO
 	setevent EVENT_BEAT_BLACKBELT_NOB
 	setevent EVENT_BEAT_BLACKBELT_LUNG
+; clear item events that have been hidden but should now appear
+	clearevent EVENT_HIDDEN_HEAT_ROCK ;makes heat rock appear in burned tower basement
+	clearevent EVENT_HIDDEN_SMOOTH_ROCK
+	clearevent EVENT_HIDDEN_DAMP_ROCK
 	writetext ChuckExplainBadgeText
 	promptbutton
 	verbosegiveitem TM_DYNAMICPUNCH

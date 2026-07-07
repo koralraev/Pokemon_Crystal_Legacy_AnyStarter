@@ -42,6 +42,10 @@ Route29Tutorial1:
 	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData1a
 	turnobject PLAYER, LEFT
 	setevent EVENT_DUDE_TALKED_TO_YOU
+	; hide "hidden" items. All resets to appear after beating Chuck in Cianwood
+	setevent EVENT_HIDDEN_HEAT_ROCK ; burned tower basement
+	setevent EVENT_HIDDEN_SMOOTH_ROCK ;tohjo falls
+	setevent EVENT_HIDDEN_DAMP_ROCK ; union cave lapras pool
 	opentext
 	writetext CatchingTutorialIntroText
 	yesorno
@@ -263,10 +267,18 @@ CatchingTutorialBoxFullText:
 
 CatchingTutorialIntroText:
 	text "I've seen you a"
-	line "couple times. How"
-
-	para "many #MON have"
-	line "you caught?"
+	line "couple times."
+	
+	para "I just wanted to"
+	line "let you know that"
+	cont "in-battle you can"
+	cont "open the STAT menu"
+	cont "to track #mons"
+	cont "stat changes by"
+	cont "pressing START."
+	
+	para "I think that is"
+	line "pretty cool."
 
 	para "Would you like me"
 	line "to show you how to"
