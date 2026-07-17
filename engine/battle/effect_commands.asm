@@ -2638,13 +2638,13 @@ PlayerAttackDamage:
 	ld b, a
 	ld c, [hl]
 
+	call SandstormSpDefBoost
+
 	ld a, [wEnemyScreens]
 	bit SCREENS_LIGHT_SCREEN, a
 	jr z, .specialcrit
 	sla c
 	rl b
-	
-	call SandstormSpDefBoost
 
 .specialcrit
 	ld hl, wBattleMonSpclAtk
@@ -2911,13 +2911,13 @@ EnemyAttackDamage:
 	ld b, a
 	ld c, [hl]
 
+	call SandstormSpDefBoost
+
 	ld a, [wPlayerScreens]
 	bit SCREENS_LIGHT_SCREEN, a
 	jr z, .specialcrit
 	sla c
 	rl b
-	
-	call SandstormSpDefBoost
 
 .specialcrit
 	ld hl, wEnemyMonSpclAtk
@@ -2945,6 +2945,14 @@ EnemyAttackDamage:
 
 	ld a, 1
 	and a
+	ret
+
+;INCLUDE "engine/battle/move_effects/beat_up.asm"
+BattleCommand_BeatUp:
+	farcall _BattleCommand_BeatUp
+	ret
+BattleCommand_BeatUpFailText:
+	farcall _BattleCommand_BeatUpFailText
 	ret
 
 BattleCommand_ClearMissDamage:
@@ -5817,8 +5825,8 @@ BattleCommand_Charge:
 	text_far _BattleDugText
 	text_end
 
-BattleCommand_Unused3C:
-; effect0x3c
+BattleCommand_CheckPowder:
+	farcall _BattleCommand_CheckPowder
 	ret
 
 BattleCommand_TrapTarget:
@@ -6334,6 +6342,11 @@ BattleCommand_Heal:
 	ld hl, HPIsFullText
 	jp StdBattleTextbox
 
+;INCLUDE "engine/battle/move_effects/transform.asm"
+BattleCommand_Transform:
+	farcall _BattleCommand_Transform
+	ret
+
 BattleEffect_ButItFailed:
 	call AnimateFailedMove
 	jp PrintButItFailed
@@ -6648,7 +6661,15 @@ BattleCommand_CheckSafeguard:
 	call StdBattleTextbox
 	jp EndMoveEffect
 
-INCLUDE "engine/battle/move_effects/magnitude.asm"
+;INCLUDE "engine/battle/move_effects/magnitude.asm" ; replace with stub pointing to custom_effects
+BattleCommand_GetMagnitude:
+	farcall _BattleCommand_GetMagnitude
+	ret
+
+INCLUDE "engine/battle/move_effects/baton_pass.asm" ;keep here. Too complex to move
+;BattleCommand_BatonPass:
+;	farcall _BattleCommand_BatonPass
+;	ret
 
 INCLUDE "engine/battle/move_effects/pursuit.asm"
 

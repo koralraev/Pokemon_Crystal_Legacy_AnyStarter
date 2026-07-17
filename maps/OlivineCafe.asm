@@ -99,16 +99,17 @@ OlivineCafeFishingGuruText:
 OlivineCafeGiveScopeLens:
 	text "What am I to do?"
 	
-	line "I work for Silph"
-	cont "in Kanto, but with"
+	para "I work for Silph"
+	line "in Kanto, but with"
 	cont "the Magnet Train"
 	cont "not running I can't"
 	cont "get back!"
 	
-	para "I have been here in"
+	para "I've been here in"
 	line "Johto to research"
-	cont "and develop a brand"
-	cont "new battle item."
+	cont "and develop a"
+	cont "brand new battle"
+	cont "item."
 	
 	para "I call it the"
 	line "SCOPE LENS!"
@@ -117,20 +118,11 @@ OlivineCafeGiveScopeLens:
 	line "chance of landing"
 	cont "critical hits!"
 	
-;	para "..."
-	
 	para "Hey, you are a"
 	line "#MON trainer!"
 
 	para "Why don't you take"
 	line "this prototype?"
-	
-;	para "It works perfectly"
-;	line "and I have the"
-;	cont "materials back at"
-;	cont "Silph to make a"
-;	cont "new one to show"
-;	cont "the President."
 	done
 	
 OlivineCafeGotScopeLens:
@@ -143,10 +135,11 @@ OlivineCafeGotScopeLens:
 	cont "back at Silph Co."
 	
 	para "I'm sure the"
-	line "President won't mind"
-	cont "it beeing promoted"
-	cont "a bit before it"
-	cont "hits the shelves."
+	line "President won't"
+	cont "mind it being"
+	cont "promoted a bit"
+	cont "before it hits"
+	cont "the shelves."
 	done
 	
 
@@ -165,4 +158,4 @@ OlivineCafe_MapEvents:
 	object_event  4,  3, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeStrengthSailorScript, -1
 	object_event  7,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeFishingGuruScript, -1
 ;	object_event  6,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeSailorScript, -1
-	object_event  7,  7, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeSilphCoWorkerScopeLens, -1
+	object_event  7,  6, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeSilphCoWorkerScopeLens, -1

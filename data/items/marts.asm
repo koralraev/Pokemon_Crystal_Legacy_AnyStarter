@@ -228,7 +228,7 @@ MartOlivine:
 	db -1 ; end
 
 MartEcruteak:
-	db 13 ; # items
+	db 14 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db POTION
@@ -242,6 +242,7 @@ MartEcruteak:
 	db REVIVE
 	db TM_CURSE
 	db TM_ATTRACT
+	db GOGGLES
 	db -1 ; end
 
 MartMahogany1:
@@ -254,11 +255,14 @@ MartMahogany1:
 	db -1 ; end
 
 MartMahogany2:
-	db 11 ; # items
+	db 14 ; # items
 	db RAGECANDYBAR
 	db METAL_COAT
 	db UP_GRADE
 	db BRICK_PIECE
+	db TM_RAIN_DANCE
+	db TM_SUNNY_DAY
+	db TM_HAIL
 	db TM_DIG
 	db TM_NIGHTMARE
 	db TM_DETECT
@@ -269,7 +273,7 @@ MartMahogany2:
 	db -1 ; end
 
 MartBlackthorn:
-	db 17 ; # items
+	db 14 ; # items
 	db ULTRA_BALL
 	db HYPER_POTION
 	db MAX_REPEL
@@ -278,9 +282,6 @@ MartBlackthorn:
 	db TM_STEEL_WING
 	db TM_THIEF
 	db TM_ICY_WIND
-	db TM_RAIN_DANCE
-	db TM_SUNNY_DAY
-	db TM_HAIL
 	db TM_IRON_TAIL
 	db TM_REST
 	db TM_NASTY_PLOT

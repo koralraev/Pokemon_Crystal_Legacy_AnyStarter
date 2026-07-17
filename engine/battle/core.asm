@@ -1744,6 +1744,11 @@ HandleWeather:
 	bit SUBSTATUS_UNDERGROUND, a
 	ret nz
 
+	farcall GetUserItem ; check for Goggles
+	ld a, [hl]
+	cp GOGGLES
+	jr z, .GogglesProtected
+
 	ld hl, wBattleMonType1
 	ldh a, [hBattleTurn]
 	and a
@@ -1785,6 +1790,11 @@ HandleWeather:
 	bit SUBSTATUS_UNDERGROUND, a
 	ret nz
 
+	farcall GetUserItem ; check for Goggles
+	ld a, [hl]
+	cp GOGGLES
+	jr z, .GogglesProtected
+
 	ld hl, wBattleMonType1
 	ldh a, [hBattleTurn]
 	and a
@@ -1811,12 +1821,20 @@ HandleWeather:
 	ld hl, PeltedByHailText
 	jp StdBattleTextbox
 
+.GogglesProtected
+	ld hl, ProtectedByGogglesText
+	jp StdBattleTextbox
+
 .ended
 	ld hl, .WeatherEndedMessages
 	call .PrintWeatherMessage
 	xor a
 	ld [wBattleWeather], a
 	ret
+
+;.CheckGogglesItem
+;	farcall _CheckGogglesItem
+;	ret
 
 .PrintWeatherMessage:
 	ld a, [wBattleWeather]

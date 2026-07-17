@@ -192,7 +192,7 @@ GoldenrodMagnetTrainStationGentlemanText:
 	
 StationBrightPowderText:
 	text "<PLAYER> found"
-	line "Brightpowder!"
+	line "BRIGHTPOWDER!"
 	done
 
 GoldenrodMagnetTrainStation_MapEvents:

@@ -1,4 +1,4 @@
-BattleCommand_BeatUp:
+_BattleCommand_BeatUp:
 ; beatup
 
 	call ResetDamage
@@ -158,7 +158,8 @@ BattleCommand_BeatUp:
 	call GetPokemonName
 	ld hl, BeatUpAttackText
 	call StdBattleTextbox
-	jp EnemyAttackDamage
+	farcall EnemyAttackDamage
+	ret
 
 .finish_beatup
 	ld hl, BeatUpAttackText
@@ -193,9 +194,10 @@ BattleCommand_BeatUp:
 
 .beatup_fail
 	ld b, buildopponentrage_command
-	jp SkipToBattleCommand
+	farcall SkipToBattleCommand
+	ret
 
-BattleCommand_BeatUpFailText:
+_BattleCommand_BeatUpFailText:
 ; beatupfailtext
 
 	ld a, [wBeatUpHitAtLeastOnce]
@@ -205,7 +207,8 @@ BattleCommand_BeatUpFailText:
 	inc a
 	ld [wAttackMissed], a
 
-	jp PrintButItFailed
+	farcall PrintButItFailed
+	ret
 
 GetBeatupMonLocation:
 	push bc

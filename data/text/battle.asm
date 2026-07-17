@@ -89,6 +89,21 @@ PeltedByHailText:
 	line "is pelted by HAIL!"
 	prompt
 
+ProtectedByGogglesText: ; for user holding item used for hail/sand
+	text "GOGGLES protect"
+	line "<USER>!"
+	prompt
+
+TargetProtectedByGogglesText: ; used for powder/spore moves
+	text "GOGGLES protect"
+	line "<TARGET>!"
+	prompt
+
+GrassTypeImmunePowderSporeText:
+	text "<TARGET>"
+	line "is immune!"
+	prompt
+
 PerishCountText:
 	text "<USER>'s"
 	line "PERISH count is @"
