@@ -1,5 +1,10 @@
 BattleCommand_StartHail:
 ; starthail
+
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	jr z, .failed
+	
 	ld a, WEATHER_HAIL
 	ld [wBattleWeather], a
 	call GetUserItem
@@ -13,3 +18,7 @@ BattleCommand_StartHail:
 	call AnimateCurrentMove
 	ld hl, ItStartedToHailText
 	jp StdBattleTextbox
+	
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed

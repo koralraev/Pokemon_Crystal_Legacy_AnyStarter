@@ -438,7 +438,7 @@ ShadyTmGuyMoveTutorScript:
 	ifequal 4, .DoubleEdge
 	ifequal 5, .Bubblebeam
 	ifequal 6, .Page2
-	sjump .Refused
+	sjump .Cancel
 	
 .Page2:
 	loadmenu .MoveMenuHeaderPage2
@@ -450,7 +450,7 @@ ShadyTmGuyMoveTutorScript:
 	ifequal 4, .Counter
 	ifequal 5, .SeismicToss
 	ifequal 6, .Page3
-	sjump .Refused
+	sjump .Cancel
 	
 .Page3:
 	loadmenu .MoveMenuHeaderPage3
@@ -462,7 +462,7 @@ ShadyTmGuyMoveTutorScript:
 	ifequal 4, .Thunderbolt
 	ifequal 5, .Teleport
 	ifequal 6, .Page4
-	sjump .Refused
+	sjump .Cancel
 	
 .Page4:
 	loadmenu .MoveMenuHeaderPage4
@@ -474,7 +474,7 @@ ShadyTmGuyMoveTutorScript:
 	ifequal 4, .EggBomb
 	ifequal 5, .Softboiled
 	ifequal 6, .Page5
-	sjump .Refused
+	sjump .Cancel
 	
 .Page5:
 	loadmenu .MoveMenuHeaderPage5
@@ -485,7 +485,8 @@ ShadyTmGuyMoveTutorScript:
 	ifequal 3, .RockSlide
 	ifequal 4, .TriAttack
 	ifequal 5, .Substitute
-	sjump .Refused
+	ifequal 6, .Cancel
+	sjump .Cancel
 	
 
 ; --- moves for the menu pages
@@ -650,7 +651,7 @@ ShadyTmGuyMoveTutorScript:
 	db "MEGA PUNCH@"
 	db "MEGA KICK@"
 	db "BODY SLAM@"
-	db "DOUBLE EDGE@"
+	db "DOUBLE-EDGE@"
 	db "BUBBLEBEAM@"
 	db "NEXT@"
 	
@@ -710,12 +711,13 @@ ShadyTmGuyMoveTutorScript:
 	
 .MenuDataPage5:
 	db STATICMENU_CURSOR ; flags
-	db 5 ; items + cancel options
+	db 6 ; items + cancel options
 	db "SKY ATTACK@"
 	db "EXPLOSION@"
 	db "ROCK SLIDE@"
 	db "TRI ATTACK@"
 	db "SUBSTITUTE@"
+	db "CANCEL@"
 
 SupernerdEricSeenText:
 	text "I got booted out"

@@ -1777,7 +1777,7 @@ HandleWeather:
 	ld de, ANIM_IN_SANDSTORM
 	call Call_PlayBattleAnim
 	call SwitchTurnCore
-	call GetEighthMaxHP
+	call GetEighthMaxHP ;does 1/8 max hp damage; use GetSixteenthMaxHP to do 1/16
 	call SubtractHPFromUser
 
 	ld hl, SandstormHitsText
@@ -1815,7 +1815,7 @@ HandleWeather:
 	ld de, ANIM_IN_HAIL
 	call Call_PlayBattleAnim
 	call SwitchTurnCore
-	call GetSixteenthMaxHP
+	call GetEighthMaxHP ;does 1/8 max hp damage; use GetSixteenthMaxHP to do 1/16
 	call SubtractHPFromUser
 
 	ld hl, PeltedByHailText

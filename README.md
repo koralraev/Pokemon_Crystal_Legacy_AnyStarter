@@ -123,7 +123,7 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	</details>
 	<details>
 	<summary>Added to TM learnsets of:</summary>
-	SSquirtle line, Psyduck/Golduck, Poliwag line, Tentacool/Tentacruel, Slowpoke line, Seel/Dewgong, Shellder/Cloyster, Krabby/Kingler, Chansey/Blissey, Kangaskhan, Horsea line, Goldeen/Seaking, Staryu/Starmie, Smoochum/Jynx, Gyarados, Lapras, Vaporeon, Omanyte/Omastar, Kabuto/Kabutops, Articuno, Dratini line, Mewtwo, Mew, Totodile line, Chinchou/Lanturn, Marill/Azumarill, Wooper/Quagsire, Qwilfish, Sneasel, Swinub/Piloswine, Corsola, Delibird, Mantine, Suicune and Lugia 
+	Squirtle line, Psyduck/Golduck, Poliwag line, Tentacool/Tentacruel, Slowpoke line, Seel/Dewgong, Shellder/Cloyster, Krabby/Kingler, Chansey/Blissey, Kangaskhan, Horsea line, Goldeen/Seaking, Staryu/Starmie, Smoochum/Jynx, Gyarados, Lapras, Vaporeon, Omanyte/Omastar, Kabuto/Kabutops, Articuno, Dratini line, Mewtwo, Mew, Totodile line, Chinchou/Lanturn, Marill/Azumarill, Wooper/Quagsire, Qwilfish, Sneasel, Swinub/Piloswine, Corsola, Delibird, Mantine, Suicune and Lugia 
 	</details>
 + The Move Relearner NPC has been moved from Blackthorne City to Cherrygrove Mart
 + Changes to some moves:
@@ -153,7 +153,7 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 + There is now a total of ~30% chance for a wild pokemon that has held items to have an item: rare items increased from ~2% to ~5%, and from ~23% to ~25% for the common item. 
 + All gen2 TMs can be purchased at marts before the E4. TMs are generally available at the first city after where they can otherwise be found or obtained; e.g., TM49 Fury Cutter is obtained after beating Bugsy in Azalea, it can then be purchased in Goldenrod
 	+ Gen2 TMs that where only available in Kanto can now be purchased at the Indigo Plateau. 
-+ A move tutor will appear in the Goldenrod Underground entrance to the Rocket Hideout after clearing the Radio Tower. He teaches some of the moves that were TMs in gen1 to eligible gen1 pokemon only. Getting gen1 TM moves to gen2 pokemon still needs breeding, or using the Egg Move Reminder in Blackthorn City. The tutor just circumvents the need for time-capsule trading with gen1
++ A move tutor will appear in the Goldenrod Underground entrance to the Rocket Hideout after clearing the Radio Tower. He teaches most of the moves that were TMs in gen1 to eligible gen1 pokemon only. Getting gen1 TM moves to gen2 pokemon still needs breeding, or using the Egg Move Reminder in Blackthorn City. The tutor just circumvents the need for time-capsule trading with gen1
   <details>
 	  <summary>Gen1 TM tutor moves:</summary>
 	  Mega Punch, Mega Kick, Body Slam, Double Edge, Bubblebeam, Icebeam, Pay Day, Submission, Counter, Seismic Toss, Rage, Mega Drain, Dragon Rage, Thunderbolt, Teleport, Mimic, Reflect, Metronome, Egg Bomb, Softboiled, Sky Attack, Explosion, Rock Slide, Tri Attack and Substitute
@@ -161,7 +161,7 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 + The Older Haircut Brother is replaced with his father. He increase happiness by 50 points, can do multiple haircuts and is there every day
 + The NPCs on the main street in Goldenrod City has been asked to keep to the sides of the street
 + Youngster Ian on route 34 is moved a bit to the left to act as a barrier to avoid going out in the grass when biking up and down Goldenrod City when breeding in the daycare
-+ Some items has been made more readily available: Leftovers, Blackbelt, Focus Band, Lucky Punch, Light Ball, Metal Powder, Polkadot Bow, Brightpowder
++ Some items has been made more readily available: Leftovers, Blackbelt, Focus Band, Lucky Punch, Light Ball, Metal Powder, Polkadot Bow, Brightpowder, Cleanse Tag, Scope Lens
   <details>
 	  <summary>Spoiler for items new locations:</summary>
 	  
@@ -173,14 +173,18 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	  - Metal Powder: held by wild Ditto (5%)
 	  - Polkadot Bow: held by wild Jigglypuff (5%)
 	  - Brightpowder: Inside Goldenrod Magnet Train Station at the sparkling flowerpots
+	  - Cleanse Tag: Given by the Granny at Ilex Forest Azelea gate
+	  - Scope Lens: Gotten from a Silph Co. scientist at Olivine Cafe
   </details>
++ Cleanse Tag now extends the duration of SAFEGUARD to 8 turns
 + Added a tutor teaching MIMIC in Cianwood house
 + Pokemons STATS menu option is now above list of usable HM moves
 + Added an in-battle stat menu to track battle stat changes and remaining turns for screens, safeguard and current weather. Opened by pressing START while on the battle menu (FIGHT/PKMN/PACK/RUN)
 + Added Egg Move Reminder to Blackthorn City at Move Deleter's house. All evolution lines can now learn their first stages egg moves, just as the PokeDex states. E.g. Crobat can learn Zubat's egg moves at the Egg Move Reminder
 + The Teleport Guy with an Abra at the Indigo Plateau stays to allow more easily getting back to Johto
-+ Added weather rocks: Heat Rock, Damp Rock, Smooth Rock and Icy Rock. Extends their corresponding weather type to 8 turns like later generations. They can be found in caves around Johto. Look for sparkling spots. Also Rain Dance and Sunny Day now has 100% accuracy.
-<details>
++ Added weather rocks: Heat Rock, Damp Rock, Smooth Rock and Icy Rock. Extends their corresponding weather type to 8 turns like later generations. They can be found in caves around Johto. Look for sparkling spots. Will only appear after gym leader Chuck in Cianwood has been beaten. 
+Also Rain Dance and Sunny Day now has 100% accuracy.
+  <details>
 	  <summary>Spoiler for weather rock locations:</summary>
 	  
 	  - Heat Rock: Left side of Burned Tower basement
@@ -188,6 +192,13 @@ This mod is neither meant as a challenge or easy-mode. It simply enables you to 
 	  - Smooth Rock: Left of the waterfalls in Tohjo Falls
 	  - Icy Rock: In Ice Path in the sount/east corner of where the boulders fall through to
   </details>
-+ Articuno, Zapdos and Moltres respectively learns Hail, Rain Dance and Sunny Day at lvl 57
 
++ Articuno, Zapdos and Moltres respectively learns Hail, Rain Dance and Sunny Day at lvl 57
++ Potions now heal 50HP. Super Potions heal 100HP. Gold Berry and Berry Juice heal is doubled (60HP and 40HP) to make them a bit more viable as useful hold items
++ The Name Rater now allows renaming traded pokemon
++ Indigo Plateau Mart now sells ethers
++ Added new item LIGHT CLAY. Extends Reflect and Light Screen duration to 8 turns. Acquired by trading a Smeargle for Mr.Mime holding LIGHT CLAY in Blackthorn City
++ Sandstorm now boosts ROCK-types Special Defence by 50%
++ Grass-types are now immune to spore and powder based moves: Poison Powder, Stun Spore, Sleep Powder, Spore, Cutton Spore
++ Added new item GOGGLES (Safety Goggles from Gen6). Protects the holder from weather damage (sand/hail) and spore and power based moves
 

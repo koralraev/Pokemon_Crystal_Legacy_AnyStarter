@@ -39,7 +39,7 @@ HiddenSmoothRockText:
 	line "SMOOTH ROCK!"
 	
 	para "Wow. It's really"
-	cont "smooth."
+	line "smooth."
 	done
 
 TohjoFalls_MapEvents:

@@ -255,14 +255,11 @@ MartMahogany1:
 	db -1 ; end
 
 MartMahogany2:
-	db 14 ; # items
+	db 11 ; # items
 	db RAGECANDYBAR
 	db METAL_COAT
 	db UP_GRADE
 	db BRICK_PIECE
-	db TM_RAIN_DANCE
-	db TM_SUNNY_DAY
-	db TM_HAIL
 	db TM_DIG
 	db TM_NIGHTMARE
 	db TM_DETECT
@@ -273,21 +270,24 @@ MartMahogany2:
 	db -1 ; end
 
 MartBlackthorn:
-	db 14 ; # items
+	db 17 ; # items
 	db ULTRA_BALL
 	db HYPER_POTION
 	db MAX_REPEL
 	db FULL_HEAL
-	db TM_SLUDGE_BOMB
-	db TM_STEEL_WING
-	db TM_THIEF
-	db TM_ICY_WIND
-	db TM_IRON_TAIL
-	db TM_REST
-	db TM_NASTY_PLOT
-	db TM_SWORDS_DANCE
-	db TM_AMNESIA
-	db TM_IRON_DEFENSE
+	db TM_SUNNY_DAY 	;11
+	db TM_ICY_WIND 		;16
+	db TM_RAIN_DANCE 	;18
+	db TM_IRON_TAIL 	;23
+	db TM_SLUDGE_BOMB 	;36
+	db TM_REST 		;44
+	db TM_THIEF 		;46
+	db TM_STEEL_WING 	;47
+	db TM_NASTY_PLOT 	;51
+	db TM_SWORDS_DANCE 	;52
+	db TM_AMNESIA 		;53
+	db TM_IRON_DEFENSE 	;54
+	db TM_HAIL 		;55
 	db -1 ; end
 
 MartViridian:
@@ -492,7 +492,7 @@ MartMtMoon:
 	db -1 ; end
 
 MartIndigoPlateau:
-	db 17 ; # items
+	db 18 ; # items
 	db ULTRA_BALL
 	db MAX_REPEL
 	db HYPER_POTION
@@ -500,6 +500,7 @@ MartIndigoPlateau:
 	db FULL_RESTORE
 	db REVIVE
 	db FULL_HEAL
+	db ETHER
 	db TM_TOXIC
 	db TM_ZAP_CANNON
 	db TM_HYPER_BEAM
