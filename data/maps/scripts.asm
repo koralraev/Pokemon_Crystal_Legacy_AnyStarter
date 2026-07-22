@@ -312,7 +312,7 @@ INCLUDE "maps/SilverCaveRoom2.asm"
 INCLUDE "maps/SilverCaveRoom3.asm"
 INCLUDE "maps/SilverCaveItemRooms.asm"
 INCLUDE "maps/DarkCaveVioletEntrance.asm"
-INCLUDE "maps/DarkCaveBlackthornEntrance.asm"
+;INCLUDE "maps/DarkCaveBlackthornEntrance.asm" ; moved to section 25
 INCLUDE "maps/DragonsDen1F.asm"
 INCLUDE "maps/DragonsDenB1F.asm"
 INCLUDE "maps/DragonShrine.asm"
@@ -487,3 +487,4 @@ INCLUDE "maps/Route10North.asm"
 INCLUDE "maps/Route36NationalParkGate.asm"
 INCLUDE "maps/OlivinePunishmentSpeechHouse.asm" ;moved from section 13
 INCLUDE "maps/OlivineHouseBeta.asm"		;moved from section 13
+INCLUDE "maps/DarkCaveBlackthornEntrance.asm"	;moved from section 16

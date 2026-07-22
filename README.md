@@ -200,5 +200,6 @@ Also Rain Dance and Sunny Day now has 100% accuracy.
 + Added new item LIGHT CLAY. Extends Reflect and Light Screen duration to 8 turns. Acquired by trading a Smeargle for Mr.Mime holding LIGHT CLAY in Blackthorn City
 + Sandstorm now boosts ROCK-types Special Defence by 50%
 + Grass-types are now immune to spore and powder based moves: Poison Powder, Stun Spore, Sleep Powder, Spore, Cutton Spore
-+ Added new item GOGGLES (Safety Goggles from Gen6). Protects the holder from weather damage (sand/hail) and spore and power based moves
++ Added new item GOGGLES (Safety Goggles from Gen6). Protects the holder from weather damage (sand/hail) and spore and power based moves: Poison Powder, Stun Spore, Sleep Powder, Spore, Cutton Spore. Can be brought from the Stone Curator in Dark Cave near Blackthorn City.
++ A curator of rare rocks and stones can be found in Dark Cave near Blackthorn City. He sells rocks and stones that can otherwise be difficult to come by. He also sells some protective goggles.
 

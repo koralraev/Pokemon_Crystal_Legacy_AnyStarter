@@ -1488,6 +1488,9 @@
 	const EVENT_HIDDEN_HEAT_ROCK		; burned tower basement
 	const EVENT_HIDDEN_DAMP_ROCK 		; union cave lapras pool
 	const EVENT_HIDDEN_ICY_ROCK 		; ice path
+	
+; new events
+	const EVENT_GREETED_STONECURATOR	; skips SC greeting on subsequent talks
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800
