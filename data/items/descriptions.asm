@@ -324,11 +324,11 @@ HyperPotionDesc:
 
 SuperPotionDesc:
 	db   "Restores #MON"
-	next "HP by 50.@"
+	next "HP by 100.@"
 
 PotionDesc:
 	db   "Restores #MON"
-	next "HP by 20.@"
+	next "HP by 50.@"
 
 EscapeRopeDesc:
 	db   "Use for escaping"
@@ -627,7 +627,7 @@ CleanseTagDesc:
 ;	db   "Helps repel wild"
 ;	next "#MON. (HOLD)@"
 	db   "Extends SG. Repels"
-	next "wild #MON. (HOLD)@"
+	next "wild #MON(HOLD)@"
 
 MysticWaterDesc:
 	db   "Powers up water-"
@@ -804,7 +804,7 @@ CharcoalDesc:
 
 BerryJuiceDesc:
 	db   "Restores #MON"
-	next "HP by 20.@"
+	next "HP by 40.@"
 
 ScopeLensDesc:
 	db   "Raises critical"
@@ -933,7 +933,7 @@ BerryDesc:
 
 GoldBerryDesc:
 	db   "A self-restore"
-	next "item. (30HP, HOLD)@"
+	next "item. (60HP, HOLD)@"
 
 SquirtBottleDesc:
 	db   "A bottle used for"

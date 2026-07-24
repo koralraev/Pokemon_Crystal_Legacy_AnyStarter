@@ -33,9 +33,9 @@ _BattleCommand_CheckPowder:
 ; Checks if the move is powder/spore-based and 
 ; if the opponent is Grass-type
 	ld a, BATTLE_VARS_MOVE_ANIM
-	farcall GetBattleVar ; to farcall
+	call GetBattleVar ; farcall not needed as GetBattleVar lives in home which is callable from everywhere
 	ld hl, PowderMoves
-	farcall IsInByteArray ; to farcall
+	call IsInByteArray
 	ret nc
 
 ; Safety Goggles protects the target regardless of type
