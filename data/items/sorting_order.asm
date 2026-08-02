@@ -134,6 +134,12 @@ ItemNameOrder:
 
 	db DRAGON_SCALE 	; 71
 	db UP_GRADE 		; 72
+	db LIGHT_CLAY
+	db HEAT_ROCK
+	db DAMP_ROCK
+	db SMOOTH_ROCK
+	db ICY_ROCK
+	db GOGGLES
 
 	db NUGGET 			; 73
 	db TINYMUSHROOM 	; 74
@@ -198,7 +204,7 @@ ItemNameOrder:
     db BLK_APRICORN		; a9
     db PNK_APRICORN		; aa
 
-REPT 22
+REPT 16 ; default 22
 	db $FF ; fill with empty bytes to reach NUM_ITEMS + 1
 ENDR
 

@@ -22,7 +22,7 @@ Though this is build on TheSmithPlays' Pokemon Crystal Legacy it is NOT compatib
 # ADDITIONS
 + New Items: Weather rocks and other duration extending hold items, like Light Clay. Changes to existing items to act as duration extending items for certain moves
 + New Moves: Hone Claws, Nasty Plot, Iron Defense, Hail
-+ New TMs: Thunder Wave, Hone Claws Nasty Plot, Swords Dance, Amnesia, Iron Defense, Hail
++ New TMs: Thunder Wave, Hone Claws, Nasty Plot, Swords Dance, Amnesia, Iron Defense, Hail
 + Changes to weathers
 + More move tutors
 + Changes to items, like increased heal amounts for Potions, hold items extend move effects, etc.

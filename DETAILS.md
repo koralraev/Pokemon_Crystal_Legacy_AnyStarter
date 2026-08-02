@@ -264,7 +264,7 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 	  - Mirror Move: now a priority move (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
 	  - Mimic: now lets you choose which move to mimic from the opposing pokemons current moves instead of just mimicking the last used move (same functionality as in gen 1). The mimicked move is used right after learning it and is learned until switching out. (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
 	  - Submission: 50BP instead of 80, but always raise attack by one (functions like Power-Up Punch from gen 6). Added to movepool of Hitmonchan (lvl 55), Cubone (lvl 51), Marowak (lvl 55), Mankey/Primeape (lvl 55). (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
-	  - Flash: now a priority move with 60BP, ELECTRIC type and a 10% chance to flinch the target. (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
+	  - Flash: now a priority move with 50BP, ELECTRIC type and a 10% chance to flinch the target. (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
 	  - Strength: now fighting type
   </details>
 + There is now a total of ~30% chance for a wild pokemon that has held items to have an item: rare items increased from ~2% to ~5%, and from ~23% to ~25% for the common item. 

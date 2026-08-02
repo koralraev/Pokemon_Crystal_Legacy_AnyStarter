@@ -40,13 +40,35 @@ CherrygroveMartCooltrainerMScript:
 CherrygroveMartYoungsterScript:
 	jumptextfaceplayer CherrygroveMartYoungsterText
 	
-MoveRelearner:
+MoveRelearner: ; used when first talking to move reminder
 	faceplayer
 	opentext
+	checkevent EVENT_GREETED_MOVE_TUTOR
+	iftrue .AlreadyGreetedMoveReminder
+	writetext MoveReminderGreetText
+	waitbutton
+	setevent EVENT_GREETED_MOVE_TUTOR	
+.AlreadyGreetedMoveReminder
 	special MoveReminder
 	waitbutton
 	closetext
 	end
+	
+MoveReminderGreetText:
+	text "Oh, hey there."
+	para "Yes, I'm the"
+	line "MOVE REMINDER."
+    
+	para "I come here to"
+	line "get normal POTIONS"
+    
+	para "Can you believe"
+	line "they don't sell"
+	cont "normal POTIONS"
+	cont "in Blackthorn!"
+    
+	para "Anyway."
+	done
 
 CherrygroveMartCooltrainerMText:
 	text "They're fresh out"

@@ -1491,6 +1491,8 @@
 	
 ; new events
 	const EVENT_GREETED_STONECURATOR	; skips SC greeting on subsequent talks
+	const EVENT_GREETED_SHADY_TUTOR
+	const EVENT_GREETED_MOVE_TUTOR
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800

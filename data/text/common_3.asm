@@ -479,28 +479,40 @@ _EggMoveReminderIntro::
     done
 
 _MoveReminderIntro::
-    text "Oh, hey there."
-    para "Yes, I'm the"
-    line "MOVE REMINDER."
+;	text "Oh, hey there."
+;	para "Yes, I'm the"
+;	line "MOVE REMINDER."
     
-    para "I come here to"
-    line "get normal POTIONS"
+;	para "I come here to"
+;	line "get normal POTIONS"
     
-    para "They don't have"
-    line "normal POTIONS"
-    cont "in Blackthorn!"
+;	para "Can you believe"
+;	line "they don't sell"
+;	cont "normal POTIONS"
+;	cont "in Blackthorn!"
     
-    para "Anyway."
+;	para "Anyway."
 
-    para "I can make #MON"
-    line "rememember moves"
+	text "I can make #MON"
+	line "rememember moves"
 
-    para "that they learned"
-    line "while growing up."
+	para "that they learned"
+	line "while growing up."
 
 	para "Shall I make a"
 	line "#MON remember?"
-    done
+	done
+
+_MoveReminderMet::
+	text "I can make #MON"
+	line "rememember moves"
+
+	para "that they learned"
+	line "while growing up."
+
+	para "Shall I make a"
+	line "#MON remember?"
+	done
 
 _MoveReminderWhichMon::
     text "Which #MON"

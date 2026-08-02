@@ -417,6 +417,11 @@ GoldenrodUndergroundHiddenAntidote:
 ShadyTmGuyMoveTutorScript:
 	faceplayer
 	opentext
+	checkevent EVENT_GREETED_SHADY_TUTOR
+	iftrue .ShadyTutorShop
+	writetext TutorGreetingText
+	promptbutton
+.ShadyTutorShop
 	writetext TutorAskTeachAMoveText
 	yesorno
 	iffalse .Refused
@@ -632,6 +637,7 @@ ShadyTmGuyMoveTutorScript:
 	end
 	
 .MoveTaught:
+	setevent EVENT_GREETED_SHADY_TUTOR
 	takemoney YOUR_MONEY, TUTORMONEYPAYAMOUNT
 	special PlaceMoneyTopRight
 	writetext TutorToughtMoveText	
@@ -954,7 +960,7 @@ GoldenrodUndergroundNoEntryText:
 	line "THIS POINT"
 	done
 	
-TutorAskTeachAMoveText:
+TutorGreetingText:
 	text "I found this box"
 	line "full of TMs!"
 	
@@ -971,9 +977,11 @@ TutorAskTeachAMoveText:
 	
 	para "It would be a"
 	line "shame just letting"
-	cont "them site here…"
+	cont "them sit here…"
+	done
 
-	para "Want to try one?"
+TutorAskTeachAMoveText:
+	text "Want to try one?"
 	done
 
 TutorShortOnFundsText:
