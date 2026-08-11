@@ -1762,7 +1762,8 @@ wOBP1:: db
 
 wNumHits:: db
 
-	ds 1
+;	ds 1
+wFlyingWithPC:: db
 
 wOptions::
 ; bit 0-2: number of frames to delay when printing text

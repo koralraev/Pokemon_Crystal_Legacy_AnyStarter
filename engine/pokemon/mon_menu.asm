@@ -607,6 +607,8 @@ MonMenu_Cut:
 	ret
 
 MonMenu_Fly:
+	xor a
+	ld [wFlyingWithPC], a
 	farcall FlyFunction
 	ld a, [wFieldMoveSucceeded]
 	cp $2

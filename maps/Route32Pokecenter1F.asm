@@ -2,6 +2,8 @@
 	const ROUTE32POKECENTER1F_NURSE
 	const ROUTE32POKECENTER1F_FISHING_GURU
 	const ROUTE32POKECENTER1F_COOLTRAINER_F
+	const ROUTE32_PC_FLYSERVICE 	 ;<----
+	const ROUTE32_PC_FLYSERVICE_ABRA  ;<----
 
 Route32Pokecenter1F_MapScripts:
 	def_scene_scripts
@@ -42,6 +44,35 @@ Route32Pokecenter1FFishingGuruScript:
 
 Route32Pokecenter1FCooltrainerFScript:
 	jumptextfaceplayer Route32Pokecenter1FCooltrainerFText
+	
+Route32_FlyService: ;<----1
+	opentext
+	writetext Route32_FlyText ;<----1
+	yesorno
+	iffalse .Refused
+	closetext
+	appear ROUTE32_PC_FLYSERVICE_ABRA ;<----1
+	playsound SFX_WARP_FROM
+	applymovement ROUTE32_PC_FLYSERVICE_ABRA, Route32_AbraTeleportTo ;<----2
+	setevent EVENT_FLYSERVICE_HIDE_ABRA ; clears the abra for next visit
+	callasm FlyService
+	reloadmappart
+	playsound SFX_WARP_TO
+	applymovement ROUTE32_PC_FLYSERVICE_ABRA, Route32_AbraTeleportFrom ;<----2
+	disappear ROUTE32_PC_FLYSERVICE_ABRA ;<----1
+	end
+.Refused
+	closetext
+	end
+Route32_AbraTeleportTo: 	;<----1
+	teleport_to
+	step_end
+Route32_AbraTeleportFrom: ;<----1
+	teleport_from
+	step_end
+Route32_FlyText: 	;<----1
+	text "Call an Abra?"
+	done
 
 Route32Pokecenter1FFishingGuruText_Question:
 	text "This is a great"
@@ -108,3 +139,5 @@ Route32Pokecenter1F_MapEvents:
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FNurseScript, -1
 	object_event  1,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FFishingGuruScript, -1
 	object_event  6,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FCooltrainerFScript, -1
+	object_event  5,  2, SPRITE_FLYSERVICE_PC, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32_FlyService, EVENT_FLYSERVICE_UNLOCKED
+	object_event  6,  3, SPRITE_ABRA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route32_FlyService, EVENT_FLYSERVICE_HIDE_ABRA

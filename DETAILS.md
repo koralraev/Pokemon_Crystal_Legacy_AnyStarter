@@ -3,10 +3,10 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 
 # FASE Details
 
-# FEATURES
+# Features
 + Gift NPC at Elm's Lab will give the player any requested pokemon, at any level, shiny or not
   - The NPC will allow you to choose any pokemon available in the game (1-251), choose its level from 1 to 100, and whether or not it should be shiny. It is necessary to first obtain the pokedex from Oak at Mr. Pokemon's house and return to Elm and speak with the officer to name the rival, before any pokemon can be chosen. The NPC will check if you have the pokedex or not.
-+ The Move Relearner NPC has been moved from Blackthorne City to Cherrygrove Mart
++ A teleportation system will be unlocked in all Johto Pokemon Centers after beating Chuck and getting HM2 FLY. The system allows to get around without having to have a pokemon knowing FLY on the team
 + A move tutor will appear in the Goldenrod Underground entrance to the Rocket Hideout after clearing the Radio Tower. He teaches most of the moves that were TMs in gen1 to eligible gen1 pokemon only. Getting gen1 TM moves to gen2 pokemon still needs breeding, or using the Egg Move Reminder in Blackthorn City. The tutor just circumvents the need for time-capsule trading with gen1
   <details>
 	  <summary>Gen1 TM tutor moves:</summary>
@@ -19,7 +19,7 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 + A curator of rare rocks and stones can be found in Dark Cave near Blackthorn City. He sells rocks and stones that can otherwise be difficult to come by. He also sells some protective goggles.
 
 
-# ADDITIONS
+# Additions
 + New Items: 
   + Weather rocks: Heat Rock, Damp Rock, Smooth Rock and Icy Rock. Extends their corresponding weather type to 8 turns like later generations. They can be found in caves around Johto. Look for sparkling spots. Will only appear after gym leader Chuck in Cianwood has been beaten
   <details>
@@ -30,12 +30,12 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 	  - Smooth Rock: Left of the waterfalls in Tohjo Falls
 	  - Icy Rock: In Ice Path in the sount/east corner of where the boulders fall through to
   </details>
-  + LIGHT CLAY: Extends Reflect and Light Screen duration to 8 turns. 
++ LIGHT CLAY: Extends Reflect and Light Screen duration to 8 turns. 
   <details>
     <summary>Spoiler for acquiring</summary>
     Acquired by trading a Smeargle for Mr.Mime holding LIGHT CLAY in Blackthorn City
     </details>
-  + GOGGLES: Safety Goggles from Gen6. Protects the holder from weather damage (sand/hail) and spore and power based moves: Poison Powder, Stun Spore, Sleep Powder, Spore, Cutton Spore. 
++ GOGGLES: Safety Goggles from Gen6. Protects the holder from weather damage (sand/hail) and spore and power based moves: Poison Powder, Stun Spore, Sleep Powder, Spore, Cutton Spore. 
   <details>
     <summary>Spoiler for acquiring</summary>
     Can be brought from the Stone Curator in Dark Cave near Blackthorn City
@@ -75,7 +75,7 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 	Houndour, 
 	Smoochum
 	</details>
-  + Nasty Plot added to E4 Karens Houndoom for the first battle, and to Umbreon for rematches
++ Nasty Plot added to E4 Karens Houndoom for the first battle, and to Umbreon for rematches
 + Swords Dance (TM52)
 	<details>
 	<summary>Added to level up learnset of:</summary>
@@ -246,26 +246,28 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 + A tutor teaching MIMIC in Cianwood house
 + Changes to items:
   <details>
-    - Cleanse Tag: Extends durations of SAFEGUARD from 5 to 8 turns
+  <summary>Changes:</summary>
+    - Cleanse Tag: Extends durations of SAFEGUARD from 5 to 8 turns in addition to repelling wild pokemon
   </details>
 
 
 
-# SOME ENHANCEMENTS
+# Some Enhancements
 + Player can always succesfully flee from wild battles
   + Now compares the enemys speed to itself so the speed of the players pokemon is not evaluated for the chance to flee the encounter
++ The Move Relearner NPC has been moved from Blackthorne City to Cherrygrove Mart
 + Changes to moves:
   <details>
-	  <summary>Move changes:</summary>
-	  - Wing Attack: now a priority move, but 50BP instead of 60 (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
-	  - Cut: now has 100% accuracy instead of 95%
-	  - Leech Life: 70BP instead of 40
-	  - Rapid Spin: now also raises speed by one stage
-	  - Mirror Move: now a priority move (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
-	  - Mimic: now lets you choose which move to mimic from the opposing pokemons current moves instead of just mimicking the last used move (same functionality as in gen 1). The mimicked move is used right after learning it and is learned until switching out. (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
-	  - Submission: 50BP instead of 80, but always raise attack by one (functions like Power-Up Punch from gen 6). Added to movepool of Hitmonchan (lvl 55), Cubone (lvl 51), Marowak (lvl 55), Mankey/Primeape (lvl 55). (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
-	  - Flash: now a priority move with 50BP, ELECTRIC type and a 10% chance to flinch the target. (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
-	  - Strength: now fighting type
+  <summary>Move changes:</summary>
+  - Wing Attack: now a priority move, but 50BP instead of 60 (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
+  - Cut: now has 100% accuracy instead of 95%
+  - Leech Life: 70BP instead of 40
+  - Rapid Spin: now also raises speed by one stage
+  - Mirror Move: now a priority move (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
+  - Mimic: now lets you choose which move to mimic from the opposing pokemons current moves instead of just mimicking the last used move (same functionality as in gen 1). The mimicked move is used right after learning it and is learned until switching out. (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
+  - Submission: 50BP instead of 80, but always raise attack by one (functions like Power-Up Punch from gen 6). Added to movepool of Hitmonchan (lvl 55), Cubone (lvl 51), Marowak (lvl 55), Mankey/Primeape (lvl 55). (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
+  - Flash: now a priority move with 50BP, ELECTRIC type and a 10% chance to flinch the target. (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
+  - Strength: now fighting type
   </details>
 + There is now a total of ~30% chance for a wild pokemon that has held items to have an item: rare items increased from ~2% to ~5%, and from ~23% to ~25% for the common item. 
 + All gen2 TMs can be purchased at marts before the E4. TMs are generally available at the first city after where they can otherwise be found or obtained; e.g., TM49 Fury Cutter is obtained after beating Bugsy in Azalea, it can then be purchased in Goldenrod
@@ -274,21 +276,22 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 + Youngster Ian on route 34 is moved a bit to the left to act as a barrier to avoid going out in the grass when biking up and down Goldenrod City when breeding in the daycare
 + Some items has been made more readily available: Leftovers, Blackbelt, Focus Band, Lucky Punch, Light Ball, Metal Powder, Polkadot Bow, Brightpowder, Cleanse Tag, Scope Lens
   <details>
-	  <summary>Spoiler for items new locations:</summary>
-	  - Leftovers: Can be found behind one of the trashcans in National Park. Check the trashcans for a clue
-	  - Blackbelt: Route 42 area behind the cutable tree, next to the three berry trees
-	  - Focus Band: Route 42 area behind the cutable tree, next to the three berry trees
-	  - Lucky Punch: held by wild Chansey (5%)
-	  - Light Ball: held by wild Pichu and Pikachu (5%)
-	  - Metal Powder: held by wild Ditto (5%)
-	  - Polkadot Bow: held by wild Jigglypuff (5%)
-	  - Brightpowder: Inside Goldenrod Magnet Train Station at the sparkling flowerpots
-	  - Cleanse Tag: Given by the Granny at Ilex Forest Azelea gate
-	  - Scope Lens: Gotten from a Silph Co. scientist at Olivine Cafe
+  <summary>Spoiler for items new locations:</summary>
+  - Leftovers: Can be found behind one of the trashcans in National Park. Check the trashcans for a clue
+  - Blackbelt: Route 42 area behind the cutable tree, next to the three berry trees
+  - Focus Band: Route 42 area behind the cutable tree, next to the three berry trees
+  - Lucky Punch: held by wild Chansey (5%)
+  - Light Ball: held by wild Pichu and Pikachu (5%)
+  - Metal Powder: held by wild Ditto (5%)
+  - Polkadot Bow: held by wild Jigglypuff (5%)
+  - Brightpowder: Inside Goldenrod Magnet Train Station at the sparkling flowerpots
+  - Cleanse Tag: Given by the Granny at Ilex Forest Azelea gate
+  - Scope Lens: Gotten from a Silph Co. scientist at Olivine Cafe
+  - TM14, TM25 TM38: at Goldenrod Gamecorner price decreased to 1500 coins = 30000$, to still be expensive but not overpriced at 110000$
   </details>
-  + Pokemons STATS menu option is now above list of usable HM moves
-  + The Teleport Guy with an Abra at the Indigo Plateau stays to allow more easily getting back to Johto
-  + Articuno, Zapdos and Moltres respectively learns Hail, Rain Dance and Sunny Day at lvl 57
-  + Potions now heal 50HP. Super Potions heal 100HP. Gold Berry and Berry Juice heal is doubled (60HP and 40HP) to make them a bit more viable as useful hold items
-  + Marts sell more TMs and Indigo Plateau mart sells ethers
++ Pokemons STATS menu option is now above list of usable HM moves
++ The Teleport Guy with an Abra at the Indigo Plateau stays to allow more easily getting back to Johto
++ Articuno, Zapdos and Moltres respectively learns Hail, Rain Dance and Sunny Day at lvl 57
++ Potions now heal 50HP. Super Potions heal 100HP. Gold Berry and Berry Juice heal is doubled (60HP and 40HP) to make them a bit more viable as useful hold items
++ Marts sell more TMs and Indigo Plateau mart sells ethers
 

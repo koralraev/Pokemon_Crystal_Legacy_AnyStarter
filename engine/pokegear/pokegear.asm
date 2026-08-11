@@ -2871,7 +2871,8 @@ TownMapMon:
 	ld [wTempIconSpecies], a
 ; Get FlyMon icon
 	ld e, $08 ; starting tile in VRAM
-	farcall GetSpeciesIcon
+;	farcall GetSpeciesIcon
+	farcall FlyFunction_GetMonIcon
 ; Animation/palette
 	depixel 0, 0
 	ld a, SPRITE_ANIM_INDEX_PARTY_MON

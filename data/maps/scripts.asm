@@ -207,7 +207,7 @@ INCLUDE "maps/ViridianPokecenter1F.asm"
 INCLUDE "maps/ViridianPokecenter2FBeta.asm"
 INCLUDE "maps/Route2NuggetHouse.asm"
 INCLUDE "maps/Route2Gate.asm"
-INCLUDE "maps/OlivinePokecenter1F.asm"
+;INCLUDE "maps/OlivinePokecenter1F.asm" ; moved to section 25
 
 
 
@@ -215,8 +215,8 @@ SECTION "Map Scripts 12", ROMX
 
 INCLUDE "maps/OlivineGym.asm"
 INCLUDE "maps/OlivineTimsHouse.asm"
-; INCLUDE "maps/OlivineHouseBeta.asm"
-; INCLUDE "maps/OlivinePunishmentSpeechHouse.asm"
+; INCLUDE "maps/OlivineHouseBeta.asm" ;moved to section 25
+; INCLUDE "maps/OlivinePunishmentSpeechHouse.asm" ;moved to section 25
 INCLUDE "maps/OlivineGoodRodHouse.asm"
 INCLUDE "maps/OlivineCafe.asm"
 INCLUDE "maps/OlivineMart.asm"
@@ -225,7 +225,7 @@ INCLUDE "maps/Route39Barn.asm"
 INCLUDE "maps/Route39Farmhouse.asm"
 INCLUDE "maps/ManiasHouse.asm"
 INCLUDE "maps/CianwoodGym.asm"
-INCLUDE "maps/CianwoodPokecenter1F.asm"
+; INCLUDE "maps/CianwoodPokecenter1F.asm" ;moved to section 26
 INCLUDE "maps/CianwoodPharmacy.asm"
 INCLUDE "maps/CianwoodPhotoStudio.asm"
 INCLUDE "maps/CianwoodLugiaSpeechHouse.asm"
@@ -488,3 +488,7 @@ INCLUDE "maps/Route36NationalParkGate.asm"
 INCLUDE "maps/OlivinePunishmentSpeechHouse.asm" ;moved from section 13
 INCLUDE "maps/OlivineHouseBeta.asm"		;moved from section 13
 INCLUDE "maps/DarkCaveBlackthornEntrance.asm"	;moved from section 16
+INCLUDE "maps/OlivinePokecenter1F.asm"		;moved from section 11
+
+SECTION "Map Scripts 26", ROMX
+INCLUDE "maps/CianwoodPokecenter1F.asm"		;moved from section 12

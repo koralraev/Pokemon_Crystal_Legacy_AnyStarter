@@ -4,6 +4,8 @@
 	const VIOLETPOKECENTER1F_GENTLEMAN
 	const VIOLETPOKECENTER1F_YOUNGSTER
 	const VIOLETPOKECENTER1F_ELMS_AIDE
+	const VIOLET_PC_FLYSERVICE 	 ;<----
+	const VIOLET_PC_FLYSERVICE_ABRA  ;<----
 
 VioletPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -84,6 +86,35 @@ VioletPokecenter1FGentlemanScript:
 
 VioletPokecenter1FYoungsterScript:
 	jumptextfaceplayer VioletPokecenter1FYoungsterText
+	
+Violet_FlyService: ;<----1
+	opentext
+	writetext Violet_FlyText ;<----1
+	yesorno
+	iffalse .Refused
+	closetext
+	appear VIOLET_PC_FLYSERVICE_ABRA ;<----1
+	playsound SFX_WARP_FROM
+	applymovement VIOLET_PC_FLYSERVICE_ABRA, Violet_AbraTeleportTo ;<----2
+	setevent EVENT_FLYSERVICE_HIDE_ABRA ; clears the abra for next visit
+	callasm FlyService
+	reloadmappart
+	playsound SFX_WARP_TO
+	applymovement VIOLET_PC_FLYSERVICE_ABRA, Violet_AbraTeleportFrom ;<----2
+	disappear VIOLET_PC_FLYSERVICE_ABRA ;<----1
+	end
+.Refused
+	closetext
+	end
+Violet_AbraTeleportTo: 	;<----1
+	teleport_to
+	step_end
+Violet_AbraTeleportFrom: ;<----1
+	teleport_from
+	step_end
+Violet_FlyText: 	;<----1
+	text "Call an Abra?"
+	done
 
 MovementData_AideWalksStraightOutOfPokecenter:
 	step DOWN
@@ -231,3 +262,5 @@ VioletPokecenter1F_MapEvents:
 	object_event  1,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FGentlemanScript, -1
 	object_event  8,  1, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1FYoungsterScript, -1
 	object_event  4,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1F_ElmsAideScript, EVENT_ELMS_AIDE_IN_VIOLET_POKEMON_CENTER
+	object_event  5,  2, SPRITE_FLYSERVICE_PC, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Violet_FlyService, EVENT_FLYSERVICE_UNLOCKED
+	object_event  6,  3, SPRITE_ABRA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Violet_FlyService, EVENT_FLYSERVICE_HIDE_ABRA

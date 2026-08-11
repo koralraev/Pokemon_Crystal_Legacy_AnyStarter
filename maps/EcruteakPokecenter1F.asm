@@ -4,6 +4,8 @@
 	const ECRUTEAKPOKECENTER1F_COOLTRAINER_F
 	const ECRUTEAKPOKECENTER1F_GYM_GUIDE
 	const ECRUTEAKPOKECENTER1F_BILL
+	const ECRUTEAK_PC_FLYSERVICE 	 ;<----
+	const ECRUTEAK_PC_FLYSERVICE_ABRA  ;<----
 
 EcruteakPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -96,6 +98,35 @@ EcruteakPokecenter1FPlayerMovement1:
 	step UP
 	step UP
 	step_end
+	
+Ecruteak_FlyService: ;<----1
+	opentext
+	writetext Ecruteak_FlyText ;<----1
+	yesorno
+	iffalse .Refused
+	closetext
+	appear ECRUTEAK_PC_FLYSERVICE_ABRA ;<----1
+	playsound SFX_WARP_FROM
+	applymovement ECRUTEAK_PC_FLYSERVICE_ABRA, Ecruteak_AbraTeleportTo ;<----2
+	setevent EVENT_FLYSERVICE_HIDE_ABRA ; clears the abra for next visit
+	callasm FlyService
+	reloadmappart
+	playsound SFX_WARP_TO
+	applymovement ECRUTEAK_PC_FLYSERVICE_ABRA, Ecruteak_AbraTeleportFrom ;<----2
+	disappear ECRUTEAK_PC_FLYSERVICE_ABRA ;<----1
+	end
+.Refused
+	closetext
+	end
+Ecruteak_AbraTeleportTo: 	;<----1
+	teleport_to
+	step_end
+Ecruteak_AbraTeleportFrom: ;<----1
+	teleport_from
+	step_end
+Ecruteak_FlyText: 	;<----1
+	text "Call an Abra?"
+	done
 
 EcruteakPokecenter1F_BillText1:
 	text "Hi, I'm BILL. And"
@@ -222,3 +253,5 @@ EcruteakPokecenter1F_MapEvents:
 	object_event  1,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FCooltrainerFScript, -1
 	object_event  7,  1, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FGymGuideScript, -1
 	object_event  0,  7, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_POKE_CENTER_BILL
+	object_event  5,  2, SPRITE_FLYSERVICE_PC, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Ecruteak_FlyService, EVENT_FLYSERVICE_UNLOCKED
+	object_event  6,  3, SPRITE_ABRA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Ecruteak_FlyService, EVENT_FLYSERVICE_HIDE_ABRA

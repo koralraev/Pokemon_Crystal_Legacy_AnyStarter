@@ -113,6 +113,7 @@
 	const SPRITE_RATTATA_OVERWORLD ; 6e
 	const SPRITE_ITEM_BELT ;6f
 	const SPRITE_ITEM_SPARKLE ;71
+	const SPRITE_FLYSERVICE_PC ; 72
 NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)

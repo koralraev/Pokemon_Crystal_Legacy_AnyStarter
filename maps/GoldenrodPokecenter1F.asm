@@ -4,6 +4,8 @@
 	const GOLDENRODPOKECENTER1F_GAMEBOY_KID
 	const GOLDENRODPOKECENTER1F_LASS
 	const GOLDENRODPOKECENTER1F_POKEFAN_F
+	const GOLDENROD_PC_FLYSERVICE 	 ;<----
+	const GOLDENROD_PC_FLYSERVICE_ABRA  ;<----
 
 GoldenrodPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -146,6 +148,36 @@ GoldenrodPokeCenter1FLinkReceptionistWalkToStairsFromRightDoorwayTileMovement:
 	step LEFT
 	step DOWN
 	step_end
+	
+Goldenrod_FlyService:
+	opentext
+	writetext Goldenrod_FlyText
+	;setevent EVENT_FLYSERVICE_HIDE_ABRA
+	yesorno
+	iffalse .Refused
+	closetext
+	appear GOLDENROD_PC_FLYSERVICE_ABRA
+	playsound SFX_WARP_FROM
+	applymovement GOLDENROD_PC_FLYSERVICE_ABRA, GoldenrodAbraTeleportTo
+	setevent EVENT_FLYSERVICE_HIDE_ABRA
+	callasm FlyService
+	reloadmappart
+	playsound SFX_WARP_TO
+	applymovement GOLDENROD_PC_FLYSERVICE_ABRA, GoldenrodAbraTeleportFrom
+	disappear GOLDENROD_PC_FLYSERVICE_ABRA
+	end
+.Refused
+	closetext
+	end
+GoldenrodAbraTeleportTo:
+	teleport_to
+	step_end
+GoldenrodAbraTeleportFrom:
+	teleport_from
+	step_end
+Goldenrod_FlyText:
+	text "Call an Abra?"
+	done
 
 GoldenrodPokecomCenterWelcomeToTradeCornerText: ; unreferenced
 	text "Hello! Welcome to"
@@ -820,3 +852,5 @@ GoldenrodPokecenter1F_MapEvents:
 	object_event  6,  1, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FGameboyKidScript, -1
 	object_event  1,  4, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FLassScript, -1
 	object_event  7,  5, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FPokefanF, -1
+	object_event  5,  2, SPRITE_FLYSERVICE_PC, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Goldenrod_FlyService, EVENT_FLYSERVICE_UNLOCKED
+	object_event  6,  3, SPRITE_ABRA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Goldenrod_FlyService, EVENT_FLYSERVICE_HIDE_ABRA

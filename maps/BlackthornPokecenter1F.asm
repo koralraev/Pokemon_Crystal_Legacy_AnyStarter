@@ -3,6 +3,8 @@
 	const BLACKTHORNPOKECENTER1F_GENTLEMAN
 	const BLACKTHORNPOKECENTER1F_TWIN
 	const BLACKTHORNPOKECENTER1F_COOLTRAINER_M
+	const BLACKTHORN_PC_FLYSERVICE 	 ;<----
+	const BLACKTHORN_PC_FLYSERVICE_ABRA  ;<----
 
 BlackthornPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -20,6 +22,35 @@ BlackthornPokecenter1FTwinScript:
 
 BlackthornPokecenter1FCooltrainerMScript:
 	jumpstd HappinessCheckScript
+	
+Blackthorn_FlyService: ;<----1
+	opentext
+	writetext Blackthorn_FlyText ;<----1
+	yesorno
+	iffalse .Refused
+	closetext
+	appear BLACKTHORN_PC_FLYSERVICE_ABRA ;<----1
+	playsound SFX_WARP_FROM
+	applymovement BLACKTHORN_PC_FLYSERVICE_ABRA, Blackthorn_AbraTeleportTo ;<----2
+	setevent EVENT_FLYSERVICE_HIDE_ABRA ; clears the abra for next visit
+	callasm FlyService
+	reloadmappart
+	playsound SFX_WARP_TO
+	applymovement BLACKTHORN_PC_FLYSERVICE_ABRA, Blackthorn_AbraTeleportFrom ;<----2
+	disappear BLACKTHORN_PC_FLYSERVICE_ABRA ;<----1
+	end
+.Refused
+	closetext
+	end
+Blackthorn_AbraTeleportTo: 	;<----1
+	teleport_to
+	step_end
+Blackthorn_AbraTeleportFrom: ;<----1
+	teleport_from
+	step_end
+Blackthorn_FlyText: 	;<----1
+	text "Call an Abra?"
+	done
 
 BlackthornPokecenter1FGentlemanText:
 	text "Deep inside far-"
@@ -61,6 +92,8 @@ BlackthornPokecenter1F_MapEvents:
 
 	def_object_events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FNurseScript, -1
-	object_event  5,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FGentlemanScript, -1
+	object_event  6,  2, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FGentlemanScript, -1
 	object_event  1,  4, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FTwinScript, -1
 	object_event  7,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FCooltrainerMScript, -1
+	object_event  5,  2, SPRITE_FLYSERVICE_PC, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Blackthorn_FlyService, EVENT_FLYSERVICE_UNLOCKED
+	object_event  6,  3, SPRITE_ABRA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Blackthorn_FlyService, EVENT_FLYSERVICE_HIDE_ABRA

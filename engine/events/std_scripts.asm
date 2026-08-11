@@ -644,6 +644,11 @@ InitializeEventsScript:
 	setevent EVENT_CAUGHT_ARTICUNO
 	setevent EVENT_CAUGHT_ZAPDOS
 	setevent EVENT_ROUTE_24_MEW
+	setevent EVENT_HIDDEN_HEAT_ROCK 	; burned tower basement
+	setevent EVENT_HIDDEN_SMOOTH_ROCK 	; tohjo falls
+	setevent EVENT_HIDDEN_DAMP_ROCK 	; union cave lapras pool
+	setevent EVENT_FLYSERVICE_HIDE_ABRA 	; hides abras from PokeCenters
+	setevent EVENT_FLYSERVICE_UNLOCKED	; hides FlyService PC
 	endcallback
 
 AskNumber1MScript:

@@ -556,6 +556,9 @@ FlyFunction:
 
 .TryFly:
 ; Fly
+	ld a, [wFlyingWithPC]
+	and a
+	jr nz, .outdoors ; skip directly to "outdoor" to allow fly
 	ld de, ENGINE_STORMBADGE
 	call CheckBadge
 	jr c, .nostormbadge
@@ -575,7 +578,6 @@ FlyFunction:
 	jr z, .illegal
 	cp NUM_SPAWNS
 	jr nc, .illegal
-
 	ld [wDefaultSpawnpoint], a
 	call CloseWindow
 	ld a, $1
@@ -591,15 +593,41 @@ FlyFunction:
 
 .illegal
 	call CloseWindow
+	ld a, [wFlyingWithPC]
+	and a
+	jr z, .done_tiles
+	call ExitFlyMap
+.done_tiles
 	call WaitBGMap
 	ld a, $80
 	ret
-
+	
 .DoFly:
+	ld a, [wFlyingWithPC]
+	and a
+	jr z, .party_menu_fly
+	call ExitFlyMap
+	ld hl, FlyServiceScript
+	ld a, Bank(FlyServiceScript)
+	call FarQueueScript
+	jr .done_queue
+.party_menu_fly
 	ld hl, .FlyScript
 	call QueueScript
+.done_queue
 	ld a, $81
 	ret
+
+;.DoFly:
+;	ld a, [wFlyingWithPC]
+;	and a
+;	jr z, .done_select
+;	call ExitFlyMap
+;.done_select
+;	ld hl, .FlyScript
+;	call QueueScript
+;	ld a, $81
+;	ret
 
 .FailFly:
 	call FieldMoveFailed
@@ -607,6 +635,7 @@ FlyFunction:
 	ret
 
 .FlyScript:
+FlyScript::
 	reloadmappart
 	callasm HideSprites
 	special UpdateTimePals

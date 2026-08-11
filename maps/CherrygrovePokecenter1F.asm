@@ -3,6 +3,8 @@
 	const CHERRYGROVEPOKECENTER1F_FISHER
 	const CHERRYGROVEPOKECENTER1F_GENTLEMAN
 	const CHERRYGROVEPOKECENTER1F_TEACHER
+	const CHERRYGROVEPC_FLYSERVICE
+	const CHERRYGROVEPC_FLYSERVICE_ABRA
 
 CherrygrovePokecenter1F_MapScripts:
 	def_scene_scripts
@@ -33,6 +35,37 @@ CherrygrovePokecenter1FTeacherScript:
 	waitbutton
 	closetext
 	end
+	
+	
+CherrygroveFlyService:
+	opentext
+	writetext Cherrygrove_FlyText
+	;setevent EVENT_FLYSERVICE_HIDE_ABRA
+	yesorno
+	iffalse .Refused
+	closetext
+	appear CHERRYGROVEPC_FLYSERVICE_ABRA
+	playsound SFX_WARP_FROM
+	applymovement CHERRYGROVEPC_FLYSERVICE_ABRA, CherrygroveAbraTeleportTo
+	setevent EVENT_FLYSERVICE_HIDE_ABRA ; clears the abra for next visit
+	callasm FlyService
+	reloadmappart
+	playsound SFX_WARP_TO
+	applymovement CHERRYGROVEPC_FLYSERVICE_ABRA, CherrygroveAbraTeleportFrom
+	disappear CHERRYGROVEPC_FLYSERVICE_ABRA
+	end
+.Refused
+	closetext
+	end
+CherrygroveAbraTeleportTo:
+	teleport_to
+	step_end
+CherrygroveAbraTeleportFrom:
+	teleport_from
+	step_end
+Cherrygrove_FlyText:
+	text "Call an Abra?"
+	done
 
 CherrygrovePokecenter1FFisherText:
 	text "It's great. I can"
@@ -83,3 +116,5 @@ CherrygrovePokecenter1F_MapEvents:
 	object_event  2,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FFisherScript, -1
 	object_event  8,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FGentlemanScript, -1
 	object_event  1,  6, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FTeacherScript, -1
+	object_event  5,  2, SPRITE_FLYSERVICE_PC, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CherrygroveFlyService, EVENT_FLYSERVICE_UNLOCKED
+	object_event  6,  3, SPRITE_ABRA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CherrygroveFlyService, EVENT_FLYSERVICE_HIDE_ABRA

@@ -42,10 +42,6 @@ Route29Tutorial1:
 	applymovement ROUTE29_COOLTRAINER_M1, DudeMovementData1a
 	turnobject PLAYER, LEFT
 	setevent EVENT_DUDE_TALKED_TO_YOU
-	; hide "hidden" items. All resets to appear after beating Chuck in Cianwood
-	setevent EVENT_HIDDEN_HEAT_ROCK ; burned tower basement
-	setevent EVENT_HIDDEN_SMOOTH_ROCK ;tohjo falls
-	setevent EVENT_HIDDEN_DAMP_ROCK ; union cave lapras pool
 	opentext
 	writetext CatchingTutorialIntroText
 	yesorno

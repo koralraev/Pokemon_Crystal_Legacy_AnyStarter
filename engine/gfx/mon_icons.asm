@@ -481,8 +481,16 @@ GetSpeciesIcon:
 
 FlyFunction_GetMonIcon:
 	push de
+	ld a, [wFlyingWithPC]
+	and a
+	jr z, .flying_with_mon
+	ld a, ICON_ABRA
+	jr .finish
+
+.flying_with_mon
 	ld a, [wTempIconSpecies]
 	call ReadMonMenuIcon
+.finish
 	ld [wCurIcon], a
 	pop de
 	ld a, e

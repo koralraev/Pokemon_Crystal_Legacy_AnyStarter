@@ -211,8 +211,9 @@ MartGoldenrod5F4:
 	db -1 ; end
 
 MartOlivine:
-	db 13 ; # items
+	db 14 ; # items
 	db GREAT_BALL
+	db POTION
 	db SUPER_POTION
 	db HYPER_POTION
 	db FULL_HEAL
@@ -303,8 +304,9 @@ MartViridian:
 	db -1 ; end
 
 MartPewter:
-	db 7 ; # items
+	db 8 ; # items
 	db GREAT_BALL
+	db POTION
 	db SUPER_POTION
 	db SUPER_REPEL
 	db ANTIDOTE
@@ -314,9 +316,10 @@ MartPewter:
 	db -1 ; end
 
 MartCerulean:
-	db 9 ; # items
+	db 10 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
+	db POTION
 	db SUPER_POTION
 	db SUPER_REPEL
 	db FULL_HEAL
@@ -339,8 +342,9 @@ MartLavender:
 	db -1 ; end
 
 MartVermilion:
-	db 8 ; # items
+	db 9 ; # items
 	db ULTRA_BALL
+	db POTION
 	db SUPER_POTION
 	db HYPER_POTION
 	db REVIVE
@@ -455,9 +459,10 @@ MartCeladon5F2_2:
 	db -1 ; end
 
 MartFuchsia:
-	db 7 ; # items
+	db 8 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
+	db POTION
 	db SUPER_POTION
 	db HYPER_POTION
 	db FULL_HEAL

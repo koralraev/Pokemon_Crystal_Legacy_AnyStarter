@@ -5,6 +5,8 @@
 	const INDIGOPLATEAUPOKECENTER1F_SILVER
 	const INDIGOPLATEAUPOKECENTER1F_GRAMPS
 	const INDIGOPLATEAUPOKECENTER1F_ABRA
+	const INDIGO_PC_FLYSERVICE 	 ;<----
+	const INDIGO_PC_FLYSERVICE_ABRA  ;<----
 
 IndigoPlateauPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -212,6 +214,35 @@ PlateauRivalLeavesMovement:
 	step DOWN
 	step DOWN
 	step_end
+	
+Indigo_FlyService: ;<----1
+	opentext
+	writetext Indigo_FlyText ;<----1
+	yesorno
+	iffalse .Refused
+	closetext
+	appear INDIGO_PC_FLYSERVICE_ABRA ;<----1
+	playsound SFX_WARP_FROM
+	applymovement INDIGO_PC_FLYSERVICE_ABRA, Indigo_AbraTeleportTo ;<----2
+	setevent EVENT_FLYSERVICE_HIDE_ABRA ; clears the abra for next visit
+	callasm FlyService
+	reloadmappart
+	playsound SFX_WARP_TO
+	applymovement INDIGO_PC_FLYSERVICE_ABRA, Indigo_AbraTeleportFrom ;<----2
+	disappear INDIGO_PC_FLYSERVICE_ABRA ;<----1
+	end
+.Refused
+	closetext
+	end
+Indigo_AbraTeleportTo: 	;<----1
+	teleport_to
+	step_end
+Indigo_AbraTeleportFrom: ;<----1
+	teleport_from
+	step_end
+Indigo_FlyText: 	;<----1
+	text "Call an Abra?"
+	done
 
 IndigoPlateauPokecenter1FCooltrainerMText:
 	text "At the #MON"
@@ -334,3 +365,5 @@ IndigoPlateauPokecenter1F_MapEvents:
 	object_event 16,  9, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
 	object_event  1,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, -1
 	object_event  0,  9, SPRITE_ABRA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, -1
+	object_event  5,  8, SPRITE_FLYSERVICE_PC, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Indigo_FlyService, EVENT_FLYSERVICE_UNLOCKED
+	object_event  6,  9, SPRITE_ABRA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Indigo_FlyService, EVENT_FLYSERVICE_HIDE_ABRA
