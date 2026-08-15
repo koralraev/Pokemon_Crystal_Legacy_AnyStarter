@@ -51,6 +51,7 @@ CianwoodFlyServiceGuyScript:
 	faceplayer
 	opentext
 	clearevent EVENT_FLYSERVICE_UNLOCKED
+	setevent EVENT_FLYSERVICE_FLYGUY_HIDE ;should hide him
 	writetext FlyGuyFlyServiceText
 	promptbutton
 	closetext
@@ -282,4 +283,4 @@ CianwoodPokecenter1F_MapEvents:
 	object_event  8,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FSuperNerdScript, -1
 	object_event  5,  2, SPRITE_FLYSERVICE_PC, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Cianwood_FlyService, EVENT_FLYSERVICE_UNLOCKED
 	object_event  6,  3, SPRITE_ABRA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Cianwood_FlyService, EVENT_FLYSERVICE_HIDE_ABRA
-	object_event  5,  3, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodFlyServiceGuyScript, -EVENT_FLYSERVICE_UNLOCKED
+	object_event  5,  3, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodFlyServiceGuyScript, EVENT_FLYSERVICE_FLYGUY_HIDE

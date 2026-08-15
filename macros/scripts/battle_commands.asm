@@ -182,6 +182,7 @@ ENDM
 	command startloop               ; ae
 	command curl                    ; af
 	command starthail		; b1 //bc flashhit is add as new number 26
+	command trapstack		; b2
 NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

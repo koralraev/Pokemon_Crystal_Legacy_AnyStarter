@@ -77,4 +77,7 @@ INCLUDE "engine/battle/move_effects/magnitude.asm"
 ;INCLUDE "engine/battle/move_effects/baton_pass.asm" ; too complex to move
 INCLUDE "engine/battle/move_effects/transform.asm"
 INCLUDE "engine/battle/move_effects/beat_up.asm"
+INCLUDE "engine/battle/move_effects/trap_stack.asm"
+
+
 

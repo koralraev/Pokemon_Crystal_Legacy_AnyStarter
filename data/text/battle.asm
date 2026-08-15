@@ -110,6 +110,13 @@ PerishCountText:
 	text_decimal wTextDecimalByte, 1, 1
 	text "!"
 	prompt
+	
+BindStackText:
+	text "<USER>'s"
+	line "trap stack is @"
+	text_decimal wTextDecimalByte, 1, 1
+	text "!"
+	prompt
 
 BattleText_TargetRecoveredWithItem:
 	text "<TARGET>"

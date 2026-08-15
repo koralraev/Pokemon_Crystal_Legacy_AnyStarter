@@ -2485,8 +2485,8 @@ FeraligatrEvosAttacks:
 SentretEvosAttacks:
 	db EVOLVE_LEVEL, 15, FURRET
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 4, DEFENSE_CURL
+	db 1, WRAP ;TACKLE
+;	db 4, DEFENSE_CURL
 	db 6, QUICK_ATTACK
 	db 9, THIEF
 	db 12, FURY_SWIPES

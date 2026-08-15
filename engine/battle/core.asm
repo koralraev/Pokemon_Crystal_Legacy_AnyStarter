@@ -1238,6 +1238,8 @@ HandleWrap:
 	call SetPlayerTurn
 
 .do_it
+	call HandleBindStackDamage
+	
 	ld hl, wPlayerWrapCount
 	ld de, wPlayerTrappingMove
 	ldh a, [hBattleTurn]
@@ -1260,6 +1262,17 @@ HandleWrap:
 	ld [wNamedObjectIndex], a
 	ld [wFXAnimID], a
 	call GetMoveName
+;	dec [hl]
+;	jr z, .release_from_bounds
+	
+	ld a, [wNamedObjectIndex] ; for bind stacks
+	cp BIND
+;	jr z, .done
+	ret z
+	cp WRAP
+;	jr z, .done
+	ret z
+
 	dec [hl]
 	jr z, .release_from_bounds
 
@@ -1283,6 +1296,7 @@ HandleWrap:
 
 .release_from_bounds
 	ld hl, BattleText_UserWasReleasedFromStringBuffer1
+	jr .print_text
 
 .print_text
 	jp StdBattleTextbox
@@ -1292,6 +1306,149 @@ SwitchTurnCore:
 	xor 1
 	ldh [hBattleTurn], a
 	ret
+	
+HandleBindStackDamage:
+; Ticks down each active BIND/WRAP stack for the side hBattleTurn currently
+; points to, deals 1/16 max HP damage per stack still active this turn, and
+; owns wPlayerWrapCount/wEnemyWrapCount for BIND/WRAP: nonzero exactly while
+; at least one stack is active, so the "can't switch" window tracks the
+; stacks themselves rather than a separate fixed-length timer.
+	call HasUserFainted
+	ret z
+
+	ld hl, wPlayerBindStack1Turns
+	ld de, wPlayerScreens
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_ptrs
+	ld hl, wEnemyBindStack1Turns
+	ld de, wEnemyScreens
+.got_ptrs
+
+	ld b, 0                        ; b = active stack count for THIS turn
+
+	ld a, [hl]
+	and a
+	jr z, .slot0_done
+	inc b                           ; nonzero going in: counts toward this turn
+	dec a
+	ld [hl], a
+	jr nz, .slot0_done              ; turns remain: keep the flag bit set
+	ld a, [de]
+	res SCREENS_BIND1, a
+	ld [de], a                      ; just hit 0: fully expired now
+.slot0_done
+	inc hl
+
+	ld a, [hl]
+	and a
+	jr z, .slot1_done
+	inc b
+	dec a
+	ld [hl], a
+	jr nz, .slot1_done
+	ld a, [de]
+	res SCREENS_BIND2, a
+	ld [de], a
+.slot1_done
+	inc hl
+
+	ld a, [hl]
+	and a
+	jr z, .slot2_done
+	inc b
+	dec a
+	ld [hl], a
+	jr nz, .slot2_done
+	ld a, [de]
+	res SCREENS_BIND3, a
+	ld [de], a
+.slot2_done
+
+	ld hl, wPlayerWrapCount
+	ld de, wPlayerTrappingMove
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_trap_ptrs
+	ld hl, wEnemyWrapCount
+	ld de, wEnemyTrappingMove
+.got_trap_ptrs
+
+	ld a, b
+	and a
+	jr nz, .stacks_active
+
+; no stacks active this turn: release if we were still marked trapped
+	ld a, [hl]
+	and a
+	ret z  ; wasn't trapped anyway, nothing to do
+
+	xor a
+	ld [hl], a  ; free to switch again
+
+	ld a, [de]
+	ld [wNamedObjectIndex], a
+	call GetMoveName
+	ld hl, BattleText_UserWasReleasedFromStringBuffer1
+	jp StdBattleTextbox
+
+.stacks_active
+	ld a, BIND_TRAP_TURNS
+	ld [hl], a                       ; keep wrapcount nonzero while any stack lives
+	
+	ld a, b
+	ld [wTextDecimalByte], a
+	push bc
+	ld hl, BindStackText
+	call StdBattleTextbox            ; else gets a chance to reuse wTextDecimalByte
+	pop bc
+
+	ld d, b                          ; stash active count (1-3); de's pointer role is done
+	call GetSixteenthMaxHP           ; bc = maxhp/16 (min 1)
+	ld h, b
+	ld l, c                          ; hl = running total, seeded with 1 stack's worth
+	dec d
+	jr z, .have_damage
+.multiply_loop
+	add hl, bc
+	dec d
+	jr nz, .multiply_loop
+.have_damage
+	ld b, h
+	ld c, l
+;	call SubtractHPFromUser
+	push bc
+
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .use_enemy_move
+	ld a, [wPlayerTrappingMove]
+	jr .got_move
+.use_enemy_move
+	ld a, [wEnemyTrappingMove]
+.got_move
+	ld [wNamedObjectIndex], a
+	ld [wFXAnimID], a
+	call GetMoveName
+
+	ld a, BATTLE_VARS_SUBSTATUS3
+	call GetBattleVar
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	jr nz, .skip_anim
+
+	call SwitchTurnCore
+	xor a
+	ld [wNumHits], a
+	ld [wFXAnimID + 1], a
+	predef PlayBattleAnim
+	call SwitchTurnCore
+
+.skip_anim
+	pop bc
+	call SubtractHPFromUser
+	
+	ld hl, BattleText_UsersHurtByStringBuffer1
+	jp StdBattleTextbox
 
 HandleLeftovers:
 	ldh a, [hSerialConnectionStatus]
@@ -3706,6 +3863,24 @@ endr
 	ld [wEnemyMinimized], a
 	ld [wPlayerWrapCount], a
 	ld [wEnemyWrapCount], a
+	
+	ld hl, wPlayerBindStack1Turns ;wrap/bind stack
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	ld hl, wEnemyBindStack1Turns
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	ld hl, wPlayerScreens
+	res SCREENS_BIND1, [hl]
+	res SCREENS_BIND2, [hl]
+	res SCREENS_BIND3, [hl]
+	ld hl, wEnemyScreens
+	res SCREENS_BIND1, [hl]
+	res SCREENS_BIND2, [hl]
+	res SCREENS_BIND3, [hl]
+	
 	ld [wEnemyTurnsTaken], a
 	ld hl, wPlayerSubStatus5
 	res SUBSTATUS_CANT_RUN, [hl]
@@ -4192,6 +4367,24 @@ endr
 	ld [wPlayerMinimized], a
 	ld [wEnemyWrapCount], a
 	ld [wPlayerWrapCount], a
+	
+	ld hl, wPlayerBindStack1Turns ;wrap/bind stack
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	ld hl, wEnemyBindStack1Turns
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	ld hl, wPlayerScreens
+	res SCREENS_BIND1, [hl]
+	res SCREENS_BIND2, [hl]
+	res SCREENS_BIND3, [hl]
+	ld hl, wEnemyScreens
+	res SCREENS_BIND1, [hl]
+	res SCREENS_BIND2, [hl]
+	res SCREENS_BIND3, [hl]
+	
 	ld [wPlayerTurnsTaken], a
 	ld hl, wEnemySubStatus5
 	res SUBSTATUS_CANT_RUN, [hl]

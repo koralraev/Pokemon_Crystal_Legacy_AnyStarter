@@ -1255,6 +1255,15 @@ TrapTarget:
 	buildopponentrage
 	traptarget
 	endmove
+	
+TrapStack:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	moveanim
+	trapstack
+	endmove
 
 SuperFang:
 Psywave:

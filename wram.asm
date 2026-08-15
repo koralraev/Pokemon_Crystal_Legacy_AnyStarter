@@ -532,21 +532,30 @@ wPlayerScreens::
 ; 2 safeguard
 ; 3 light screen
 ; 4 reflect
-; 5-7 unused
+; 5 bind/wrap stack 1 active
+; 6 bind/wrap stack 2 active
+; 7 bind/wrap stack 3 active
+
 	db
 
 wEnemyScreens::
 ; see wPlayerScreens
 	db
 
-wPlayerSafeguardCount:: db  ; trach these with stat menu
+wPlayerSafeguardCount:: db  ; track these with stat menu
 wPlayerLightScreenCount:: db
 wPlayerReflectCount:: db
+wPlayerBindStack1Turns:: db
+wPlayerBindStack2Turns:: db
+wPlayerBindStack3Turns:: db
 	ds 1
 
 wEnemySafeguardCount:: db
 wEnemyLightScreenCount:: db
 wEnemyReflectCount:: db
+wEnemyBindStack1Turns:: db
+wEnemyBindStack2Turns:: db
+wEnemyBindStack3Turns:: db
 	ds 1
 
 	ds 1
@@ -623,7 +632,6 @@ wSomeoneIsRampaging:: db
 wPlayerJustGotFrozen:: db
 wEnemyJustGotFrozen:: db
 wBattleEnd::
-
 
 SECTION UNION "Miscellaneous", WRAM0
 

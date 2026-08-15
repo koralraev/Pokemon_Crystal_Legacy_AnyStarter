@@ -2954,6 +2954,11 @@ BattleCommand_BeatUp:
 BattleCommand_BeatUpFailText:
 	farcall _BattleCommand_BeatUpFailText
 	ret
+	
+; farcall pointer to trap_stack.asm through effect_commands2.asm
+BattleCommand_TrapStack:
+	farcall _BattleCommand_TrapStack
+	ret
 
 BattleCommand_ClearMissDamage:
 ; clearmissdamage

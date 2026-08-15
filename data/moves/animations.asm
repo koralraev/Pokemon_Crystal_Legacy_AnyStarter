@@ -117,7 +117,7 @@ BattleAnimations::
 	dw BattleAnim_LightScreen
 	dw BattleAnim_Haze
 	dw BattleAnim_Reflect
-	dw BattleAnim_FocusEnergy ;-------
+	dw BattleAnim_FocusEnergy
 	dw BattleAnim_HoneClaws ; BIDE
 	dw BattleAnim_Metronome
 	dw BattleAnim_MirrorMove
@@ -135,7 +135,7 @@ BattleAnimations::
 	dw BattleAnim_SpikeCannon
 	dw BattleAnim_Constrict
 	dw BattleAnim_Amnesia
-	dw BattleAnim_Kinesis ;--------
+	dw BattleAnim_Kinesis
 	dw BattleAnim_Softboiled
 	dw BattleAnim_HiJumpKick
 	dw BattleAnim_Glare
@@ -198,7 +198,7 @@ BattleAnimations::
 	dw BattleAnim_DestinyBond
 	dw BattleAnim_PerishSong
 	dw BattleAnim_IcyWind
-	dw BattleAnim_Detect ;--------
+	dw BattleAnim_Detect
 	dw BattleAnim_BoneRush
 	dw BattleAnim_LockOn
 	dw BattleAnim_Outrage
@@ -230,7 +230,7 @@ BattleAnimations::
 	dw BattleAnim_BatonPass
 	dw BattleAnim_Encore
 	dw BattleAnim_Pursuit
-	dw BattleAnim_RapidSpin ;-------
+	dw BattleAnim_RapidSpin
 	dw BattleAnim_SweetScent
 	dw BattleAnim_IronTail
 	dw BattleAnim_MetalClaw
