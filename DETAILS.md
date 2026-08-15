@@ -10,6 +10,7 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 + A move tutor will appear in the Goldenrod Underground entrance to the Rocket Hideout after clearing the Radio Tower. He teaches most of the moves that were TMs in gen1 to eligible gen1 pokemon only. Getting gen1 TM moves to gen2 pokemon still needs breeding, or using the Egg Move Reminder in Blackthorn City. The tutor just circumvents the need for time-capsule trading with gen1
   <details>
 	  <summary>Gen1 TM tutor moves:</summary>
+	  
 	  Mega Punch, Mega Kick, Body Slam, Double Edge, Bubblebeam, Icebeam, Pay Day, Submission, Counter, Seismic Toss, Rage, Mega Drain, Dragon Rage, Thunderbolt, Teleport, Mimic, Reflect, Metronome, Egg Bomb, Softboiled, Sky Attack, Explosion, Rock Slide, Tri Attack and Substitute
   </details>
 + The Older Haircut Brother is replaced with his father. He increase happiness by 50 points, can do multiple haircuts and is there every day
@@ -33,12 +34,14 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 + LIGHT CLAY: Extends Reflect and Light Screen duration to 8 turns. 
   <details>
     <summary>Spoiler for acquiring</summary>
-    Acquired by trading a Smeargle for Mr.Mime holding LIGHT CLAY in Blackthorn City
+	  
+  		- Acquired by trading a Smeargle for Mr.Mime holding LIGHT CLAY in Blackthorn City
     </details>
 + GOGGLES: Safety Goggles from Gen6. Protects the holder from weather damage (sand/hail) and spore and power based moves: Poison Powder, Stun Spore, Sleep Powder, Spore, Cutton Spore. 
   <details>
     <summary>Spoiler for acquiring</summary>
-    Can be brought from the Stone Curator in Dark Cave near Blackthorn City
+	  
+  		- Can be brought from the Stone Curator in Dark Cave near Blackthorn City
     </details>
 + Sandstorm now boosts ROCK-types Special Defence by 50%
 + Grass-types are now immune to spore and powder based moves: Poison Powder, Stun Spore, Sleep Powder, Spore, Cutton Spore
@@ -198,44 +201,112 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 + Iron Defense as TM54
 	<details>
 	<summary>Added to level up learnset of:</summary>
-	Squirtle line,
-	Metapod,
-	Kakuna,
-	Sandshrew / Sandslash,
-	Geodude line,
-	Slowbro / Slowking,
-	Magnemite / Magneton,
-	Shellder / Cloyster,
-	Krabby / Kingler,
-	Marowak,
-	Rhydon,
-	Pinsir,
-	Omanyte / Omastar,
-	Kabuto / Kabutops,
-	Sudowoodo,
-	Pineco / Forretress,
-	Steelix,
-	Scizor,
-	Heracross,
-	Magcargo,
-	Corsola,
-	Skarmory,
-	Donphan,
-	Pupitar / Tyranitar
+		
+		- Squirtle line
+  		- Metapod,
+  		- Kakuna,
+  		- Sandshrew / Sandslash,
+  		- Geodude line,
+  		- Slowbro / Slowking,
+  		- Magnemite / Magneton,
+  		- Shellder / Cloyster,
+  		- Krabby / Kingler,
+  		- Marowak,
+  		- Rhydon,
+  		- Pinsir,
+  		- Omanyte / Omastar,
+  		- Kabuto / Kabutops,
+  		- Sudowoodo,
+  		- Pineco / Forretress,
+  		- Steelix,
+  		- Scizor,
+  		- Heracross,
+  		- Magcargo,
+  		- Corsola,
+  		- Skarmory,
+  		- Donphan,
+  		- Pupitar / Tyranitar
 	</details>
 	<details>
 	<summary>Added to TM learnsets of:</summary>
-	Squirtle line, Metapod, Kakuna, Sandshrew / Sandslash, Diglett / Dugtrio, Geodude line, Slowbro, Magnemite / Magneton, Shellder / Cloyster, Krabby / Kingler, Cubone / Marowak, Rhydon, Mr.Mime, Pinsir, Omanyte / Omastar, Kabuto / Kabutops, Mew, Sudowoodo, Pineco / Forretress, Slowking, Steelix, Scizor, Shuckle, Heracross, Magcargo, Corsola, Skarmory, Donphan, Larvitar line 
+		
+  		- Squirtle line,
+  		- Metapod,
+  		- Kakuna,
+  		- Sandshrew / Sandslash,
+  		- Diglett / Dugtrio,
+  		- Geodude line,
+  		- Slowbro,
+  		- Magnemite / Magneton,
+  		- Shellder / Cloyster,
+  		- Krabby / Kingler,
+  		- Cubone / Marowak,
+  		- Rhydon,
+  		- Mr.Mime,
+  		- Pinsir,
+  		- Omanyte / Omastar,
+  		- Kabuto / Kabutops,
+  		- Mew,
+  		- Sudowoodo,
+  		- Pineco / Forretress,
+  		- Slowking,
+  		- Steelix,
+  		- Scizor,
+  		- Shuckle,
+  		- Heracross,
+  		- Magcargo,
+  		- Corsola,
+  		- Skarmory,
+  		- Donphan,
+  		- Larvitar line 
 	</details>
 	Added to egg moves of Larvitar
 + Hail as TM55
 	<details>
 	<summary>Added to level up learnset of:</summary>
-	Seel / Dewgong, Piloswine, Articuno
+		
+  		- Seel / Dewgong,
+  		- Piloswine,
+  		- Articuno
 	</details>
 	<details>
 	<summary>Added to TM learnsets of:</summary>
-	Squirtle line, Psyduck/Golduck, Poliwag line, Tentacool/Tentacruel, Slowpoke line, Seel/Dewgong, Shellder/Cloyster, Krabby/Kingler, Chansey/Blissey, Kangaskhan, Horsea line, Goldeen/Seaking, Staryu/Starmie, Smoochum/Jynx, Gyarados, Lapras, Vaporeon, Omanyte/Omastar, Kabuto/Kabutops, Articuno, Dratini line, Mewtwo, Mew, Totodile line, Chinchou/Lanturn, Marill/Azumarill, Wooper/Quagsire, Qwilfish, Sneasel, Swinub/Piloswine, Corsola, Delibird, Mantine, Suicune and Lugia 
+		
+  		- Squirtle line,
+  		- Psyduck/Golduck,
+  		- Poliwag line,
+  		- Tentacool/Tentacruel,
+  		- Slowpoke line,
+  		- Seel/Dewgong,
+  		- Shellder/Cloyster,
+  		- Krabby/Kingler,
+  		- Chansey/Blissey,
+  		- Kangaskhan,
+  		- Horsea line,
+  		- Goldeen/Seaking,
+  		- Staryu/Starmie,
+  		- Smoochum/Jynx,
+  		- Gyarados,
+  		- Lapras,
+  		- Vaporeon,
+  		- Omanyte/Omastar,
+  		- Kabuto/Kabutops,
+  		- Articuno,
+  		- Dratini line,
+  		- Mewtwo,
+  		- Mew,
+  		- Totodile line,
+  		- Chinchou/Lanturn,
+  		- Marill/Azumarill,
+  		- Wooper/Quagsire,
+  		- Qwilfish,
+  		- Sneasel,
+  		- Swinub/Piloswine,
+  		- Corsola,
+  		- Delibird,
+  		- Mantine,
+  		- Suicune
+  		- Lugia 
 	</details>
 
 + New Weather and changes to weather:
@@ -247,7 +318,8 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 + Changes to items:
   <details>
   <summary>Changes:</summary>
-    - Cleanse Tag: Extends durations of SAFEGUARD from 5 to 8 turns in addition to repelling wild pokemon
+	  
+	  - Cleanse Tag: Extends durations of SAFEGUARD from 5 to 8 turns in addition to repelling wild pokemon
   </details>
 
 
@@ -258,16 +330,18 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 + The Move Relearner NPC has been moved from Blackthorne City to Cherrygrove Mart
 + Changes to moves:
   <details>
-  <summary>Move changes:</summary>
-  - Wing Attack: now a priority move, but 50BP instead of 60 (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
-  - Cut: now has 100% accuracy instead of 95%
-  - Leech Life: 70BP instead of 40
-  - Rapid Spin: now also raises speed by one stage
-  - Mirror Move: now a priority move (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
-  - Mimic: now lets you choose which move to mimic from the opposing pokemons current moves instead of just mimicking the last used move (same functionality as in gen 1). The mimicked move is used right after learning it and is learned until switching out. (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
-  - Submission: 50BP instead of 80, but always raise attack by one (functions like Power-Up Punch from gen 6). Added to movepool of Hitmonchan (lvl 55), Cubone (lvl 51), Marowak (lvl 55), Mankey/Primeape (lvl 55). (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
-  - Flash: now a priority move with 50BP, ELECTRIC type and a 10% chance to flinch the target. (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
-  - Strength: now fighting type
+  	<summary>Move changes:</summary>
+		
+	  - Wing Attack: now a priority move, but 50BP instead of 60 (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
+	  - Cut: now has 100% accuracy instead of 95%
+	  - Leech Life: 70BP instead of 40
+	  - Rapid Spin: now also raises speed by one stage
+	  - Mirror Move: now a priority move (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
+	  - Mimic: now lets you choose which move to mimic from the opposing pokemons current moves instead of just mimicking the last used move (same functionality as in gen 1). The mimicked move is used right after learning it and is learned until switching out. (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
+	  - Submission: 50BP instead of 80, but always raise attack by one (functions like Power-Up Punch from gen 6). Added to movepool of Hitmonchan (lvl 55), Cubone (lvl 51), Marowak (lvl 55), Mankey/Primeape (lvl 55). (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
+	  - Flash: now a priority move with 50BP, ELECTRIC type and a 10% chance to flinch the target. (inspired by Vortyne's PureRGB: https://github.com/Vortyne/pureRGB)
+	  - Strength: now fighting type
+	  - Bind/Wrap: now adds a stack of "bind" or "wrap" to the target dealing 1/16 max hp damage at the end of the turn (like damage from leech seed or poison). A stack lasts for 3 turns, and up to three stacks can be placed on a target; 1 stacks = 1/16, 2 stacks = 2/16, and 3 stacks = 3/16 max hp damage. To get to 3 stacks Bind/Wrap must be used on 3 consecutive turns, otherwise the first placed stack will "run out". Text in battle will display the number of stacks currently on the target (like Perish Songs count), and the number of "vines" or "robes" in the animation also indicate the number of stacks.
   </details>
 + There is now a total of ~30% chance for a wild pokemon that has held items to have an item: rare items increased from ~2% to ~5%, and from ~23% to ~25% for the common item. 
 + All gen2 TMs can be purchased at marts before the E4. TMs are generally available at the first city after where they can otherwise be found or obtained; e.g., TM49 Fury Cutter is obtained after beating Bugsy in Azalea, it can then be purchased in Goldenrod
@@ -277,17 +351,18 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 + Some items has been made more readily available: Leftovers, Blackbelt, Focus Band, Lucky Punch, Light Ball, Metal Powder, Polkadot Bow, Brightpowder, Cleanse Tag, Scope Lens
   <details>
   <summary>Spoiler for items new locations:</summary>
-  - Leftovers: Can be found behind one of the trashcans in National Park. Check the trashcans for a clue
-  - Blackbelt: Route 42 area behind the cutable tree, next to the three berry trees
-  - Focus Band: Route 42 area behind the cutable tree, next to the three berry trees
-  - Lucky Punch: held by wild Chansey (5%)
-  - Light Ball: held by wild Pichu and Pikachu (5%)
-  - Metal Powder: held by wild Ditto (5%)
-  - Polkadot Bow: held by wild Jigglypuff (5%)
-  - Brightpowder: Inside Goldenrod Magnet Train Station at the sparkling flowerpots
-  - Cleanse Tag: Given by the Granny at Ilex Forest Azelea gate
-  - Scope Lens: Gotten from a Silph Co. scientist at Olivine Cafe
-  - TM14, TM25 TM38: at Goldenrod Gamecorner price decreased to 1500 coins = 30000$, to still be expensive but not overpriced at 110000$
+	  
+	  - Leftovers: Can be found behind one of the trashcans in National Park. Check the trashcans for a clue
+	  - Blackbelt: Route 42 area behind the cutable tree, next to the three berry trees
+	  - Focus Band: Route 42 area behind the cutable tree, next to the three berry trees
+	  - Lucky Punch: held by wild Chansey (5%)
+	  - Light Ball: held by wild Pichu and Pikachu (5%)
+	  - Metal Powder: held by wild Ditto (5%)
+	  - Polkadot Bow: held by wild Jigglypuff (5%)
+	  - Brightpowder: Inside Goldenrod Magnet Train Station at the sparkling flowerpots
+	  - Cleanse Tag: Given by the Granny at Ilex Forest Azelea gate
+	  - Scope Lens: Gotten from a Silph Co. scientist at Olivine Cafe
+	  - TM14, TM25 TM38: at Goldenrod Gamecorner price decreased to 1500 coins = 30000$, to still be expensive but not overpriced at 110000$
   </details>
 + Pokemons STATS menu option is now above list of usable HM moves
 + The Teleport Guy with an Abra at the Indigo Plateau stays to allow more easily getting back to Johto
