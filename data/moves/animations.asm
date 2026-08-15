@@ -284,6 +284,8 @@ BattleAnimations::
 	dw BattleAnim_Shake
 	dw BattleAnim_HitConfusion
 	dw BattleAnim_InHail
+	dw BattleAnim_Bind_Stack1
+	dw BattleAnim_Bind_Stack2
 	assert_table_length NUM_BATTLE_ANIMS + 1
 
 BattleAnim_0:
@@ -1817,6 +1819,29 @@ BattleAnim_Wrap:
 	anim_incobj 1
 	anim_incobj 2
 	anim_incobj 3
+	anim_wait 96
+	anim_ret
+	
+BattleAnim_Bind_Stack1:
+	anim_1gfx ANIM_GFX_ROPE
+	anim_sound 0, 1, SFX_BIND
+	anim_obj ANIM_OBJ_BIND1, 132, 64, $0
+	anim_wait 64
+	anim_sound 0, 1, SFX_BIND
+	anim_incobj 1
+	anim_wait 96
+	anim_ret
+
+BattleAnim_Bind_Stack2:
+	anim_1gfx ANIM_GFX_ROPE
+	anim_sound 0, 1, SFX_BIND
+	anim_obj ANIM_OBJ_BIND1, 132, 64, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_BIND2, 132, 56, $0
+	anim_wait 64
+	anim_sound 0, 1, SFX_BIND
+	anim_incobj 1
+	anim_incobj 2
 	anim_wait 96
 	anim_ret
 

@@ -1398,6 +1398,7 @@ HandleBindStackDamage:
 	
 	ld a, b
 	ld [wTextDecimalByte], a
+	ld [wBindStackAnimCount], a	; animation
 	push bc
 	ld hl, BindStackText
 	call StdBattleTextbox            ; else gets a chance to reuse wTextDecimalByte
@@ -1429,6 +1430,31 @@ HandleBindStackDamage:
 .got_move
 	ld [wNamedObjectIndex], a
 	ld [wFXAnimID], a
+				;;; animation
+	xor a
+	ld [wFXAnimID + 1], a
+
+	ld a, [wBindStackAnimCount]
+	cp 1
+	jr z, .anim_1stack
+	cp 2
+	jr z, .anim_2stacks
+	jr .anim_ready               ; 3 stacks: keep the move's own full anim, set above
+
+.anim_1stack
+	ld a, LOW(ANIM_BIND_STACK1)
+	ld [wFXAnimID], a
+	ld a, HIGH(ANIM_BIND_STACK1)
+	ld [wFXAnimID + 1], a
+	jr .anim_ready
+.anim_2stacks
+	ld a, LOW(ANIM_BIND_STACK2)
+	ld [wFXAnimID], a
+	ld a, HIGH(ANIM_BIND_STACK2)
+	ld [wFXAnimID + 1], a
+
+.anim_ready
+				;;; animation
 	call GetMoveName
 
 	ld a, BATTLE_VARS_SUBSTATUS3
@@ -1439,7 +1465,7 @@ HandleBindStackDamage:
 	call SwitchTurnCore
 	xor a
 	ld [wNumHits], a
-	ld [wFXAnimID + 1], a
+;	ld [wFXAnimID + 1], a		;out for animation select above
 	predef PlayBattleAnim
 	call SwitchTurnCore
 

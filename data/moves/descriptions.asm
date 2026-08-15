@@ -343,8 +343,10 @@ FlyDescription:
 	next "2nd turn: Attack@"
 
 BindDescription:
-	db   "Binds the target"
-	next "for 2-5 turns.@"
+;	db   "Binds the target"
+;	next "for 2-5 turns.@"
+	db   "Bind 3 times for"
+	next "increased damage.@"
 
 SlamDescription:
 	db   "Slams the foe with"
@@ -403,8 +405,10 @@ BodySlamDescription:
 	next "cause paralysis.@"
 
 WrapDescription:
-	db   "Squeezes the foe"
-	next "for 2-5 turns.@"
+;	db   "Squeezes the foe"
+;	next "for 2-5 turns.@"
+	db   "More WRAPs"
+	next "increases damage.@"
 
 TakeDownDescription:
 	db   "A tackle that also"

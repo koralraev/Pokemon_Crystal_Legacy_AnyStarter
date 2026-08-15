@@ -1262,6 +1262,7 @@ TrapStack:
 	doturn
 	checkhit
 	moveanim
+	failuretext
 	trapstack
 	endmove
 
