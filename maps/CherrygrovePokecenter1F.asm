@@ -68,11 +68,25 @@ Cherrygrove_FlyText:
 	done
 
 CherrygrovePokecenter1FFisherText:
-	text "It's great. I can"
-	line "store any number"
-
-	para "of #MON, and"
-	line "it's all free."
+	text "A new way of using"
+	line "the moves BIND and"
+	cont "WRAP has just been"
+	cont "discovered!"
+	
+	para "Both moves now"
+	line "place a 'stack' on"
+	cont "the target."
+	para "Each stack deals"
+	line "1/16 max HP"
+	cont "damage, upto 3/16."
+	para "It still prevents"
+	line "the target from"
+	cont "escaping."
+	
+	para "I think both moves"
+	line "are a bit more"
+	cont "interesting to use"
+	cont "now."
 	done
 
 CherrygrovePokecenter1FGentlemanText:

@@ -5167,6 +5167,38 @@ DrawEnemyHUD:
 	hlcoord 2, 2
 	ld b, 0
 	call DrawBattleHPBar
+	push bc ; preserve register around DrawEnemyHUDIcons 
+	push de ; to not change HP bar color
+	call DrawEnemyHUDIcons	;draws shiny and hold item icons
+	pop de
+	pop bc
+	ret
+	
+DrawEnemyHUDIcons:
+	call BattleCheckEnemyShininess
+	jr nc, .not_shiny
+	hlcoord 10, 1
+	ld [hl], $7a
+	jr .shiny_done
+.not_shiny
+	ld [hl], " "
+.shiny_done
+
+	ld a, [wEnemyMonItem]
+	and a
+	jr z, .no_item
+	ld de, EVENT_GOT_ITEMFINDER
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	jr z, .no_item          ; c = 0 -> flag not set -> no Itemfinder yet
+	hlcoord 2, 1
+	ld [hl], $79
+	ret
+.no_item
+	hlcoord 2, 1
+	ld [hl], " "  ;place empty tile to clear item if used or removed
 	ret
 
 UpdateEnemyHPPal:
@@ -6842,16 +6874,16 @@ CheckUnownLetter:
 
 INCLUDE "data/wild/unlocked_unowns.asm"
 
-SwapBattlerLevels: ; unreferenced
-	push bc
-	ld a, [wBattleMonLevel]
-	ld b, a
-	ld a, [wEnemyMonLevel]
-	ld [wBattleMonLevel], a
-	ld a, b
-	ld [wEnemyMonLevel], a
-	pop bc
-	ret
+;SwapBattlerLevels: ; unreferenced
+;	push bc
+;	ld a, [wBattleMonLevel]
+;	ld b, a
+;	ld a, [wEnemyMonLevel]
+;	ld [wBattleMonLevel], a
+;	ld a, b
+;	ld [wEnemyMonLevel], a
+;	pop bc
+;	ret
 
 BattleWinSlideInEnemyTrainerFrontpic:
 	xor a
@@ -7208,19 +7240,19 @@ _LoadHPBar:
 	callfar LoadHPBar
 	ret
 
-LoadHPExpBarGFX: ; unreferenced
-	ld de, EnemyHPBarBorderGFX
-	ld hl, vTiles2 tile $6c
-	lb bc, BANK(EnemyHPBarBorderGFX), 4
-	call Get1bpp
-	ld de, HPExpBarBorderGFX
-	ld hl, vTiles2 tile $73
-	lb bc, BANK(HPExpBarBorderGFX), 6
-	call Get1bpp
-	ld de, ExpBarGFX
-	ld hl, vTiles2 tile $55
-	lb bc, BANK(ExpBarGFX), 8
-	jp Get2bpp
+;LoadHPExpBarGFX: ; unreferenced
+;	ld de, EnemyHPBarBorderGFX
+;	ld hl, vTiles2 tile $6c
+;	lb bc, BANK(EnemyHPBarBorderGFX), 4
+;	call Get1bpp
+;	ld de, HPExpBarBorderGFX
+;	ld hl, vTiles2 tile $73
+;	lb bc, BANK(HPExpBarBorderGFX), 6
+;	call Get1bpp
+;	ld de, ExpBarGFX
+;	ld hl, vTiles2 tile $55
+;	lb bc, BANK(ExpBarGFX), 8
+;	jp Get2bpp
 
 EmptyBattleTextbox:
 	ld hl, .empty

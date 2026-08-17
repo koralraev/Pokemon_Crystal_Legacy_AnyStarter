@@ -96,6 +96,10 @@ LoadHPBar:
 	ld hl, vTiles2 tile $5e
 	lb bc, BANK(MobilePhoneTilesGFX), 2
 	call Get2bppViaHDMA
+	ld de, BattleHUDIconsGFX        ; shiny + item icons
+	ld hl, vTiles2 tile $79
+	lb bc, BANK(BattleHUDIconsGFX), 2
+	call Get2bppViaHDMA
 	ret
 
 StatsScreen_LoadFont:

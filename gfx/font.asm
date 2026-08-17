@@ -27,6 +27,8 @@ INCBIN "gfx/battle/hp_exp_bar_border.1bpp"
 ExpBarGFX:
 INCBIN "gfx/battle/expbar.2bpp"
 
+BattleHUDIconsGFX:: INCBIN "gfx/battle/extra_hud_icons.2bpp" ;icons for shiny+hold item
+
 TownMapGFX:
 INCBIN "gfx/pokegear/town_map.2bpp.lz"
 
