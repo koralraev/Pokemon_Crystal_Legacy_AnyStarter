@@ -154,7 +154,7 @@ ILikeToMimicText:
 	
 	para "Do you want me to"
 	line "teach one of your"
-	cont "#mon to MIMIC?"
+	cont "#MON to MIMIC?"
 	done
 	
 AskMysteryBerryPaymentText:

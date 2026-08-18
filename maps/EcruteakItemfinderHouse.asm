@@ -11,7 +11,7 @@ EcruteakItemfinderGuy:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_ITEMFINDER
-	iftrue .itemfinder
+	iftrue .itemfinderToggleInBattle
 	writetext EcruteakItemfinderAdventureText
 	yesorno
 	iffalse .no
@@ -19,17 +19,30 @@ EcruteakItemfinderGuy:
 	promptbutton
 	verbosegiveitem ITEMFINDER
 	setevent EVENT_GOT_ITEMFINDER
-.itemfinder:
+	setevent EVENT_ENABLE_ITEMFINDER_INBATTLE  ;toggle: first time enable
 	writetext ItemfinderExplanationText
+	waitbutton
+.itemfinderToggleInBattle:
+	writetext EcurteakItemfinderToggleText ;want it to show in battle?
+	yesorno
+	iftrue .toggleON
+	clearevent EVENT_ENABLE_ITEMFINDER_INBATTLE 	;toggleOFF
+	writetext EcruteakItemfinderWontShowInBattleText
 	waitbutton
 	closetext
 	end
-
 .no:
 	writetext EcruteakItemfinderToEachHisOwnText
 	waitbutton
 	closetext
 	end
+.toggleON:
+	setevent EVENT_ENABLE_ITEMFINDER_INBATTLE
+	writetext EcruteakItemfinderWillShowInBattleText
+	waitbutton
+	closetext
+	end
+	
 
 EcruteakHistoryBook:
 	opentext
@@ -103,11 +116,48 @@ ItemfinderExplanationText:
 
 	para "in ECRUTEAK's"
 	line "BURNED TOWER."
+	
+	para "Also, as a new"
+	line "feature the ITEM-"
+	cont "FINDER can show if"
+	cont "an enemy is"
+	cont "holding an item!"
+	cont "Pretty cool right?"
+	para "It can be turned"
+	line "on or off."
+	cont "Just talk to me"
+	cont "and I'll change it"
+	cont "for you. No cost."
 	done
 
 EcruteakItemfinderToEachHisOwnText:
 	text "Oh… To each his"
 	line "own, I suppose…"
+	done
+	
+EcurteakItemfinderToggleText:
+	text "Do you want the"
+	line "ITEMFINDER to"
+	cont "work in battles?"
+	done
+	
+EcruteakItemfinderWontShowInBattleText:
+	text "OK. It's OFF"
+	line "so it won't work"
+	cont "in battles."
+	para "Come talk to me"
+	line "if you want"
+	cont "it ON again."
+	done
+	
+EcruteakItemfinderWillShowInBattleText:
+	text "OK. It's ON."
+	line "Now it'll show"
+	cont "if an enemy has a"
+	cont "hold item."
+	para "Come talk to me"
+	line "if you want"
+	cont "it OFF."
 	done
 
 EcruteakHistoryBookText:

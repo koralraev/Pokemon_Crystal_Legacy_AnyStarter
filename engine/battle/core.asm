@@ -11,6 +11,14 @@ DoBattle:
 	ld hl, wOTPartyMon1HP
 	ld bc, PARTYMON_STRUCT_LENGTH - 1
 	ld d, BATTLEACTION_SWITCH1 - 1
+	
+; set wram byte for player has itemfinder ON for battle to place hud icon
+	ld de, EVENT_ENABLE_ITEMFINDER_INBATTLE
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	ld [wPlayerHasItemfinderToggleOn], a
+
 .loop
 	inc d
 	ld a, [hli]
@@ -5175,9 +5183,10 @@ DrawEnemyHUD:
 	ret
 	
 DrawEnemyHUDIcons:
-	call BattleCheckEnemyShininess
-	jr nc, .not_shiny
+	ld a, [wEnemyMonIsShiny]
+	and a
 	hlcoord 10, 1
+	jr z, .not_shiny
 	ld [hl], $7a
 	jr .shiny_done
 .not_shiny
@@ -5186,18 +5195,14 @@ DrawEnemyHUDIcons:
 
 	ld a, [wEnemyMonItem]
 	and a
+	hlcoord 2, 1 ; 2,1 looks best
 	jr z, .no_item
-	ld de, EVENT_GOT_ITEMFINDER
-	ld b, CHECK_FLAG
-	call EventFlagAction
-	ld a, c
+	ld a, [wPlayerHasItemfinderToggleOn]
 	and a
-	jr z, .no_item          ; c = 0 -> flag not set -> no Itemfinder yet
-	hlcoord 2, 1
+	jr z, .no_item	
 	ld [hl], $79
 	ret
 .no_item
-	hlcoord 2, 1
 	ld [hl], " "  ;place empty tile to clear item if used or removed
 	ret
 
@@ -6560,10 +6565,20 @@ LoadEnemyMon:
 	ld a, [wMagikarpLength]
 	cp 3
 	jr c, .GenerateDVs ; try again
+	
+	; Finally done with DVs
+	
 
-; Finally done with DVs
 
 .Happiness:
+; set wram byte for shininess to place hud icon
+	call BattleCheckEnemyShininess
+	ld a, 0
+	jr nc, .not_shiny_cache
+	inc a
+.not_shiny_cache
+	ld [wEnemyMonIsShiny], a
+	
 ; Set happiness
 	ld a, [wBattleMode]
 	dec a

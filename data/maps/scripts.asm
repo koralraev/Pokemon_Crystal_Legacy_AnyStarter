@@ -197,7 +197,7 @@ INCLUDE "maps/EcruteakLugiaSpeechHouse.asm"
 INCLUDE "maps/DanceTheatre.asm"
 INCLUDE "maps/EcruteakMart.asm"
 INCLUDE "maps/EcruteakGym.asm"
-INCLUDE "maps/EcruteakItemfinderHouse.asm"
+; INCLUDE "maps/EcruteakItemfinderHouse.asm" ; moved to section 26
 INCLUDE "maps/ViridianGym.asm"
 INCLUDE "maps/ViridianNicknameSpeechHouse.asm"
 INCLUDE "maps/TrainerHouse1F.asm"
@@ -492,3 +492,4 @@ INCLUDE "maps/OlivinePokecenter1F.asm"		;moved from section 11
 
 SECTION "Map Scripts 26", ROMX
 INCLUDE "maps/CianwoodPokecenter1F.asm"		;moved from section 12
+INCLUDE "maps/EcruteakItemfinderHouse.asm" 	;moved from section 11

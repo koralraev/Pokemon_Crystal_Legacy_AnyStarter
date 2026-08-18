@@ -1496,6 +1496,7 @@
 	const EVENT_FLYSERVICE_HIDE_ABRA
 	const EVENT_FLYSERVICE_UNLOCKED
 	const EVENT_FLYSERVICE_FLYGUY_HIDE
+	const EVENT_ENABLE_ITEMFINDER_INBATTLE	;toggle to show enemy hold item in battle
 
 	const_next 2048
 NUM_EVENTS EQU const_value ; 800

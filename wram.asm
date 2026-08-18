@@ -498,6 +498,8 @@ wLinkBattleRNCount::
 	db
 
 wEnemyItemState:: db
+wEnemyMonIsShiny:: db
+wPlayerHasItemfinderToggleOn:: db
 	ds 2
 wCurEnemyMoveNum:: db
 
