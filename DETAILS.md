@@ -3,7 +3,7 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 
 # FASE Details
 
-# Features
+## Features
 + Gift NPC at Elm's Lab will give the player any requested pokemon, at any level, shiny or not
   - The NPC will allow you to choose any pokemon available in the game (1-251), choose its level from 1 to 100, and whether or not it should be shiny. It is necessary to first obtain the pokedex from Oak at Mr. Pokemon's house and return to Elm and speak with the officer to name the rival, before any pokemon can be chosen. The NPC will check if you have the pokedex or not.
 + A teleportation system will be unlocked in all Johto Pokemon Centers after beating Chuck and getting HM2 FLY. The system allows to get around without having to have a pokemon knowing FLY on the team
@@ -16,11 +16,10 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 + The Older Haircut Brother is replaced with his father. He increase happiness by 50 points, can do multiple haircuts and is there every day
 + An in-battle stat menu to track battle stat changes and remaining turns for screens, safeguard and current weather. Opened by pressing START while on the battle menu (FIGHT/PKMN/PACK/RUN)
 + Egg Move Reminder added t0 Move Deleters house in Blackthorn City. All evolution lines can now learn their first stages egg moves, just as the PokeDex states. E.g. Crobat can learn Zubat's egg moves at the Egg Move Reminder
-+ The Name Rater now allows renaming traded pokemon
-+ A curator of rare rocks and stones can be found in Dark Cave near Blackthorn City. He sells rocks and stones that can otherwise be difficult to come by. He also sells some protective goggles.
++ Acquiring the Itemfinder in Ecruteak allows to see if an enemy pokemon is holding an item in battle. This function can be toggled on/off by talking to the guy giving the Itemfinder
 
 
-# Additions
+## Additions
 + New Items: 
   + Weather rocks: Heat Rock, Damp Rock, Smooth Rock and Icy Rock. Extends their corresponding weather type to 8 turns like later generations. They can be found in caves around Johto. Look for sparkling spots. Will only appear after gym leader Chuck in Cianwood has been beaten
   <details>
@@ -45,6 +44,7 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
     </details>
 + Sandstorm now boosts ROCK-types Special Defence by 50%
 + Grass-types are now immune to spore and powder based moves: Poison Powder, Stun Spore, Sleep Powder, Spore, Cutton Spore
++ A curator of rare rocks and stones can be found in Dark Cave near Blackthorn City. He sells rocks and stones that can otherwise be difficult to come by. He also sells some protective goggles
   
 
 + New Moves:
@@ -324,10 +324,12 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 
 
 
-# Some Enhancements
-+ Player can always succesfully flee from wild battles
+## Some Enhancements
++ A shiny icon will be shown when encountering shiny pokemon, making it more clear to see if it is shiny or not, if you missed the initial shiny sparkle and are not completely sure of pokemons shiny coloration (or encounter a Jigglypuff)
++ Player can always successfully flee from wild battles
   + Now compares the enemys speed to itself so the speed of the players pokemon is not evaluated for the chance to flee the encounter
 + The Move Relearner NPC has been moved from Blackthorne City to Cherrygrove Mart
++ The Name Rater now allows renaming traded pokemon
 + Changes to moves:
   <details>
   	<summary>Move changes:</summary>
@@ -344,6 +346,7 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 	  - Bind/Wrap: now adds a stack of "bind" or "wrap" to the target dealing 1/16 max hp damage at the end of the turn (like damage from leech seed or poison). A stack lasts for 3 turns, and up to three stacks can be placed on a target; 1 stacks = 1/16, 2 stacks = 2/16, and 3 stacks = 3/16 max hp damage. To get to 3 stacks Bind/Wrap must be used on 3 consecutive turns, otherwise the first placed stack will "run out". Text in battle will display the number of stacks currently on the target (like Perish Songs count), and the number of "vines" or "robes" in the animation also indicate the number of stacks.
   </details>
 + There is now a total of ~30% chance for a wild pokemon that has held items to have an item: rare items increased from ~2% to ~5%, and from ~23% to ~25% for the common item. 
++ More wild pokemon have hold items
 + All gen2 TMs can be purchased at marts before the E4. TMs are generally available at the first city after where they can otherwise be found or obtained; e.g., TM49 Fury Cutter is obtained after beating Bugsy in Azalea, it can then be purchased in Goldenrod
 	+ Gen2 TMs that where only available in Kanto can now be purchased at the Indigo Plateau. 
 + The NPCs on the main street in Goldenrod City has been asked to keep to the sides of the street to allow the player to go straight through
@@ -369,4 +372,6 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 + Articuno, Zapdos and Moltres respectively learns Hail, Rain Dance and Sunny Day at lvl 57
 + Potions now heal 50HP. Super Potions heal 100HP. Gold Berry and Berry Juice heal is doubled (60HP and 40HP) to make them a bit more viable as useful hold items
 + Marts sell more TMs and Indigo Plateau mart sells ethers
++ In Cianwood Gym the fighter before the boulders will offer to move the boulders for the player, if they have no pokemon knowing STRENGTH, but is otherwise worthy (beat him and have obtained HM04 STRENGTH)
+
 

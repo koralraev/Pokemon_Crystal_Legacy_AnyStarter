@@ -171,12 +171,123 @@ TrainerBlackbeltNob:
 	trainer BLACKBELT_T, NOB, EVENT_BEAT_BLACKBELT_NOB, BlackbeltNobSeenText, BlackbeltNobBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
+;	endifjustbattled
 	opentext
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue .GoOnThrough
 	writetext BlackbeltNobAfterText
+	waitbutton
+	callasm CheckStrengthASM
+	ifequal 1, .AskMoveBoulders
+	closetext
+	end
+.GoOnThrough:
+	writetext BlackbeltNobGoOnThroughText
 	waitbutton
 	closetext
 	end
+.AskMoveBoulders:
+	writetext BlackbeltNobWantToMoveBouldersText
+	yesorno
+	iftrue .MoveBoulders
+	writetext BlackbeltNobRefuseText
+	waitbutton
+	closetext
+	end
+	
+.MoveBoulders:
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	writetext BlackbeltNobStandBackText
+	pause 20
+	closetext
+	readvar VAR_FACING
+	ifequal RIGHT, NobMovementScript1
+	ifequal LEFT, NobMovementScript1
+	ifequal DOWN, NobMovementScript2
+	end
+	
+NobMovementScript1:
+	; move left boulder
+	applymovement CIANWOODGYM_BLACK_BELT3, NobMovementUp
+	applymovement CIANWOODGYM_BOULDER2, NobBoulder2
+	playsound SFX_STRENGTH
+	earthquake 10
+	disappear CIANWOODGYM_BOULDER2
+	moveobject CIANWOODGYM_BOULDER2, 3, 6
+	appear CIANWOODGYM_BOULDER2
+	; move middle boulder
+	applymovement CIANWOODGYM_BLACK_BELT3, NobMovementRight
+	applymovement CIANWOODGYM_BOULDER3, NobBoulder3Left
+	playsound SFX_STRENGTH
+	earthquake 10
+	disappear CIANWOODGYM_BOULDER3
+	moveobject CIANWOODGYM_BOULDER3, 3, 7
+	appear CIANWOODGYM_BOULDER3
+	; nob moves back
+	applymovement CIANWOODGYM_BLACK_BELT3, NobMovementBack1
+	end
+	
+NobMovementScript2:
+	; move right boulder
+	applymovement CIANWOODGYM_BLACK_BELT3, NobMovementToRightBoulder
+	applymovement CIANWOODGYM_BOULDER4, NobBoulder4
+	playsound SFX_STRENGTH
+	earthquake 10
+	disappear CIANWOODGYM_BOULDER4
+	moveobject CIANWOODGYM_BOULDER4, 5, 6
+	appear CIANWOODGYM_BOULDER4
+	; move middle boulder
+	applymovement CIANWOODGYM_BLACK_BELT3, NobMovementLeft
+	applymovement CIANWOODGYM_BOULDER3, NobBoulder3Right
+	playsound SFX_STRENGTH
+	earthquake 10
+	disappear CIANWOODGYM_BOULDER3
+	moveobject CIANWOODGYM_BOULDER3, 5, 7
+	appear CIANWOODGYM_BOULDER3
+	; nob moves back
+	applymovement CIANWOODGYM_BLACK_BELT3, NobMovementBack2
+	end
+	
+	
+NobMovementUp:
+	step UP
+	step_end
+NobMovementLeft:
+	step LEFT
+	turn_head UP
+	step_end
+NobMovementRight:
+	step RIGHT
+	turn_head UP
+	step_end
+NobMovementToRightBoulder:
+	step RIGHT
+	step RIGHT
+	step UP
+	turn_head UP
+	step_end
+NobMovementBack1:
+	step LEFT
+	step DOWN
+	step_end
+NobMovementBack2:
+	step DOWN
+	step LEFT
+	step_end
+	
+NobBoulder2:
+	slow_step UP
+	step_end
+NobBoulder3Left:
+	slow_step LEFT
+	step_end
+NobBoulder3Right:
+	slow_step RIGHT
+	step_end
+NobBoulder4:
+	slow_step UP
+	step_end
+
 
 TrainerBlackbeltLung:
 	trainer BLACKBELT_T, LUNG, EVENT_BEAT_BLACKBELT_LUNG, BlackbeltLungSeenText, BlackbeltLungBeatenText, 0, .Script
@@ -199,6 +310,7 @@ CianwoodGymStatue:
 .Beaten:
 	gettrainername STRING_BUFFER_4, CHUCK, CHUCK1
 	jumpstd GymStatue2Script
+	
 
 CianwoodGymMovement_ChuckChucksBoulder:
 	set_sliding
@@ -367,8 +479,50 @@ BlackbeltNobBeatenText:
 BlackbeltNobAfterText:
 	text "I lost! "
 	line "I'm speechless!"
+	para "If you don't have"
+	line "a #MON knowing"
+	cont "STRENGTH I can"
+	cont "move those"
+	cont "boulders for you."
+	done
+	
+BlackbeltNobGoOnThroughText:
+	text "Go on through."
+	done
+	
+BlackbeltNobWantToMoveBouldersText:
+	text "…"
+	para "You don't seem"
+	line "to have a #MON"
+	cont "knowing STRENGTH."
+	para "However, I "
+	line "acknowledge that"
+	cont "strength comes in"
+	cont "many ways."
+	para "You have proven"
+	line "yourself worthy."
+	para "I can move those"
+	line "boulders for you"
+	cont "if you'd like."
+	done
+	
+BlackbeltNobCanMoveBoulders:
+	text "If you have"
+	line "no mon i can"
+	cont "do it"
 	done
 
+BlackbeltNobStandBackText:
+	text "OK!"
+	line "Stand back!"
+	para "HAH!"
+	done
+	
+BlackbeltNobRefuseText:
+	text "Inner peace."
+	done
+
+	
 BlackbeltLungSeenText:
 	text "My raging fists"
 	line "will shatter your"
@@ -384,6 +538,19 @@ BlackbeltLungAfterText:
 	line "My… my pride is"
 	cont "shattered…"
 	done
+	
+CheckStrengthASM:
+	ld d, STRENGTH
+	farcall CheckPartyMove
+	jr nc, .not_found
+.found:
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+.not_found:
+	xor a
+	ld [wScriptVar], a
+	ret
 
 CianwoodGym_MapEvents:
 	db 0, 0 ; filler

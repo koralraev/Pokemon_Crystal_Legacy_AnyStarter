@@ -61,7 +61,7 @@ CheckBadge:
 	text_far _BadgeRequiredText
 	text_end
 
-CheckPartyMove:
+CheckPartyMove::
 ; Check if a monster in your party has move d.
 
 	ld e, 0
