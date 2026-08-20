@@ -156,9 +156,9 @@ GoldenrodGameCornerTMVendorMenuHeader:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "TM25    5500@"
-	db "TM14    5500@"
-	db "TM38    5500@"
+	db "TM25    1500@" ;5500
+	db "TM14    1500@"
+	db "TM38    1500@"
 	db "CANCEL@"
 
 GoldenrodGameCornerPrizeMonVendorScript:
@@ -174,9 +174,9 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	loadmenu .MenuHeader
 	verticalmenu
 	closewindow
-	ifequal 1, .Abra
-	ifequal 2, .Cubone
-	ifequal 3, .Wobbuffet
+	ifequal 1, .Abra	; gives abra
+	ifequal 2, .Cubone	; porygon
+	ifequal 3, .Wobbuffet	; dratini
 	sjump GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 
 .Abra:

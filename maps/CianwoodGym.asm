@@ -175,6 +175,8 @@ TrainerBlackbeltNob:
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .GoOnThrough
+	checkevent EVENT_GOT_HM04_STRENGTH
+	iffalse .PlayerGotNoStrength
 	writetext BlackbeltNobAfterText
 	waitbutton
 	callasm CheckStrengthASM
@@ -183,6 +185,11 @@ TrainerBlackbeltNob:
 	end
 .GoOnThrough:
 	writetext BlackbeltNobGoOnThroughText
+	waitbutton
+	closetext
+	end
+.PlayerGotNoStrength:
+	writetext BlackbeltNobAfterNotWorthyText
 	waitbutton
 	closetext
 	end
@@ -477,7 +484,7 @@ BlackbeltNobBeatenText:
 	done
 
 BlackbeltNobAfterText:
-	text "I lost! "
+	text "I lost!"
 	line "I'm speechless!"
 	para "If you don't have"
 	line "a #MON knowing"
@@ -486,19 +493,29 @@ BlackbeltNobAfterText:
 	cont "boulders for you."
 	done
 	
+BlackbeltNobAfterNotWorthyText:
+	text "I lost!"
+	line "I'm speechless!"
+	para "If you gain some"
+	line "STRENGTH and prove"
+	cont "yourself worthy"
+	cont "I can move those"
+	cont "boulders for you."
+	done
+	
 BlackbeltNobGoOnThroughText:
 	text "Go on through."
 	done
 	
 BlackbeltNobWantToMoveBouldersText:
-	text "…"
+	text "..."
 	para "You don't seem"
 	line "to have a #MON"
 	cont "knowing STRENGTH."
 	para "However, I "
 	line "acknowledge that"
 	cont "strength comes in"
-	cont "many ways."
+	cont "many forms."
 	para "You have proven"
 	line "yourself worthy."
 	para "I can move those"

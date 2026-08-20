@@ -1,4 +1,6 @@
 
-	RGB 20, 15, 21
-	RGB 08, 21, 14
+;	RGB 20, 15, 21 ;"grey/purple"
+;	RGB 08, 21, 14 ;"greenish"
+	RGB  7,  7,  7 ; black
+	RGB 25,  8,  8 ; red
 

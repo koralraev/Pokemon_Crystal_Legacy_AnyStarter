@@ -32,7 +32,7 @@ Moves:
 	move WING_ATTACK,  EFFECT_PRIORITY_HIT,        50, FLYING,       100, 35,   0
 	move WHIRLWIND,    EFFECT_FORCE_SWITCH,        0, NORMAL,       100, 20,   0
 	move FLY,          EFFECT_FLY,                70, FLYING,       100, 15,   0
-	move BIND,         EFFECT_TRAP_STACK,          0, NORMAL,        95, 25,   0
+	move BIND,         EFFECT_TRAP_STACK,          0, NORMAL,        95, 30,   0
 	move SLAM,         EFFECT_NORMAL_HIT,         80, NORMAL,       100, 20,   0
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,         40, GRASS,        100, 25,   0
 	move STOMP,        EFFECT_STOMP,              65, NORMAL,       100, 20,  30
@@ -47,7 +47,7 @@ Moves:
 	move HORN_DRILL,   EFFECT_OHKO,                1, NORMAL,        30,  5,   0
 	move TACKLE,       EFFECT_NORMAL_HIT,         35, NORMAL,       100, 35,   0
 	move BODY_SLAM,    EFFECT_PARALYZE_HIT,       85, NORMAL,       100, 15,  30
-	move WRAP,         EFFECT_TRAP_STACK,          0, NORMAL,        95, 25,   0
+	move WRAP,         EFFECT_TRAP_STACK,          0, NORMAL,        95, 30,   0
 	move TAKE_DOWN,    EFFECT_RECOIL_HIT,         95, NORMAL,       100, 20,   0
 	move THRASH,       EFFECT_RAMPAGE,            90, NORMAL,       100, 20,   0
 	move DOUBLE_EDGE,  EFFECT_RECOIL_HIT,        120, NORMAL,       100, 15,   0

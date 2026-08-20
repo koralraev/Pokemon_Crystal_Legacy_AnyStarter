@@ -45,6 +45,7 @@ Though this is build on TheSmithPlays' Pokemon Crystal Legacy it is NOT compatib
 + Increased heal amount for some items
 + Marts sell more items
 + Chuck can be reached without a pokemon knowing STRENGTH
++ Shiny Charizard is black and red
 
   
 
