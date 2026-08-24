@@ -291,5 +291,6 @@ IconPointers:
 	dw LugiaIcon
 	dw HoOhIcon
 	dw CelebiIcon
+	dw MunchlaxIcon
 	dw EggIcon
 	assert_table_length NUM_ICONS + 1

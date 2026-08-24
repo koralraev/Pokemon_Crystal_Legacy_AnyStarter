@@ -290,6 +290,7 @@
 	const ICON_LUGIA
 	const ICON_HOOH
 	const ICON_CELEBI
+	const ICON_MUNCHLAX
 	const ICON_EGG
 NUM_ICONS EQU const_value - 1
 

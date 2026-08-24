@@ -253,5 +253,5 @@ MonMenuIcons:
 	db ICON_LUGIA       ; LUGIA
 	db ICON_HOOH        ; HOOH
 	db ICON_CELEBI      ; CELEBI
-	db ICON_SNORLAX     ; MUNCHLAX
+	db ICON_MUNCHLAX    ; MUNCHLAX
 	assert_table_length NUM_POKEMON
