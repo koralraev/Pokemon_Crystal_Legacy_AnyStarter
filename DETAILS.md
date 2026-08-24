@@ -42,6 +42,12 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 	  
   		- Can be brought from the Stone Curator in Dark Cave near Blackthorn City
     </details>
++ BIG ROOT: Makes draining moves heal 25% more. Draining moves: Absorb, Mega Drain, Giga Drain, Leech Life, Dream Eater, Leech Seed
+  <details>
+    <summary>Spoiler for acquiring</summary>
+	  
+  		- Can be brought from the youngster in Goldenrod Department Store 2nd Floor
+    </details>
 + Sandstorm now boosts ROCK-types Special Defence by 50%
 + Grass-types are now immune to spore and powder based moves: Poison Powder, Stun Spore, Sleep Powder, Spore, Cutton Spore
 + A curator of rare rocks and stones can be found in Dark Cave near Blackthorn City. He sells rocks and stones that can otherwise be difficult to come by. He also sells some protective goggles
@@ -321,6 +327,8 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 	  
 	  - Cleanse Tag: Extends durations of SAFEGUARD from 5 to 8 turns in addition to repelling wild pokemon
   </details>
+  
++ Munchlax has been added
 
 
 

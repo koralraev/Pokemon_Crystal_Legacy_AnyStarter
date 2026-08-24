@@ -139,6 +139,7 @@ AlphabeticalPokedexOrder:
 	db MOLTRES
 	db MR__MIME
 	db MUK
+	db MUNCHLAX
 	db MURKROW
 	db NATU
 	db NIDOKING

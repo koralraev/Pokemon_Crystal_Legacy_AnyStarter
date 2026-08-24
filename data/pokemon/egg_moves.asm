@@ -435,8 +435,17 @@ AerodactylEggMoves:
 	db FORESIGHT
 	db -1 ; end
 
-SnorlaxEggMoves:
+MunchlaxEggMoves: ;updated to gen6
 	db LICK
+	db CHARM
+	db COUNTER
+	db CURSE
+	db DOUBLE_EDGE
+	db PURSUIT
+	db SELFDESTRUCT
+	db ROAR ;whirlwind?
+	db WHIRLPOOL
+	db ENDURE
 	db -1 ; end
 
 DratiniEggMoves:
@@ -568,7 +577,13 @@ MarillEggMoves:
 	db FORESIGHT
 	db -1 ; end
 
-SudowoodoEggMoves:
+SudowoodoEggMoves: ;updated to gen6
+	db CURSE
+	db DEFENSE_CURL
+	db ENDURE
+	db HARDEN
+	db HEADBUTT
+	db ROLLOUT
 	db SELFDESTRUCT
 	db -1 ; end
 

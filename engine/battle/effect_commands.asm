@@ -4001,6 +4001,35 @@ SapHealth:
 	ld a, 1
 	ldh [hDividend + 1], a
 .at_least_one
+; Big Root: the draining mon heals 30% more if holding it
+	call GetUserItem
+	ld a, [hl]
+	cp BIG_ROOT
+	jr nz, .no_big_root
+
+	ldh a, [hDividend]
+	ld b, a
+	ldh a, [hDividend + 1]
+	ld c, a
+	ld h, b
+	ld l, c
+	srl b
+	rr c
+	srl b
+	rr c
+	add hl, bc ; gives 25%
+	
+;	srl b
+;	rr c
+;	srl b
+;	rr c
+;	add hl, bc ; gives ~31%
+
+	ld a, h
+	ldh [hDividend], a
+	ld a, l
+	ldh [hDividend + 1], a
+.no_big_root
 
 	ld hl, wBattleMonHP
 	ld de, wBattleMonMaxHP
@@ -5078,7 +5107,7 @@ CalcBattleStats:
 
 	ret
 
-INCLUDE "engine/battle/move_effects/bide.asm"
+INCLUDE "engine/battle/move_effects/bide.asm" ; bide no longer exit as no mon can learn it
 
 BattleCommand_CheckRampage:
 ; checkrampage
@@ -6546,30 +6575,9 @@ ResetTurn:
 INCLUDE "engine/battle/move_effects/thief.asm"
 
 BattleCommand_ArenaTrap:
-; arenatrap
-
-; Doesn't work on an absent opponent.
-
-	call CheckHiddenOpponent
-	jr nz, .failed
-
-; Don't trap if the opponent is already trapped.
-
-	ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVarAddr
-	bit SUBSTATUS_CANT_RUN, [hl]
-	jr nz, .failed
-
-; Otherwise trap the opponent.
-
-	set SUBSTATUS_CANT_RUN, [hl]
-	call AnimateCurrentMove
-	ld hl, CantEscapeNowText
-	jp StdBattleTextbox
-
-.failed
-	call AnimateFailedMove
-	jp PrintButItFailed
+; arenatrap moved to separate file engine/battle/move_effects/arena_trap.asm
+	farcall _BattleCommand_ArenaTrap
+	ret
 
 INCLUDE "engine/battle/move_effects/nightmare.asm"
 

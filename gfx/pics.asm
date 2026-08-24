@@ -712,12 +712,13 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 SECTION "Pics 19", ROMX
 
-BossPic:      		 INCBIN "gfx/trainers/boss.2bpp.lz"
+BossPic:      	     INCBIN "gfx/trainers/boss.2bpp.lz"
 OmastarBackpic:      INCBIN "gfx/pokemon/omastar/back.2bpp.lz"
 PrimeapeFrontpic:    INCBIN "gfx/pokemon/primeape/front.animated.2bpp.lz"
-ArcherPic:      	 INCBIN "gfx/trainers/archer.2bpp.lz"
+ArcherPic:           INCBIN "gfx/trainers/archer.2bpp.lz"
 PkmnTrainerFPic:     INCBIN "gfx/trainers/pkmntrainerf.2bpp.lz"
-
+MunchlaxFrontpic:    INCBIN "gfx/pokemon/munchlax/front.animated.2bpp.lz"
+MunchlaxBackpic:     INCBIN "gfx/pokemon/munchlax/back.2bpp.lz"
 
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics,
 ; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).

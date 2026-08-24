@@ -2200,6 +2200,8 @@ AerodactylEvosAttacks:
 SnorlaxEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
+	db 1, LICK
+	db 1, METRONOME
 	db 8, AMNESIA
 	db 15, DEFENSE_CURL
 	db 22, BELLY_DRUM
@@ -3845,4 +3847,21 @@ CelebiEvosAttacks:
 	db 50, BATON_PASS
 	db 55, FUTURE_SIGHT
 	db 60, PERISH_SONG
+	db 0 ; no more level-up moves
+	
+MunchlaxEvosAttacks:
+	db EVOLVE_HAPPINESS, TR_ANYTIME, SNORLAX
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, METRONOME
+	db 8, AMNESIA
+	db 12, LICK
+	db 15, DEFENSE_CURL
+	db 22, BELLY_DRUM
+	db 29, HEADBUTT
+	db 36, SNORE
+	db 36, REST
+	db 43, BODY_SLAM
+	db 50, ROLLOUT
+	db 57, HYPER_BEAM
 	db 0 ; no more level-up moves

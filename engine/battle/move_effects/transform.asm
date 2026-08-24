@@ -7,7 +7,7 @@ _BattleCommand_Transform:
 	bit SUBSTATUS_TRANSFORMED, [hl]
 	jr z, .not_already_transformed
 	farcall BattleEffect_ButItFailed
-	ret
+	ret	; transform returns here
 .not_already_transformed
 	farcall CheckHiddenOpponent
 	jr z, .no_hidden_opponent

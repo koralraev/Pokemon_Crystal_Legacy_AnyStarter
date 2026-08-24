@@ -49,7 +49,7 @@ ItemNames::
 	li "SODA POP"
 	li "LEMONADE"
 	li "X ATTACK"
-	li "TERU-SAMA"
+	li "BIG ROOT"
 	li "X DEFEND"
 	li "X SPEED"
 	li "X SPECIAL"
@@ -257,7 +257,6 @@ ItemNames::
 	li "HM06"
 	li "HM07"
 	assert_list_length NUM_ITEMS + NUM_TMS + NUM_HMS
-;	li "TERU-SAMA" ; tm55
-	li "TERU-SAMA" ; !!!-this is the last possible item to add-!!!
+	li "TERU-SAMA" ; !!!-this is the last possible item to add-> several TERU-SAMA can be replaced-!!! 
 	li "?"
 	assert_list_length $100

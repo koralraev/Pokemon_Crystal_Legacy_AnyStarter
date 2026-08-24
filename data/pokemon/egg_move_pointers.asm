@@ -142,7 +142,7 @@ EggMovePointers::
 	dw KabutoEggMoves
 	dw KabutoEggMoves ; kabutops
 	dw AerodactylEggMoves
-	dw SnorlaxEggMoves
+	dw MunchlaxEggMoves ; snorlax
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
@@ -251,4 +251,5 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
+	dw MunchlaxEggMoves
 	assert_table_length NUM_POKEMON

@@ -1479,7 +1479,7 @@
 	const EVENT_HIDDEN_CLEANSE_TAG		; ilex azela gate
 	const EVENT_HIDDEN_FOCUS_BAND		; route42
 	const EVENT_HIDDEN_LEFTOVERS		; national park trashcan
-	const EVENT_HIDDEN_MAGNET		;
+	const EVENT_GIFT_BIG_ROOT		; golden dept.store 2F
 	const EVENT_HIDDEN_SCOPE_LENS		; olivine cafe
 	const EVENT_ENTEI_ITEM			;
 	const EVENT_RAIKOU_ITEM			;

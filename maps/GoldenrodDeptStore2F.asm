@@ -25,7 +25,20 @@ GoldenrodDeptStore2FClerk2Script:
 	end
 
 GoldenrodDeptStore2FYoungsterScript:
-	jumptextfaceplayer GoldenrodDeptStore2FYoungsterText
+;	jumptextfaceplayer GoldenrodDeptStore2FYoungsterText
+	faceplayer
+	opentext
+	checkevent EVENT_GIFT_BIG_ROOT
+	iftrue .AlreadyGotBigRoot
+	writetext GoldenrodDeptStore2FYoungsterText
+	promptbutton
+	verbosegiveitem BIG_ROOT
+	setevent EVENT_GIFT_BIG_ROOT
+.AlreadyGotBigRoot:
+	writetext AlreadyGotBigRootText
+	waitbutton
+	closetext
+	end
 
 GoldenrodDeptStore2FCooltrainerFScript:
 	jumptextfaceplayer GoldenrodDeptStore2FCooltrainerFText
@@ -59,13 +72,27 @@ GoldenrodDeptStore2FUnusedText2: ; unreferenced
 	done
 
 GoldenrodDeptStore2FYoungsterText:
-	text "#GEAR can store"
-	line "up to 25 phone"
-	cont "numbers."
+	text "I found this"
+	line "BIG ROOT while"
+	cont "foraging in Ilex"
+	cont "Forest."
 
-	para "It's hard to de-"
-	line "cide which numbers"
-	cont "to keep."
+	para "It's a good find"
+	line "but the clerk says"
+	cont "he won't trade me a"
+	cont "# DOLL for it."
+	para "Why don't you take"
+	line "instead. "
+	cont "I know where to"
+	cont "find more."
+	done
+AlreadyGotBigRootText:
+	text "A BIG ROOT makes"
+	line "draining moves"
+	cont "heal the user"
+	cont "a bit more."
+	para "Around 30 percent"
+	line "by my calculation."
 	done
 
 GoldenrodDeptStore2FCooltrainerFText:
