@@ -389,9 +389,33 @@ TrainerBugCatcherWayne:
 	trainer BUG_CATCHER, WAYNE, EVENT_BEAT_BUG_CATCHER_WAYNE, BugCatcherWayneSeenText, BugCatcherWayneBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
+;	endifjustbattled
 	opentext
+	checkevent EVENT_GOT_NUTRI_ROOT
+	iftrue .WayneNormalRoutine
+	checkevent EVENT_GOT_HIDDEN_BUG_NET
+	iftrue .AskToTradeBugNet
+	writetext WayneNetJustBrokeText
+	waitbutton
+	closetext
+	end
+.AskToTradeBugNet:
+	writetext WantToTradeBugNetForRootText
+	yesorno
+	iffalse .Refuse
+	setevent EVENT_GOT_NUTRI_ROOT
+	takeitem BUG_NET
+	verbosegiveitem NUTRI_ROOT
+	writetext WayneKeepCatchingBugsText
+	waitbutton
+	; fall through
+.WayneNormalRoutine:
 	writetext BugCatcherWayneAfterBattleText
+	waitbutton
+	closetext
+	end
+.Refuse:
+	writetext WayneHowWillICatchBugsText
 	waitbutton
 	closetext
 	end
@@ -933,6 +957,40 @@ BugCatcherWayneAfterBattleText:
 	para "I ought to use"
 	line "HEADBUTT in other"
 	cont "places too."
+	done
+
+WayneNetJustBrokeText:
+	text "My net for"
+	line "catching #MON"
+	cont "just broke..."
+	para "I you ever come"
+	line "across a BUG NET"
+	cont "I would like to"
+	cont "trade you for it."
+	para "I have found many"
+	line "good things here"
+	cont "in the forest"
+	cont "while looking for"
+	cont "BUG #MON."
+	done
+	
+WantToTradeBugNetForRootText:
+	text "Hey! You found"
+	line "a BUG NET!"
+	para "Can I trade you a"
+	line "NUTRI ROOT for it?"
+	done
+	
+WayneHowWillICatchBugsText:
+	text "How will I catch"
+	line "bugs without a"
+	cont "BUG NET?"
+	done
+	
+WayneKeepCatchingBugsText:
+	text "YES!"
+	line "Now I can catch"
+	cont "more BUGS!"
 	done
 
 IlexForest_MapEvents:

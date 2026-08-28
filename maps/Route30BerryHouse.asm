@@ -9,6 +9,38 @@ Route30BerryHouse_MapScripts:
 Route30BerryHousePokefanMScript:
 	faceplayer
 	opentext
+	checkevent EVENT_TALKED_TO_FLORIA_BERRYMIX
+	iffalse .BerryNormalRoutine
+	checkevent EVENT_GOT_BERRYMIX ;disallow player to continue trading in leftovers
+	iftrue .BerryNormalRoutine
+	writetext Route30BerrySpeechHouseCheckTreesText
+	waitbutton
+	checkitem LEFTOVERS
+	iffalse .NoLeftovers
+	writetext BerryYouGotLeftoversText
+	yesorno
+	iffalse .RefusedTrade
+	setevent EVENT_GOT_BERRYMIX
+	takeitem LEFTOVERS
+	verbosegiveitem BERRYMIX
+	writetext BerryPutToGoodUseText
+	promptbutton
+	closetext
+	end
+	
+.RefusedTrade:
+	writetext BerryPlayerRefusedTradeText
+	waitbutton
+	turnobject ROUTE30BERRYHOUSE_POKEFAN_M, RIGHT
+	closetext
+	end
+
+.NoLeftovers:
+	closetext
+	end
+	
+; normal routine
+.BerryNormalRoutine:
 	checkevent EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE
 	iftrue .GotBerry
 	writetext Route30BerrySpeechHouseMonEatBerriesText
@@ -37,12 +69,46 @@ Route30BerrySpeechHouseMonEatBerriesText:
 
 	para "Here. I'll share"
 	line "one with you!"
+	
+	para "Check trees for"
+	line "BERRIES. They grow"
+	cont "back every day."
 	done
 
 Route30BerrySpeechHouseCheckTreesText:
-	text "Check trees for"
-	line "BERRIES. They grow"
-	cont "back every day."
+	text "You know BERRIES"
+	line "are good for"
+	cont "#MON to regain"
+	cont "HP in battle,"
+	cont "but something"
+	cont "even better is"
+	cont "LEFTOVERS."
+	para "That makes"
+	line "#MON regain"
+	cont "a little HP each"
+	cont "turn, and not just"
+	cont "when they eat a"
+	cont "berry."
+	para "If only I had"
+	line "some LEFTOVERS."
+	done
+
+BerryYouGotLeftoversText:
+	text "Ooh! You have some"
+	line "LEFTOVERS?!"
+	para "Can I have it?"
+	line "I'll give you a"
+	cont "good BERRYMIX in"
+	cont "return."
+	done
+	
+BerryPutToGoodUseText:
+	text "I will put"
+	line "this to good use."
+	done
+	
+BerryPlayerRefusedTradeText:
+	text "HMPH!"
 	done
 
 Route30BerryHouse_MapEvents:

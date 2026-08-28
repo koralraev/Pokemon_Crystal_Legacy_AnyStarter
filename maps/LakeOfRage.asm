@@ -12,6 +12,7 @@
 	const LAKEOFRAGE_WESLEY
 	const LAKEOFRAGE_POKE_BALL1
 	const LAKEOFRAGE_POKE_BALL2
+	const LAKEOFRAGE_HIDDEN_BUG_NET_SPARKLE
 
 LakeOfRage_MapScripts:
 	def_scene_scripts
@@ -251,6 +252,19 @@ WesleyNotWednesdayScript:
 	writetext WesleyNotWednesdayText
 	waitbutton
 	closetext
+	end
+	
+HiddenBugNetScript:
+	checkevent EVENT_GOT_HIDDEN_BUG_NET
+	iftrue .GotNet
+	opentext
+	writetext PlayerFoundHiddenBugNetText
+	promptbutton
+	verbosegiveitem BUG_NET
+	setevent EVENT_GOT_HIDDEN_BUG_NET
+	disappear LAKEOFRAGE_HIDDEN_BUG_NET_SPARKLE
+	closetext	
+.GotNet:
 	end
 
 LakeOfRageElixer:
@@ -516,6 +530,15 @@ WesleyNotWednesdayText:
 	line "not Wednesday."
 	cont "That's too bad."
 	done
+	
+PlayerFoundHiddenBugNetText:
+	text "A net for catching"
+	line "bugs is laying in"
+	cont "the middle of the"
+	cont "path."
+	para "You take it."
+	done
+	
 
 LakeOfRageSignText:
 	text "LAKE OF RAGE,"
@@ -558,3 +581,4 @@ LakeOfRage_MapEvents:
 	object_event  4,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WesleyScript, EVENT_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY
 	object_event  7, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageElixer, EVENT_LAKE_OF_RAGE_ELIXER
 	object_event 35,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageTMDetect, EVENT_LAKE_OF_RAGE_TM_DETECT
+	object_event  9, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, HiddenBugNetScript, EVENT_GOT_HIDDEN_BUG_NET

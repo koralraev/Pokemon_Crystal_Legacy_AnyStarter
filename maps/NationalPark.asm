@@ -1,6 +1,6 @@
 	object_const_def
 	const NATIONALPARK_LASS1
-	const NATIONALPARK_POKEFAN_F1
+;	const NATIONALPARK_POKEFAN_F1
 	const NATIONALPARK_TEACHER1
 	const NATIONALPARK_YOUNGSTER1
 	const NATIONALPARK_YOUNGSTER2
@@ -13,6 +13,7 @@
 	const NATIONALPARK_POKE_BALL1
 	const NATIONALPARK_GAMEBOY_KID
 	const NATIONALPARK_POKE_BALL2
+	const NATIONALPARK_GOLDEN_ACORN_KID
 
 NationalPark_MapScripts:
 	def_scene_scripts
@@ -68,6 +69,75 @@ NationalParkGameboyKidScript:
 	closetext
 	turnobject NATIONALPARK_GAMEBOY_KID, DOWN
 	end
+	
+NationalParkGoldenAcornKidScript:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_GOLDEN_ACORN
+	iftrue .GotGoldenAcorn
+	checkevent EVENT_TALKED_TO_FLORIA_GOLDEN_ACORN
+	iftrue .NeedGoldenAcorn
+	writetext AcornKidGatheringAcornsText
+	waitbutton
+	closetext
+	end
+.NeedGoldenAcorn:
+	writetext AcornKidGatheringAcornsText
+	promptbutton
+	writetext AcornKidNeedGoldenAcornText
+	waitbutton
+	checkitem NUGGET
+	iffalse .NoNugget
+	writetext AcornKidGiveNuggetForAcornText
+	yesorno
+	iffalse .RefusedTrade
+	setevent EVENT_GOT_GOLDEN_ACORN
+	takeitem NUGGET
+	verbosegiveitem GOLDEN_ACORN
+	promptbutton
+	closetext
+	end
+.NoNugget:
+	closetext
+	end
+.RefusedTrade
+	writetext AcornKidRefusedText
+	waitbutton
+	closetext
+	end	
+.GotGoldenAcorn:
+	writetext AcornKidGotGoldenAcornText
+	waitbutton
+	closetext
+	end
+
+AcornKidGatheringAcornsText:
+	text "I'm gathering"
+	line "acorns!"
+	done
+AcornKidNeedGoldenAcornText:
+	text "Look! I found a"
+	line "golden one!"
+	para "Oh, you need it?"
+	line "Then I want some-"
+	cont "thing else that's"
+	cont "golden for it."
+	cont "Like a NUGGET!"
+	done
+AcornKidGiveNuggetForAcornText:
+	text "Will you trade"
+	line "a NUGGET for my"
+	cont "GOLDEN ACORN?"
+	done
+AcornKidRefusedText:
+	text "No GOLDEN ACORN"
+	line "for you then!"
+	done
+AcornKidGotGoldenAcornText:
+	text "I'm gathering"
+	line "more acorns!"
+	done
+
 
 TrainerSchoolboyJack1:
 	trainer SCHOOLBOY, JACK1, EVENT_BEAT_SCHOOLBOY_JACK, SchoolboyJack1SeenText, SchoolboyJack1BeatenText, 0, .Script
@@ -581,7 +651,7 @@ NationalPark_MapEvents:
 
 	def_object_events
 	object_event 15, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkLassScript, -1
-	object_event 14,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkPokefanFScript, -1
+;	object_event 14,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkPokefanFScript, -1
 	object_event 27, 40, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher1Script, -1
 	object_event 11, 41, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster1Script, -1
 	object_event 10, 41, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster2Script, -1
@@ -594,3 +664,4 @@ NationalPark_MapEvents:
 	object_event 35, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkParlyzHeal, EVENT_NATIONAL_PARK_PARLYZ_HEAL
 	object_event 26,  6, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkGameboyKidScript, -1
 	object_event  1, 43, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkTMDig, EVENT_NATIONAL_PARK_TM_DIG
+	object_event  0, 33, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkGoldenAcornKidScript, -1

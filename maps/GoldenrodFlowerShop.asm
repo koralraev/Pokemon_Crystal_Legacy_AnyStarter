@@ -69,6 +69,33 @@ FlowerShopTeacherScript:
 FlowerShopFloriaScript:
 	faceplayer
 	opentext
+	checkevent EVENT_TALKED_TO_CHEF ; did we start the quest?
+	iffalse .FloriaNormalRoutine
+	; if quest is on and player talked to chef
+	; check if we already got berrymix location
+;	checkevent EVENT_GOT_BERRYMIX ; did we already get the berrymix?
+;	iftrue .FloriaNormalRoutine
+	; then we need to get GA for floria to tell us berrymix loc
+	checkevent EVENT_GOT_GOLDEN_ACORN
+	iftrue .GotGoldenAcorn
+	writetext FloriaWantGoldenAcornText
+	setevent EVENT_TALKED_TO_FLORIA_GOLDEN_ACORN
+	waitbutton
+	closetext
+	end
+	
+.GotGoldenAcorn:
+	checkevent EVENT_GOT_BERRYMIX
+	iftrue .FloriaNormalRoutine
+	writetext FloriaTellBerryMixLocationText
+	setevent EVENT_TALKED_TO_FLORIA_BERRYMIX
+	takeitem GOLDEN_ACORN
+	waitbutton
+	closetext
+	end	
+		
+	; normal routine
+.FloriaNormalRoutine:
 	checkevent EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP
 	iffalse .TalkToFlorida
 	checkevent EVENT_FOUGHT_SUDOWOODO
@@ -81,7 +108,7 @@ FlowerShopFloriaScript:
 	setevent EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP
 	closetext
 	end
-
+	
 .GotSquirtbottle:
 	writetext GoldenrodFlowerShopFloriaYouBeatWhitneyText
 	waitbutton
@@ -196,6 +223,42 @@ GoldenrodFlowerShopFloriaYouBeatWhitneyText:
 GoldenrodFlowerShopFloriaItReallyWasAMonText:
 	text "So it really was a"
 	line "#MON!"
+	done
+	
+FloriaWantGoldenAcornText:
+	text "No we don't have"
+	line "BERRYMIX here."
+	cont "Just regular un-"
+	cont "mixed berries."
+	para "But I know of a"
+	line "guy who might"
+	cont "know."
+	para "Tell you what."
+	line "If you can bring"
+	cont "me a GOLDEN ACORN"
+	cont "I'll tell you"
+	cont "where you can find"
+	cont "him."
+	para "I heard GOLDEN"
+	line "ACORNS can be"
+	cont "found at the"
+	cont "National Park, but"
+	cont "they are really"
+	cont "rare so don't"
+	cont "expect it to be"
+	cont "easy!"
+	done
+
+FloriaTellBerryMixLocationText:
+	text "Wow! You really"
+	line "got one!"
+	cont "Thanks!"
+	para "The berry expert"
+	line "lives just north"
+	cont "of Cherrygrove."
+	para "He might know"
+	line "about mixing"
+	cont "berries."
 	done
 
 GoldenrodFlowerShop_MapEvents:

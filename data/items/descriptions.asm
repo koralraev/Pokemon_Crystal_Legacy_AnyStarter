@@ -90,7 +90,7 @@ ItemDescriptions:
 	dw BigMushroomDesc
 	dw SilverPowderDesc
 	dw BluApricornDesc
-	dw TeruSama6Desc
+	dw BugNetDesc
 	dw AmuletCoinDesc
 	dw YlwApricornDesc
 	dw GrnApricornDesc
@@ -100,7 +100,7 @@ ItemDescriptions:
 	dw WhtApricornDesc
 	dw BlackbeltDesc
 	dw BlkApricornDesc
-	dw TeruSama7Desc
+	dw BerrymixDesc
 	dw PnkApricornDesc
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc
@@ -141,11 +141,11 @@ ItemDescriptions:
 	dw CharcoalDesc
 	dw BerryJuiceDesc
 	dw ScopeLensDesc
-	dw TeruSama12Desc
-	dw TeruSama13Desc
+	dw NutriRootDesc
+	dw SpecialDishDesc
 	dw MetalCoatDesc
 	dw DragonFangDesc
-	dw TeruSama14Desc
+	dw GoldenAcornDesc
 	dw LeftoversDesc
 	dw OldAmberDesc
 	dw DomeFossilDesc
@@ -611,8 +611,9 @@ SilverPowderDesc:
 BluApricornDesc:
 	db   "A blue APRICORN.@"
 
-TeruSama6Desc:
-	db   "?@"
+BugNetDesc:
+	db   "A net for catching"
+	next "bugs.@"
 
 AmuletCoinDesc:
 	db   "Doubles monetary"
@@ -649,8 +650,9 @@ BlkApricornDesc:
 	db   "A black APRICORN."
 	next "@"
 
-TeruSama7Desc:
-	db   "?@"
+BerrymixDesc:
+	db   "A mix of assorted"
+	next "berries.@"
 
 PnkApricornDesc:
 	db   "A pink APRICORN."
@@ -811,11 +813,13 @@ ScopeLensDesc:
 	db   "Raises critical"
 	next "hit ratio. (HOLD)@"
 
-TeruSama12Desc:
-	db   "?@"
+NutriRootDesc:
+	db   "A very nutritional"
+	next "root.@"
 
-TeruSama13Desc:
-	db   "?@"
+SpecialDishDesc:
+	db   "A special dish"
+	next "for a #MON.@"
 
 MetalCoatDesc:
 	db   "Powers up steel-"
@@ -825,8 +829,9 @@ DragonFangDesc:
 	db   "Powers up dragon-"
 	next "type moves. (HOLD)@"
 
-TeruSama14Desc:
-	db   "?@"
+GoldenAcornDesc:
+	db   "A rare gold"
+	next "colored acorn.@"
 
 LeftoversDesc:
 	db   "Restores HP during"

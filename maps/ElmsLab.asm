@@ -1358,11 +1358,13 @@ BookshelfToggleEvent:
 	writetext YesToSetNoToClearText
 	yesorno
 	iftrue .ToggleOn
-	clearevent EVENT_GOT_HM04_STRENGTH
+	clearevent EVENT_GOT_SPECIAL_DISH
+	
 	closetext
 	end
 .ToggleOn:
-	setevent EVENT_GOT_HM04_STRENGTH
+	setevent EVENT_GOT_SPECIAL_DISH
+	setevent EVENT_START_MUNCHLAX_QUEST
 	closetext
 	end
 	

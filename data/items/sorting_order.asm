@@ -194,6 +194,11 @@ ItemNameOrder:
     db POLKADOT_BOW 	; a1
     db SQUIRTBOTTLE 	; a2
     db BLUE_CARD 		; a3
+    db GOLDEN_ACORN		;a4
+    db NUTRI_ROOT		;a5
+    db BUG_NET			;a6
+    db BERRYMIX			;a7
+    db SPECIAL_DISH		;a8
 
 ; Apricorns
     db RED_APRICORN 	; a4
@@ -204,7 +209,7 @@ ItemNameOrder:
     db BLK_APRICORN		; a9
     db PNK_APRICORN		; aa
 
-REPT 16 ; default 22
+REPT 11 ; default 22
 	db $FF ; fill with empty bytes to reach NUM_ITEMS + 1
 ENDR
 

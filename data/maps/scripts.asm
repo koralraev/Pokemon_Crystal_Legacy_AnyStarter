@@ -218,7 +218,7 @@ INCLUDE "maps/OlivineTimsHouse.asm"
 ; INCLUDE "maps/OlivineHouseBeta.asm" ;moved to section 25
 ; INCLUDE "maps/OlivinePunishmentSpeechHouse.asm" ;moved to section 25
 INCLUDE "maps/OlivineGoodRodHouse.asm"
-INCLUDE "maps/OlivineCafe.asm"
+; INCLUDE "maps/OlivineCafe.asm" ;moved to section 26
 INCLUDE "maps/OlivineMart.asm"
 INCLUDE "maps/Route38EcruteakGate.asm"
 INCLUDE "maps/Route39Barn.asm"
@@ -380,7 +380,7 @@ SECTION "Map Scripts 19", ROMX
 INCLUDE "maps/AzaleaTown.asm"
 INCLUDE "maps/GoldenrodCity.asm"
 INCLUDE "maps/SaffronCity.asm"
-INCLUDE "maps/MahoganyRedGyaradosSpeechHouse.asm"
+ ;INCLUDE "maps/MahoganyRedGyaradosSpeechHouse.asm" ;moved to section 26
 INCLUDE "maps/MahoganyGym.asm"
 INCLUDE "maps/MahoganyPokecenter1F.asm"
 INCLUDE "maps/Route42EcruteakGate.asm"
@@ -493,3 +493,5 @@ INCLUDE "maps/OlivinePokecenter1F.asm"		;moved from section 11
 SECTION "Map Scripts 26", ROMX
 INCLUDE "maps/CianwoodPokecenter1F.asm"		;moved from section 12
 INCLUDE "maps/EcruteakItemfinderHouse.asm" 	;moved from section 11
+INCLUDE "maps/OlivineCafe.asm"			;moved from section 12
+INCLUDE "maps/MahoganyRedGyaradosSpeechHouse.asm" ;moved from section 19
