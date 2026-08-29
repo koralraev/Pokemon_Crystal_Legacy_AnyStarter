@@ -17,6 +17,7 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 + An in-battle stat menu to track battle stat changes and remaining turns for screens, safeguard and current weather. Opened by pressing START while on the battle menu (FIGHT/PKMN/PACK/RUN)
 + Egg Move Reminder added t0 Move Deleters house in Blackthorn City. All evolution lines can now learn their first stages egg moves, just as the PokeDex states. E.g. Crobat can learn Zubat's egg moves at the Egg Move Reminder
 + Acquiring the Itemfinder in Ecruteak allows to see if an enemy pokemon is holding an item in battle. This function can be toggled on/off by talking to the guy giving the Itemfinder
++ After getting to Indigo Plateau a flypoint to the Plateau is available on the Johto map, and on the Kanto map a flypoint to New Bark is available
 
 
 ## Additions
@@ -328,7 +329,18 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 	  - Cleanse Tag: Extends durations of SAFEGUARD from 5 to 8 turns in addition to repelling wild pokemon
   </details>
   
-+ Munchlax has been added
++ Munchlax has been added. Can be acquired through a trade sequence quest started by talking to the guy in the house above the Pokemon Center in Mahogany Town
+  <details>
+  <summary>Quest spoiler:</summary>
+	  
+	  - The quest requires you to get several items to make a special dish for a Munchlax. The invloved NPCs will tell you where to go and who to talk to. Remember to read their dialogue.
+	  - Item locations:
+	  - NUTRI ROOT (new key item): Trade a BUG NET to the bugcatcher in the north part of Ilex Forest
+	  - BUG NET (new key item): Found as an item laying in the labyrinth path in the west part of Lage of Rage
+	  - BERRYMIX (new key item): Trade a LEFTOVERS to the guy in the house on Route 30 who gives you a Berry
+	  - GOLDEN ACORN (new key item): Trade a Nugget to the new NPC in the east part of National Park behind the fense where TM DIG can be found
+	  - The quest aditionally require the player to obtain a Nugget, Leftovers and a Hard Stone. All these are traded doing the quest, but are given back once completed
+  </details>
 
 
 
@@ -376,10 +388,25 @@ Original readme at: https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy?tab=re
 	  - TM14, TM25 TM38: at Goldenrod Gamecorner price decreased to 1500 coins = 30000$, to still be expensive but not overpriced at 110000$
   </details>
 + Pokemons STATS menu option is now above list of usable HM moves
-+ The Teleport Guy with an Abra at the Indigo Plateau stays to allow more easily getting back to Johto
 + Articuno, Zapdos and Moltres respectively learns Hail, Rain Dance and Sunny Day at lvl 57
 + Potions now heal 50HP. Super Potions heal 100HP. Gold Berry and Berry Juice heal is doubled (60HP and 40HP) to make them a bit more viable as useful hold items
 + Marts sell more TMs and Indigo Plateau mart sells ethers
 + In Cianwood Gym the fighter before the boulders will offer to move the boulders for the player, if they have no pokemon knowing STRENGTH, but is otherwise worthy (beat him and have obtained HM04 STRENGTH)
++ Changes to enemy trainer battles to use new moves and items:
+  <details>
+  <summary>Changes:</summary>
+	  
+	  - Bugsy (rematch): Forretress has Berry Juice. Shuckle has Smooth Rock
+	  - Pryce (if battled first): Dewgong has Hail instead of Rain Dance
+	  - Pryce (if battled second): Jynx has Hail instead of Rain Dance
+	  - Pryce (if battled third): Cloyster has Hail instead of Rain Dance, and an Icy Rock
+	  - Pryce (rematch): Piloswine has Hail instead of Strength
+	  - Jasmine (rematch): Rorsola has Sandstorm instead of Rain Dance
+	  - Archer (radio tower): Taurus has Double Edge instead of Frustration
+	  - Smith. Venusaur has Big Root instead of Gold Berry
+	  - Koga: Venomoth has Big Root
+	  - Red: Venusaur has Big Root instead of Miracle Seed
+	  - Blaine: Rapidash ahs Heat Rock instead of Quick Claw
+  </details>
 
 

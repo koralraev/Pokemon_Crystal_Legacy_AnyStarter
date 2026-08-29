@@ -1,6 +1,6 @@
 BattleCommand_Thief:
 ; thief
-; add call RefreshBattleHuds to update huds immediately
+; could add call RefreshBattleHuds to update huds immediately
 
 	ldh a, [hBattleTurn]
 	and a

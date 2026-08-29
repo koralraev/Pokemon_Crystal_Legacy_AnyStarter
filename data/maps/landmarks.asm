@@ -53,7 +53,10 @@ Landmarks:
 	landmark 132,  64, Route45Name
 	landmark 112,  72, DarkCaveName
 	landmark 124,  88, Route46Name
+	landmark 148,  92, IndigoPlateauName
 	landmark 148,  68, SilverCaveName
+	
+	
 	assert_table_length KANTO_LANDMARK
 	landmark  52, 108, PalletTownName
 	landmark  52,  92, Route1Name
@@ -102,6 +105,7 @@ Landmarks:
 	landmark  28,  92, Route26Name
 	landmark  20, 100, Route27Name
 	landmark  12, 100, TohjoFallsName
+	landmark  12,  92, NewBarkTownName
 	landmark  20,  68, Route28Name
 	landmark 140, 116, FastShipName
 	assert_table_length NUM_LANDMARKS

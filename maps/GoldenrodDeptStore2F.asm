@@ -91,7 +91,7 @@ AlreadyGotBigRootText:
 	line "draining moves"
 	cont "heal the user"
 	cont "a bit more."
-	para "Around 30 percent"
+	para "Around 25 percent"
 	line "by my calculation."
 	done
 

@@ -633,6 +633,8 @@ ShadyTmGuyMoveTutorScript:
 	waitbutton
 	special MoveTutor
 	ifequal FALSE, .MoveTaught
+	writetext TutorFarewellText
+	waitbutton
 	closetext
 	end
 	

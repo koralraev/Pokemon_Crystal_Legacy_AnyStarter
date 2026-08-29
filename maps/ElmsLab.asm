@@ -1358,13 +1358,18 @@ BookshelfToggleEvent:
 	writetext YesToSetNoToClearText
 	yesorno
 	iftrue .ToggleOn
-	clearevent EVENT_GOT_SPECIAL_DISH
+	clearflag ENGINE_FLYPOINT_INDIGO_PLATEAU
+	clearflag ENGINE_FLYPOINT_PALLET
 	
 	closetext
 	end
 .ToggleOn:
-	setevent EVENT_GOT_SPECIAL_DISH
-	setevent EVENT_START_MUNCHLAX_QUEST
+	setflag ENGINE_FLYPOINT_INDIGO_PLATEAU
+	setflag ENGINE_FLYPOINT_PALLET
+	setevent EVENT_GOT_HM02_FLY
+	setevent EVENT_BEAT_CHUCK
+	setflag ENGINE_STORMBADGE
+	giveitem HM_FLY
 	closetext
 	end
 	
@@ -1490,7 +1495,7 @@ ElmsLab_MapEvents:
 	bg_event  6,  7, BGEVENT_READ, ElmsLabBookshelf
 	bg_event  7,  7, BGEVENT_READ, ElmsLabBookshelf
 	bg_event  8,  7, BGEVENT_READ, ElmsLabBookshelf
-;	bg_event  9,  7, BookshelfToggleEvent, ElmsLabBookshelf
+	bg_event  9,  7, BGEVENT_READ, ElmsLabBookshelf
 	bg_event  9,  3, BGEVENT_READ, ElmsLabTrashcan
 	bg_event  5,  0, BGEVENT_READ, ElmsLabWindow
 	bg_event  3,  5, BGEVENT_DOWN, ElmsLabPC

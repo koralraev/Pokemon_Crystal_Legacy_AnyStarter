@@ -121,6 +121,7 @@ JOHTO_FLYPOINT EQU const_value
 	const FLY_MAHOGANY
 	const FLY_LAKE_OF_RAGE
 	const FLY_BLACKTHORN
+	const FLY_INDIGO_J
 	const FLY_MT_SILVER
 ; kanto
 KANTO_FLYPOINT EQU const_value
@@ -135,6 +136,7 @@ KANTO_FLYPOINT EQU const_value
 	const FLY_SAFFRON
 	const FLY_FUCHSIA
 	const FLY_CINNABAR
+	const FLY_NEW_BARK_K
 	const FLY_INDIGO
 NUM_FLYPOINTS EQU const_value
 

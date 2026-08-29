@@ -63,7 +63,11 @@ OlivineCafeFishingGuruScript: ; the chef
 	takeitem NUTRI_ROOT
 	takeitem BERRYMIX
 	waitbutton
-	;animtaion and sound
+	closetext
+	applymovement OLIVINECAFE_FISHING_GURU, OlivineCafeChefSpin_MovementData
+	playsound SFX_DEX_FANFARE_20_49
+	pause 30
+	opentext
 	writetext ChefGiveSpecialDishText
 	waitbutton
 	verbosegiveitem SPECIAL_DISH
@@ -131,6 +135,8 @@ OlivineCafeFishingGuruScript: ; the chef
 OlivineCafeSilphCoWorkerScopeLens:
 	faceplayer
 	opentext
+	checkevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
+	iftrue .MagnetTrainWorking
 	checkevent EVENT_HIDDEN_SCOPE_LENS
 	iftrue .GotScopeLens
 	writetext OlivineCafeGiveScopeLens
@@ -146,6 +152,24 @@ OlivineCafeSilphCoWorkerScopeLens:
 	waitbutton
 	closetext
 	end
+.MagnetTrainWorking:
+	writetext OlivineCafeMagnetTrainWorkingText
+	waitbutton
+	closetext
+	end
+	
+OlivineCafeChefSpin_MovementData:
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
+	turn_head LEFT
+	step_end
 
 OlivineCafeStrengthSailorText:
 	text "Hah! Your #MON"
@@ -239,7 +263,21 @@ OlivineCafeGotScopeLens:
 	cont "before it hits"
 	cont "the shelves."
 	done
-	
+
+OlivineCafeMagnetTrainWorkingText:
+	text "The Magnet Train"
+	line "is working again!"
+	para "I have gotten to"
+	line "like it here in"
+	cont "Olivine so I have"
+	cont "decided to stay a"
+	cont "bit longer."
+	para "How is the SCOPE"
+	line "LENS working for"
+	cont "you? Are you"
+	cont "getting some"
+	cont "critical hits?"
+	done
 
 ChefGotAllText:
 	text "You got all the"

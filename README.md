@@ -12,6 +12,7 @@ Though this is build on TheSmithPlays' Pokemon Crystal Legacy it is NOT compatib
 + An in-battle menu for tracking battle stat changes, screens and weathers turns can be openend by pressing START
 + An Egg Move Reminder has been added to Move Deleters house in Blackthorn City. All evolution lines can now learn their first stages egg moves
 + The Itemfinder can now show if an enemy is holding an item. Can be toggled by talking to the Itemfinder Guy.
++ Player can fly directly from Johto to Indigo Plateau and from Kanto to New Bark
 
 
 
@@ -25,6 +26,7 @@ Though this is build on TheSmithPlays' Pokemon Crystal Legacy it is NOT compatib
 + Sandstorm now boosts ROCK-types Special Defence by 50%
 + Grass types are immune to spore and powder based moves
 + A curator of rare rocks and stones can be found somewhere. He sells items that are otherwise difficult to come by
++ A pokemon from a later generation can be obtained through a trade sequence quest started in Mahogany Town
 
 
 
@@ -40,12 +42,11 @@ Though this is build on TheSmithPlays' Pokemon Crystal Legacy it is NOT compatib
 + Cycling between the Daycare and Goldenrod is easier as an NPC acts as a barrier to go into the grass on route 34
 + Some items have been made more readily available
 + Pokemons STATS menu option in the party menu shows above usable HM moves
-+ The Teleport Guy with an Abra at the Indigo Plateau stays to allow more easily getting back to Johto
 + Articuno, Zapdos and Moltres respectively learns Hail, Rain Dance and Sunny Day at lvl 57
 + Increased heal amount for some items
 + Marts sell more items
 + Chuck can be reached without a pokemon knowing STRENGTH
 + Shiny Charizard is black and red
-
++ Changes to certain enemy trainers to use new items and moves
   
 

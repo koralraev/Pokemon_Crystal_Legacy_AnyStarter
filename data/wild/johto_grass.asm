@@ -1494,7 +1494,7 @@ JohtoGrassWildMons:
 	db 20, MAGNEMITE
 	db 20, DODUO
 	db 20, MEOWTH
-	db 19, RATICATE
+	db 19, VOLTORB ;RATICATE
 	db 19, RATICATE
 	; day
 	db 20, MAGNEMITE
