@@ -1358,18 +1358,12 @@ BookshelfToggleEvent:
 	writetext YesToSetNoToClearText
 	yesorno
 	iftrue .ToggleOn
-	clearflag ENGINE_FLYPOINT_INDIGO_PLATEAU
-	clearflag ENGINE_FLYPOINT_PALLET
+	clearevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
 	
 	closetext
 	end
 .ToggleOn:
-	setflag ENGINE_FLYPOINT_INDIGO_PLATEAU
-	setflag ENGINE_FLYPOINT_PALLET
-	setevent EVENT_GOT_HM02_FLY
-	setevent EVENT_BEAT_CHUCK
-	setflag ENGINE_STORMBADGE
-	giveitem HM_FLY
+	setevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
 	closetext
 	end
 	

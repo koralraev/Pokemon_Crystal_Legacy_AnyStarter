@@ -136,7 +136,7 @@ OlivineCafeSilphCoWorkerScopeLens:
 	faceplayer
 	opentext
 	checkevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
-	iftrue .MagnetTrainWorking
+	iffalse .MagnetTrainWorking
 	checkevent EVENT_HIDDEN_SCOPE_LENS
 	iftrue .GotScopeLens
 	writetext OlivineCafeGiveScopeLens
@@ -154,6 +154,16 @@ OlivineCafeSilphCoWorkerScopeLens:
 	end
 .MagnetTrainWorking:
 	writetext OlivineCafeMagnetTrainWorkingText
+	waitbutton
+	checkevent EVENT_HIDDEN_SCOPE_LENS
+	iffalse .GiveScopeLens
+	closetext
+	end
+.GiveScopeLens:
+	writetext OlivineCafeGiveScopeLens2Text
+	waitbutton
+	verbosegiveitem SCOPE_LENS
+	setevent EVENT_HIDDEN_SCOPE_LENS
 	waitbutton
 	closetext
 	end
@@ -278,6 +288,13 @@ OlivineCafeMagnetTrainWorkingText:
 	cont "getting some"
 	cont "critical hits?"
 	done
+OlivineCafeGiveScopeLens2Text:
+	text "Oh, you are not?"
+	line "Well I can give"
+	cont "you this to help"
+	cont "you then."
+	done
+	
 
 ChefGotAllText:
 	text "You got all the"

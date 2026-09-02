@@ -1971,7 +1971,7 @@ BattleCommand_LowerSub:
 .rollout_rampage
 	ld a, [wSomeoneIsRampaging]
 	and a
-	xor a ; was ld a, 0 should save 1 byte
+	ld a, 0
 	ld [wSomeoneIsRampaging], a
 	ret
 
@@ -2111,11 +2111,24 @@ BattleCommand_FailureText:
 	ld a, [wAttackMissed]
 	and a
 	ret z
-
+	
+	; check to allow swagger to still confuse target and not fail if targets atk is +6
+	; below approach works but displays <user>s atk wont raise more when <targets> atk is +6
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_SWAGGER
+	jr nz, .not_swagger
+	ld a, [wFailedMessage]
+	cp 2
+	jr nz, .not_swagger
+	farcall SwitchTurnCore
+	call BattleCommand_StatUpFailText
+	farcall SwitchTurnCore
+	ret
+.not_swagger
 	call GetFailureResultText
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVarAddr
-
 	cp FLY
 	jr z, .fly_dig
 	cp DIG
@@ -2133,6 +2146,10 @@ BattleCommand_FailureText:
 	jr z, .multihit
 	cp EFFECT_BEAT_UP
 	jr z, .multihit
+	
+;	cp EFFECT_SWAGGER ; check to skip ending move effect if targets atk is +6 allowing swagger to still confuse. This will say move missed but still confuse the target.
+;	ret z
+	
 	jp EndMoveEffect
 
 .multihit
@@ -2414,7 +2431,7 @@ BattleCommand_CheckFaint:
 	and a
 	ld hl, wEnemyMonMaxHP + 1
 	bccoord 2, 2 ; hp bar
-	xor a ; was ld a, 0 should save 1 byte
+	ld a, 0
 	jr nz, .got_max_hp
 	ld hl, wBattleMonMaxHP + 1
 	bccoord 10, 9 ; hp bar
@@ -3267,7 +3284,7 @@ BattleCommand_ConstantDamage:
 	call GetBattleVar
 	cp EFFECT_LEVEL_DAMAGE
 	ld b, [hl]
-	xor a ; was ld a, 0 should save 1 byte
+	ld a, 0
 	jr z, .got_power
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
@@ -3301,7 +3318,7 @@ BattleCommand_ConstantDamage:
 	cp b
 	jr nc, .psywave_loop ; if a >= 1.5xlevel, generate another random number
 	ld b, a
-	xor a ; was ld a, 0 should save 1 byte
+	ld a, 0 ; xor a should save 1 byte but break dragon rage/sonicboom 
 	pop de
 	jr .got_power
 
@@ -3323,7 +3340,7 @@ BattleCommand_ConstantDamage:
 	and a
 	jr nz, .got_power
 	or b
-	xor a ; was ld a, 0 should save 1 byte
+	ld a, 0
 	jr nz, .got_power
 	ld b, 1
 	jr .got_power
@@ -3746,8 +3763,6 @@ BattleCommand_SleepTarget:
 	jp nz, PrintDidntAffect2
 
 	ld hl, DidntAffect1Text
-	call .CheckAIRandomFail
-	jr c, .fail
 
 	call CheckSubstituteOpp
 	jr nz, .fail
@@ -3784,33 +3799,6 @@ BattleCommand_SleepTarget:
 	pop hl
 	jp StdBattleTextbox
 
-.CheckAIRandomFail:
-	; Enemy turn
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .dont_fail
-
-	; Not in link battle
-	ld a, [wLinkMode]
-	and a
-	jr nz, .dont_fail
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr nz, .dont_fail
-
-	; Not locked-on by the enemy
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .dont_fail
-
-	call BattleRandom
-	cp 25 percent + 1 ; 25% chance AI fails
-	ret c
-
-.dont_fail
-	xor a
-	ret
 
 BattleCommand_PoisonTarget:
 ; poisontarget
@@ -3878,27 +3866,6 @@ BattleCommand_Poison:
 	and a
 	jr nz, .failed
 
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .dont_sample_failure
-
-	ld a, [wLinkMode]
-	and a
-	jr nz, .dont_sample_failure
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr nz, .dont_sample_failure
-
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .dont_sample_failure
-
-	call BattleRandom
-	cp 25 percent + 1 ; 25% chance AI fails
-	jr c, .failed
-
-.dont_sample_failure
 	ld hl, ProtectingItselfText
 	call CheckSubstituteOpp
 	jr nz, .failed
@@ -4001,7 +3968,7 @@ SapHealth:
 	ld a, 1
 	ldh [hDividend + 1], a
 .at_least_one
-; Big Root: the draining mon heals 30% more if holding it
+; Big Root: the draining mon heals 25% more if holding it
 	call GetUserItem
 	ld a, [hl]
 	cp BIG_ROOT
@@ -4019,7 +3986,7 @@ SapHealth:
 	rr c
 	add hl, bc ; gives 25%
 	
-;	srl b
+;	srl b	; comment in to heal ~30%
 ;	rr c
 ;	srl b
 ;	rr c
@@ -4561,41 +4528,12 @@ BattleCommand_StatDown:
 ; Sharply lower the stat if applicable.
 	ld a, [wLoweredStat]
 	and $f0
-	jr z, .ComputerMiss
+	jr z, .GotAmountToLower
 	dec b
-	jr nz, .ComputerMiss
+	jr nz, .GotAmountToLower
 	inc b
 
-.ComputerMiss:
-; Computer opponents have a 25% chance of failing.
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .DidntMiss
-
-	ld a, [wLinkMode]
-	and a
-	jr nz, .DidntMiss
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr nz, .DidntMiss
-
-; Lock-On still always works.
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .DidntMiss
-
-; Attacking moves that also lower accuracy are unaffected.
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_ACCURACY_DOWN_HIT
-	jr z, .DidntMiss
-
-	call BattleRandom
-	cp 25 percent + 1 ; 25% chance AI fails
-	jr c, .Failed
-
-.DidntMiss:
+.GotAmountToLower:
 	call CheckSubstituteOpp
 	jr nz, .Failed
 
@@ -5811,23 +5749,23 @@ BattleCommand_Charge:
 	call GetBattleVar
 	cp RAZOR_WIND
 	ld hl, .BattleMadeWhirlwindText
-	ret z ;was jr z, .done should save 1 byte
+	jr z, .done
 
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
-	ret z ;was jr z, .done should save 1 byte (bit?)
+	jr z, .done
 
 	cp SKULL_BASH
 	ld hl, .BattleLoweredHeadText
-	ret z ;was jr z, .done should save 1 byte
+	jr z, .done
 
 	cp SKY_ATTACK
 	ld hl, .BattleGlowingText
-	ret z ;was jr z, .done should save 1 byte
+	jr z, .done
 
 	cp FLY
 	ld hl, .BattleFlewText
-	ret z ;was jr z, .done should save 1 byte
+	jr z, .done
 
 	cp DIG
 	ld hl, .BattleDugText
@@ -6110,27 +6048,6 @@ BattleCommand_Paralyze:
 	jp StdBattleTextbox
 
 .no_item_protection
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .dont_sample_failure
-
-	ld a, [wLinkMode]
-	and a
-	jr nz, .dont_sample_failure
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr nz, .dont_sample_failure
-
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .dont_sample_failure
-
-	call BattleRandom
-	cp 25 percent + 1 ; 25% chance AI fails
-	jr c, .failed
-
-.dont_sample_failure
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .failed
