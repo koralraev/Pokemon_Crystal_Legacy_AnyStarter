@@ -1021,6 +1021,14 @@ Heal:
 	heal
 	endmove
 
+Roost:
+	checkobedience
+	usedmovetext
+	doturn
+	heal
+	roost
+	endmove
+
 Transform:
 	checkobedience
 	usedmovetext

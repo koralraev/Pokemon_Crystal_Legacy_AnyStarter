@@ -181,8 +181,9 @@ ENDM
 	command supereffectivelooptext  ; ad
 	command startloop               ; ae
 	command curl                    ; af
-	command starthail		; b1 //bc flashhit is add as new number 26
+	command starthail		; b1 //not b0 as flashhit is add as new number 26
 	command trapstack		; b2
+	command roost			; b3
 NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

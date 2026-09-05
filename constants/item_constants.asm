@@ -358,6 +358,7 @@ MT01 EQU const_value
 	add_mt ROCK_SLIDE	;tm48
 	add_mt TRI_ATTACK	;tm49
 	add_mt SUBSTITUTE	;tm50
+	add_mt ROOST
 	
 NUM_TUTORS = __tmhm_value__ - NUM_TMS - NUM_HMS - 1
 

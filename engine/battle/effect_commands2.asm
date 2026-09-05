@@ -79,6 +79,7 @@ INCLUDE "engine/battle/move_effects/transform.asm"
 INCLUDE "engine/battle/move_effects/beat_up.asm"
 INCLUDE "engine/battle/move_effects/trap_stack.asm"
 INCLUDE "engine/battle/move_effects/arena_trap.asm"
+Include "engine/battle/move_effects/roost.asm"
 
 
 

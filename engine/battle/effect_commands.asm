@@ -113,10 +113,10 @@ BattleCommand_CheckTurn:
 
 ; Repurposed as hardcoded turn handling. Useless as a command.
 
-; Move $ff immediately ends the turn.
+; NO_MOVE immediately ends the turn.
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
-	inc a
+	and a ; NO_MOVE?
 	jp z, EndTurn
 
 	xor a
@@ -4911,6 +4911,11 @@ BattleCommand_Curl:
 	ld a, BATTLE_VARS_SUBSTATUS2
 	call GetBattleVarAddr
 	set SUBSTATUS_CURLED, [hl]
+	ret
+	
+BattleCommand_Roost:
+; roost non-immue to ground effect
+	farcall _BattleCommand_Roost
 	ret
 
 BattleCommand_RaiseSubNoAnim:

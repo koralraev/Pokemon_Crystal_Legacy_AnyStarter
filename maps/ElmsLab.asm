@@ -1358,12 +1358,13 @@ BookshelfToggleEvent:
 	writetext YesToSetNoToClearText
 	yesorno
 	iftrue .ToggleOn
-	clearevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
+;	clearevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
 	
 	closetext
 	end
 .ToggleOn:
-	setevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
+;	setevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
+	giveitem SHARP_BEAK
 	closetext
 	end
 	

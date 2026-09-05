@@ -250,6 +250,7 @@ PidgeyEvosAttacks:
 	db 19, WHIRLWIND
 	db 25, WING_ATTACK
 	db 30, MUD_SLAP
+	db 37, ROOST
 	db 42, AGILITY
 	db 47, SKY_ATTACK
 	db 55, MIRROR_MOVE
@@ -265,6 +266,7 @@ PidgeottoEvosAttacks:
 	db 19, WHIRLWIND
 	db 25, WING_ATTACK
 	db 30, MUD_SLAP
+	db 39, ROOST
 	db 42, AGILITY
 	db 47, SKY_ATTACK
 	db 55, MIRROR_MOVE
@@ -280,6 +282,7 @@ PidgeotEvosAttacks:
 	db 25, WING_ATTACK
 	db 30, MUD_SLAP
 	db 36, EXTREMESPEED
+	db 40, ROOST
 	db 42, AGILITY
 	db 47, SKY_ATTACK
 	db 55, MIRROR_MOVE
@@ -322,6 +325,7 @@ SpearowEvosAttacks:
 	db 10, FURY_ATTACK
 	db 15, PURSUIT
 	db 31, MIRROR_MOVE
+	db 33, ROOST
 	db 37, DRILL_PECK
 	db 43, AGILITY
 	db 0 ; no more level-up moves
@@ -335,6 +339,7 @@ FearowEvosAttacks:
 	db 15, PURSUIT
 	db 31, MIRROR_MOVE
 	db 37, DRILL_PECK
+	db 41, ROOST
 	db 43, AGILITY
 	db 0 ; no more level-up moves
 
@@ -2217,6 +2222,7 @@ ArticunoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GUST
 	db 1, POWDER_SNOW
+	db 1, ROOST
 	db 13, MIST
 	db 25, AGILITY
 	db 37, MIND_READER
@@ -2227,12 +2233,14 @@ ArticunoEvosAttacks:
 	db 65, NASTY_PLOT
 	db 73, BLIZZARD
 	db 76, SKY_ATTACK
+	db 85, ROOST
 	db 0 ; no more level-up moves
 
 ZapdosEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 1, THUNDERSHOCK
+	db 1, ROOST
 	db 13, THUNDER_WAVE
 	db 25, AGILITY
 	db 37, DETECT
@@ -2243,12 +2251,14 @@ ZapdosEvosAttacks:
 	db 65, NASTY_PLOT
 	db 73, THUNDER
 	db 76, SKY_ATTACK
+	db 85, ROOST
 	db 0 ; no more level-up moves
 
 MoltresEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WING_ATTACK
 	db 1, EMBER
+	db 1, ROOST
 	db 13, FIRE_SPIN
 	db 25, AGILITY
 	db 37, ENDURE
@@ -2259,6 +2269,7 @@ MoltresEvosAttacks:
 	db 65, NASTY_PLOT
 	db 73, FIRE_BLAST
 	db 76, SKY_ATTACK
+	db 85, ROOST
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:
@@ -2300,6 +2311,7 @@ DragoniteEvosAttacks:
 	db 1, WRAP
 	db 1, THUNDER_WAVE
 	db 1, HONE_CLAWS
+	db 1, ROOST
 	db 15, TWISTER
 	db 22, DRAGON_RAGE
 	db 29, SLAM
@@ -2309,6 +2321,7 @@ DragoniteEvosAttacks:
 	db 56, OUTRAGE
 	db 57, HONE_CLAWS
 	db 70, HYPER_BEAM
+	db 80, ROOST
 	db 0 ; no more level-up moves
 
 MewtwoEvosAttacks:
@@ -2533,6 +2546,7 @@ HoothootEvosAttacks:
 	db 28, LIGHT_SCREEN
 	db 32, MIRROR_COAT
 	db 36, TAKE_DOWN
+	db 38, ROOST
 	db 40, PSYCHIC_M
 	db 45, DREAM_EATER
 	db 50, FUTURE_SIGHT
@@ -2552,6 +2566,7 @@ NoctowlEvosAttacks:
 	db 32, MIRROR_COAT
 	db 36, TAKE_DOWN
 	db 40, PSYCHIC_M
+	db 43, ROOST
 	db 45, DREAM_EATER
 	db 50, FUTURE_SIGHT
 	db 0 ; no more level-up moves
@@ -3171,6 +3186,7 @@ DunsparceEvosAttacks:
 	db 15, DIG
 	db 18, SPITE
 	db 26, PURSUIT
+	db 27, ROOST
 	db 30, SCREECH
 	db 33, BODY_SLAM
 	db 0 ; no more level-up moves
@@ -3479,6 +3495,7 @@ MantineEvosAttacks:
 	db 25, WING_ATTACK
 	db 30, TAKE_DOWN
 	db 40, AGILITY
+	db 43, ROOST
 	db 45, MIRROR_COAT
 	db 49, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -3487,6 +3504,7 @@ SkarmoryEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LEER
 	db 1, PECK
+	db 1, ROOST
 	db 13, SAND_ATTACK
 	db 17, SPIKES
 	db 19, SWIFT

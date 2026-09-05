@@ -177,7 +177,7 @@ Moves:
 	move SUPER_FANG,   EFFECT_SUPER_FANG,          1, NORMAL,        90, 10,   0
 	move SLASH,        EFFECT_NORMAL_HIT,         70, NORMAL,       100, 20,   0
 	move SUBSTITUTE,   EFFECT_SUBSTITUTE,          0, NORMAL,       100, 10,   0
-	move STRUGGLE,     EFFECT_RECOIL_HIT,         50, NORMAL,       100,  1,   0
+	move ROOST,        EFFECT_ROOST,               0, FLYING,       100,  5,   0
 	move SKETCH,       EFFECT_SKETCH,              0, NORMAL,       100,  1,   0
 	move TRIPLE_KICK,  EFFECT_TRIPLE_KICK,        20, FIGHTING,     100, 15,   0
 	move THIEF,        EFFECT_THIEF,              60, DARK,         100, 15, 100
@@ -267,4 +267,5 @@ Moves:
 	move IRON_DEFENSE, EFFECT_DEFENSE_UP_2,        0, STEEL,        100, 15,   0
 	move NASTY_PLOT,   EFFECT_SP_ATK_UP_2,         0, DARK,     	100, 20,   0
 	move HAIL,	   EFFECT_HAIL,	               0, ICE,          100, 10,   0
+	move STRUGGLE,     EFFECT_RECOIL_HIT,         50, NORMAL,       100,  1,   0
 	assert_table_length NUM_ATTACKS

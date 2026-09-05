@@ -170,7 +170,7 @@
 	const SUPER_FANG   ; a2
 	const SLASH        ; a3
 	const SUBSTITUTE   ; a4
-	const STRUGGLE     ; a5
+	const ROOST        ; a5----struggle
 	const SKETCH       ; a6
 	const TRIPLE_KICK  ; a7
 	const THIEF        ; a8
@@ -257,14 +257,15 @@
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
 	const BEAT_UP      ; fb
-	const IRON_DEFENSE ; fc
-	const NASTY_PLOT   ; fd
-	const HAIL	   ; fe
+	const IRON_DEFENSE ; fc 252
+	const NASTY_PLOT   ; fd 253
+	const HAIL	   ; fe 254
+	const STRUGGLE     ; ff 255
 NUM_ATTACKS EQU const_value - 1
 
 ; Battle animations use the same constants as the moves up to this point
-	const_next $ff
-	const ANIM_SWEET_SCENT_2     ; ff
+
+	const ANIM_SWEET_SCENT_2     ; ff	all from here is shifted 1 up because we added move 255
 	const ANIM_THROW_POKE_BALL   ; 100
 	const ANIM_SEND_OUT_MON      ; 101
 	const ANIM_RETURN_MON        ; 102

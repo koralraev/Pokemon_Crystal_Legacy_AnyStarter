@@ -299,6 +299,7 @@ HandleBetweenTurnEffects:
 	call HandleDefrost
 	call HandleSafeguard
 	call HandleScreens
+	call HandleRoost
 	call HandleStatBoostingHeldItems
 	call HandleHealingItems
 	call UpdateBattleMonInParty
@@ -1913,6 +1914,41 @@ HandleScreens:
 	res SCREENS_REFLECT, [hl]
 	ld hl, BattleText_MonsReflectFaded
 	jp StdBattleTextbox
+	
+HandleRoost:
+	ld hl, wPlayerSubStatus2
+	bit SUBSTATUS_ROOST, [hl]
+	res SUBSTATUS_ROOST, [hl]
+	call nz, .RestorePlayerFlying
+	ld hl, wEnemySubStatus2
+	bit SUBSTATUS_ROOST, [hl]
+	res SUBSTATUS_ROOST, [hl]
+	call nz, .RestoreEnemyFlying
+	ret
+
+.RestorePlayerFlying
+	ld hl, wBattleMonType1
+	jr .Restore
+
+.RestoreEnemyFlying
+	ld hl, wEnemyMonType1
+
+.Restore
+	ld a, [hl]
+	cp CURSE_TYPE
+	jr z, .got_target
+	inc hl
+	ld a, [hl]
+	cp CURSE_TYPE
+	jr nz, .was_pure_flying
+.got_target
+	ld [hl], FLYING
+	ret
+.was_pure_flying
+	ld a, FLYING
+	ld [hld], a
+	ld [hl], a
+	ret
 
 HandleWeather:
 	ld a, [wBattleWeather]
@@ -4520,7 +4556,7 @@ PursuitSwitch:
 
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVarAddr
-	ld a, $ff
+	xor a ; NOMOVE  ; was  ld a, $ff
 	ld [hl], a
 
 	pop af

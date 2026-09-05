@@ -166,7 +166,7 @@ BattleAnimations::
 	dw BattleAnim_SuperFang
 	dw BattleAnim_Slash
 	dw BattleAnim_Substitute
-	dw BattleAnim_Struggle
+	dw BattleAnim_Roost
 	dw BattleAnim_Sketch
 	dw BattleAnim_TripleKick
 	dw BattleAnim_Thief
@@ -256,10 +256,10 @@ BattleAnimations::
 	dw BattleAnim_IronDefense
 	dw BattleAnim_NastyPlot
 	dw BattleAnim_Hail
+	dw BattleAnim_Struggle ; move 255
 	assert_table_length NUM_ATTACKS + 1
-;	dw BattleAnim_254 <-- last move anim now used. No more can be aded
 	dw BattleAnim_SweetScent2
-	assert_table_length $100
+	assert_table_length $101
 ; $100
 	dw BattleAnim_ThrowPokeBall
 	dw BattleAnim_SendOutMon
@@ -289,8 +289,8 @@ BattleAnimations::
 	assert_table_length NUM_BATTLE_ANIMS + 1
 
 BattleAnim_0:
-BattleAnim_253:
-BattleAnim_254:
+;BattleAnim_253:
+;BattleAnim_254:
 BattleAnim_MirrorMove:
 	anim_ret
 
@@ -1648,6 +1648,7 @@ BattleAnim_DoubleTeam:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+BattleAnim_Roost:
 BattleAnim_Recover:
 	anim_1gfx ANIM_GFX_BUBBLE
 	anim_call BattleAnim_TargetObj_1Row

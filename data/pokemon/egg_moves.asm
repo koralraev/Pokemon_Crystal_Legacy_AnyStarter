@@ -245,6 +245,7 @@ FarfetchDEggMoves:
 	db GUST
 	db QUICK_ATTACK
 	db FLAIL
+	db ROOST
 	db -1 ; end
 
 DoduoEggMoves:
@@ -433,6 +434,7 @@ AerodactylEggMoves:
 	db WHIRLWIND
 	db PURSUIT
 	db FORESIGHT
+	db ROOST
 	db -1 ; end
 
 MunchlaxEggMoves: ;updated to gen6
@@ -555,6 +557,7 @@ NatuEggMoves:
 	db QUICK_ATTACK
 	db FAINT_ATTACK
 	db STEEL_WING
+	db ROOST
 	db -1 ; end
 
 MareepEggMoves:
@@ -627,6 +630,7 @@ MurkrowEggMoves:
 	db MIRROR_MOVE
 	db WING_ATTACK
 	db SKY_ATTACK
+	db ROOST
 	db -1 ; end
 
 MisdreavusEggMoves:

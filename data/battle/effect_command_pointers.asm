@@ -182,4 +182,5 @@ BattleCommandPointers:
 	dw BattleCommand_Curl
 	dw BattleCommand_StartHail
 	dw BattleCommand_TrapStack
+	dw BattleCommand_Roost
 	assert_table_length NUM_EFFECT_COMMANDS

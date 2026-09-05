@@ -165,7 +165,7 @@ MoveDescriptions::
 	dw SuperFangDescription
 	dw SlashDescription
 	dw SubstituteDescription
-	dw StruggleDescription
+	dw RoostDescription
 	dw SketchDescription
 	dw TripleKickDescription
 	dw ThiefDescription
@@ -255,12 +255,11 @@ MoveDescriptions::
 	dw IronDefenseDescription
 	dw NastyPlotDescription
 	dw HailDescription
+	dw StruggleDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFFDescription:
 Move00Description:
 	db "?@"
 	
@@ -930,9 +929,9 @@ SubstituteDescription:
 	db   "Makes a decoy with"
 	next "1/4 user's max HP.@"
 
-StruggleDescription:
-	db   "Used only if all"
-	next "PP are exhausted.@"
+RoostDescription: 
+	db   "Lands to rest."
+	next "Exposed to GROUND.@"
 
 SketchDescription:
 	db   "Copies the foe's"
@@ -1289,3 +1288,7 @@ NastyPlotDescription:
 HailDescription:
 	db   "Hurts all types"
 	next "except ICE.@"
+	
+StruggleDescription:
+	db   "Used only if all"
+	next "PP are exhausted.@"

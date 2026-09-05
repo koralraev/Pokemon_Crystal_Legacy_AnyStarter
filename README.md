@@ -38,7 +38,7 @@ Though this is build on TheSmithPlays' Pokemon Crystal Legacy it is NOT compatib
 + Several existing moves have been changed to make them more viable and fun to use, eg. Flash is now an electric type priroity move with a chance to flinch the target
 + Increased chances for wild pokemon to have hold items. More wild pokemon have hold items that where otherwise difficult to come by
 + All gen2 TMs can be purchased at marts before the E4
-+ Goldenrod City and Route 34 NPCs moved around to make traversing easier main street is no longer blocked by NPCs walking about
++ Goldenrod City and Route 34 NPCs moved around to make traversing easier
 + Cycling between the Daycare and Goldenrod is easier as an NPC acts as a barrier to go into the grass on route 34
 + Some items have been made more readily available
 + Pokemons STATS menu option in the party menu shows above usable HM moves
@@ -48,5 +48,6 @@ Though this is build on TheSmithPlays' Pokemon Crystal Legacy it is NOT compatib
 + Chuck can be reached without a pokemon knowing STRENGTH
 + Shiny Charizard is black and red
 + Changes to certain enemy trainers to use new items and moves
++ The AI's 25% chance to fail status moves has been removed
   
 

@@ -45,7 +45,7 @@ MoveEffectsPointers:
 	dw SuperFang
 	dw StaticDamage
 	dw TrapTarget
-	dw TrapStack ; unused_2b
+	dw TrapStack
 	dw MultiHit
 	dw NormalHit
 	dw Mist
@@ -161,4 +161,5 @@ MoveEffectsPointers:
 	dw DefenseCurl
 	dw FreezeHit
 	dw Hail
+	dw Roost
 	assert_table_length NUM_MOVE_EFECTS

@@ -18,7 +18,42 @@ OlivineMartCooltrainerFScript:
 	jumptextfaceplayer OlivineMartCooltrainerFText
 
 OlivineMartLassScript:
-	jumptextfaceplayer OlivineMartLassText
+;	jumptextfaceplayer OlivineMartLassText
+	faceplayer
+	opentext
+	writetext OlivineMartLassText
+	yesorno
+	iftrue .TeachRoost
+	writetext OlivineMartLassByeText
+	waitbutton
+	closetext
+	end
+.TeachRoost:
+	checkitem SHARP_BEAK
+	iffalse .NoSharpBeakPayment
+	setval ROOST
+	sjump .TeachMove
+.NoSharpBeakPayment:
+	writetext NoSharpBeakPaymentText
+	waitbutton
+	closetext
+	end
+
+.TeachMove:
+	writetext RoostTutorTeachMoveText
+	waitbutton
+	special MoveTutor
+	ifequal FALSE, .MoveTaught
+	closetext
+	end
+	
+.MoveTaught:
+	writetext RoostTutorToughtMoveText
+	takeitem SHARP_BEAK
+	waitbutton
+	closetext
+	end
+	
 
 OlivineMartCooltrainerFText:
 	text "Do your #MON"
@@ -39,8 +74,39 @@ OlivineMartLassText:
 	para "Want to know what"
 	line "it says?"
 
-	para "Let's see… Nope!"
-	line "It's a secret!"
+	para "Let's see… "
+;	line "It's a secret!"
+	para "'Many bird"
+	line "#MON can ROOST"
+	cont "to rest.'"
+	para "This is good to"
+	line "know!"
+	para "Want me to teach"
+	line "one of your"
+	cont "#MON to ROOST"
+	cont "in exchange for"
+	cont "a SHARP BEAK?"
+	done
+
+OlivineMartLassByeText:
+	text "Ok."
+	done
+
+NoSharpBeakPaymentText:
+	text "But you don't have"
+	line "a SHARP BEAK to"
+	cont "pay with."
+	done
+
+RoostTutorTeachMoveText:
+	text "Which one should"
+	line "learn to ROOST?"
+	done
+
+RoostTutorToughtMoveText:
+	text "Now your #MON"
+	line "can rest after a"
+	cont "long flight."
 	done
 
 OlivineMart_MapEvents:

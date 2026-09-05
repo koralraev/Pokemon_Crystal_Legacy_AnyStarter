@@ -164,7 +164,7 @@ MoveNames::
 	li "SUPER FANG"
 	li "SLASH"
 	li "SUBSTITUTE"
-	li "STRUGGLE"
+	li "ROOST"
 	li "SKETCH"
 	li "TRIPLE KICK"
 	li "THIEF"
@@ -254,4 +254,5 @@ MoveNames::
 	li "IRON DEFENSE"
 	li "NASTY PLOT"
 	li "HAIL"
+	li "STRUGGLE"
 	assert_list_length NUM_ATTACKS
