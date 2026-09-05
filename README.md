@@ -13,6 +13,7 @@ Though this is build on TheSmithPlays' Pokemon Crystal Legacy it is NOT compatib
 + An Egg Move Reminder has been added to Move Deleters house in Blackthorn City. All evolution lines can now learn their first stages egg moves
 + The Itemfinder can now show if an enemy is holding an item. Can be toggled by talking to the Itemfinder Guy.
 + Player can fly directly from Johto to Indigo Plateau and from Kanto to New Bark
++ Check the [Feature details](https://github.com/koralraev/Pokemon_Crystal_Legacy_AnyStarter/blob/main/DETAILS.md#features) for more info
 
 
 
@@ -23,10 +24,11 @@ Though this is build on TheSmithPlays' Pokemon Crystal Legacy it is NOT compatib
 + Changes to weathers
 + More move tutors
 + Changes to items, like increased heal amounts for Potions, hold items extend move effects, etc.
-+ Sandstorm now boosts ROCK-types Special Defence by 50%
++ Sandstorm now boosts ROCK-types Special Defense by 50%
 + Grass types are immune to spore and powder based moves
 + A curator of rare rocks and stones can be found somewhere. He sells items that are otherwise difficult to come by
 + A pokemon from a later generation can be obtained through a trade sequence quest started in Mahogany Town
++ Check the [Addition details](https://github.com/koralraev/Pokemon_Crystal_Legacy_AnyStarter/blob/main/DETAILS.md#additions) for more info
 
 
 
@@ -35,7 +37,7 @@ Though this is build on TheSmithPlays' Pokemon Crystal Legacy it is NOT compatib
 + The player can always successfully flee from wild battles
 + The Move Relearner NPC has been made available much earlier
 + The Name Rater now allows renaming traded pokemon
-+ Several existing moves have been changed to make them more viable and fun to use, eg. Flash is now an electric type priroity move with a chance to flinch the target
++ Several existing moves have been changed to make them more viable and fun to use, eg. Flash is now an electric type priority move with a chance to flinch the target
 + Increased chances for wild pokemon to have hold items. More wild pokemon have hold items that where otherwise difficult to come by
 + All gen2 TMs can be purchased at marts before the E4
 + Goldenrod City and Route 34 NPCs moved around to make traversing easier
@@ -49,5 +51,6 @@ Though this is build on TheSmithPlays' Pokemon Crystal Legacy it is NOT compatib
 + Shiny Charizard is black and red
 + Changes to certain enemy trainers to use new items and moves
 + The AI's 25% chance to fail status moves has been removed
++ Check the [Enhancement details](https://github.com/koralraev/Pokemon_Crystal_Legacy_AnyStarter/blob/main/DETAILS.md#some-enhancements) for more info
   
 
